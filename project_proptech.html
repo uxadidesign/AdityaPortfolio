@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropTech Agent Transaction Portal | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on standardizing PropTech agent transaction portals, reducing contract errors by 15%, and accelerating listings processing.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Decorative Glowing Background Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Personal monogram logo -->
+            <a href="index.html" class="nav-logo">AN<span class="logo-dot">.</span></a>
+            
+            <!-- Center navigation menu items -->
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="work.html" class="nav-link active">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="about.html#resume" class="nav-link">Resume</a></li>
+                </ul>
+            </nav>
+
+            <!-- Right nav actions: CTA + Theme Toggle + Mobile Hamburger -->
+            <div class="nav-actions">
+                <a href="index.html#contact" class="btn btn-nav-cta">Let's Connect</a>
+                
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Case Study Hero Section -->
+    <section class="cs-hero">
+        <div class="container">
+            <div class="cs-back-link">
+                <a href="work.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+            </div>
+            
+            <div class="cs-hero-header">
+                <span class="cs-category-tag"><i class="fa-solid fa-house-laptop"></i> SaaS • Real Estate Transaction Portal</span>
+                <h1 class="cs-title">PropTech Agent Transaction Portal</h1>
+                <p class="cs-tagline">Designing modular paperwork dashboards and transaction tracking flows to decrease agent contract rejections and accelerate listing routing.</p>
+            </div>
+            
+            <div class="cs-hero-mockup-wrapper">
+                <img src="assets/bigul_userflow.jpg" alt="Real Estate agent transaction portal flow diagram mockup" class="cs-hero-mockup main-lightbox-trigger">
+            </div>
+            
+            <div class="cs-metadata-grid">
+                <div class="meta-item">
+                    <h5>Role</h5>
+                    <p>Lead UI/UX Designer<br><span>(Agent Portal Ownership)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Duration</h5>
+                    <p>Dec 2021 - Jul 2022<br><span>(8 Months Duration)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Team Size</h5>
+                    <p>5 cross-functional members<br><span>(1 PM, 2 Devs, 1 QA, 1 Designer)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Key Results</h5>
+                    <p>-15% Submission Errors<br><span>+25% Process Speed</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Layout: Sticky Sidebar TOC + Scrollable Content -->
+    <div class="cs-layout-container container">
+        <!-- Sticky Sidebar Table of Contents -->
+        <aside class="cs-sidebar">
+            <div class="cs-toc-wrapper" id="tocWrapper">
+                <h4 class="toc-title">ON THIS PAGE</h4>
+                <ul class="toc-list">
+                    <li><a href="#overview" class="toc-link active">1. Overview & Context</a></li>
+                    <li><a href="#role" class="toc-link">2. My Role & Collaboration</a></li>
+                    <li><a href="#research" class="toc-link">3. Research & Discovery</a></li>
+                    <li><a href="#problem" class="toc-link">4. Problem Definition</a></li>
+                    <li><a href="#process" class="toc-link">5. Design Process</a></li>
+                    <li><a href="#visual" class="toc-link">6. Visual Design System</a></li>
+                    <li><a href="#hifi" class="toc-link">7. High-Fidelity Walkthrough</a></li>
+                    <li><a href="#strategy" class="toc-link">8. Product Strategy</a></li>
+                    <li><a href="#challenges" class="toc-link">9. Challenges & Solutions</a></li>
+                    <li><a href="#impact" class="toc-link">10. Business Impact</a></li>
+                    <li><a href="#tools" class="toc-link">11. Tools & Tech</a></li>
+                    <li><a href="#gallery" class="toc-link">12. Design Gallery</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Scrollable Content Column -->
+        <main class="cs-content">
+            
+            <!-- 1. Overview & Context -->
+            <section id="overview" class="cs-section">
+                <h2>1. Project Overview</h2>
+                <div class="cs-section-body">
+                    <h3>Background & Business Context</h3>
+                    <p>
+                        Real estate transaction processing is plagued by extensive paperwork, manual review loops, and high contract rejection rates due to formatting errors. Brokers need a fast, foolproof tool to manage listing documents.
+                    </p>
+                    <p>
+                        Before our portal redesign, agent contract rejection rates were at 24%, wasting weeks in manual verification loops. Agents struggled to track list histories, causing deal blockages.
+                    </p>
+                    
+                    <div class="goal-box">
+                        <h4>Goals & Objectives:</h4>
+                        <ul>
+                            <li><strong>Minimize transaction submission errors by 15%</strong> through clear inline checklist validators.</li>
+                            <li><strong>Accelerate listing processing speed by 25%</strong>.</li>
+                            <li><strong>Unify paperwork tracking</strong> inside a single dashboard.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. My Role & Collaboration -->
+            <section id="role" class="cs-section">
+                <h2>2. My Role & Collaboration</h2>
+                <div class="cs-section-body">
+                    <p>
+                        As the <strong>Lead UI/UX Designer</strong>, I owned end-to-end user research, portal workflow design, high-density dashboard layouts, and usability benchmarking.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. Research & Discovery -->
+            <section id="research" class="cs-section">
+                <h2>3. Research & Discovery</h2>
+                <div class="cs-section-body">
+                    <p>
+                        We interviewed 10 active agents to map out their paperwork submission journeys, identifying key friction points in uploading documents.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 4. Problem Definition -->
+            <section id="problem" class="cs-section">
+                <h2>4. Problem Definition</h2>
+                <div class="cs-section-body">
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <span class="kpi-metric">-15%</span>
+                            <span class="kpi-lbl">Target submission errors</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">+25%</span>
+                            <span class="kpi-lbl">Target processing speed</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Design Process -->
+            <section id="process" class="cs-section">
+                <h2>5. Design Process</h2>
+                <div class="cs-section-body">
+                    <p>
+                        We designed a structured upload layout that verifies document files as they are uploaded.
+                    </p>
+                    <div class="process-img-wrapper">
+                        <img src="assets/bigul_userflow.jpg" alt="User flow mapping" class="process-img main-lightbox-trigger">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Visual Design System -->
+            <section id="visual" class="cs-section">
+                <h2>6. Visual Design System</h2>
+                <div class="cs-section-body">
+                    <p>
+                        To ensure layout consistency across portals, we established Apex design components for inputs and status cards.
+                    </p>
+                    <div class="process-img-wrapper">
+                        <img src="assets/bigul_designsystem.jpg" alt="Apex design guidelines" class="process-img main-lightbox-trigger">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. High-Fidelity Walkthrough -->
+            <section id="hifi" class="cs-section">
+                <h2>7. High-Fidelity Walkthrough</h2>
+                <div class="cs-section-body">
+                    <div class="hifi-feature">
+                        <h4>Inline Document Checklist Validator</h4>
+                        <p>
+                            Shows real-time feedback on signature zones and tax IDs, correcting user errors before final submission.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Product Strategy -->
+            <section id="strategy" class="cs-section">
+                <h2>8. Product Strategy & Trade-offs</h2>
+                <p>
+                    We chose to restrict file formats to PDF only, simplifying backend file parsing and layout rendering at the expense of user image uploads.
+                </p>
+            </section>
+
+            <!-- 9. Challenges & Solutions -->
+            <section id="challenges" class="cs-section">
+                <h2>9. Challenges & Solutions</h2>
+                <div class="cs-section-body">
+                    <div class="challenge-item">
+                        <h5>Challenge: Unclear listing status states</h5>
+                        <p><strong>The Problem:</strong> Agents submitted contracts and didn't know if they were under review, approved, or rejected, leading to constant phone support calls.</p>
+                        <p><strong>Design Solution:</strong> We added a visual step tracker with color-coded status badges and detailed error annotations, saving weeks of manual email follow-ups.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. Business Impact -->
+            <section id="impact" class="cs-section">
+                <h2>10. Impact & Results</h2>
+                <div class="cs-section-body">
+                    <div class="impact-metrics-row">
+                        <div class="metric-circle">
+                            <span class="m-val">-15%</span>
+                            <span class="m-lbl">Errors</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">+25%</span>
+                            <span class="m-lbl">Speed Boost</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. Tools & Tech -->
+            <section id="tools" class="cs-section">
+                <h2>11. Tools & Tech</h2>
+                <div class="cs-section-body">
+                    <div class="tools-flex">
+                        <div class="tool-item-box"><i class="fa-brands fa-figma"></i> Figma</div>
+                        <div class="tool-item-box">Miro</div>
+                        <div class="tool-item-box">Jira</div>
+                        <div class="tool-item-box">Notion</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. Design Gallery -->
+            <section id="gallery" class="cs-section">
+                <h2>12. Design Gallery</h2>
+                <div class="cs-section-body">
+                    <p>Click on any of the screens or wireframes to open a full-resolution interactive lightbox preview.</p>
+                    <div class="cs-gallery-grid">
+                        <div class="gallery-card">
+                            <img src="assets/bigul_userflow.jpg" alt="Portal user flow diagram" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="assets/bigul_wireframes.jpg" alt="Wireframe layouts" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="assets/bigul_designsystem.jpg" alt="Design tokens Atoms guide" class="gallery-img main-lightbox-trigger">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Project Navigation Section -->
+            <div class="cs-project-nav" id="navigation">
+                <a href="project_shanti.html" class="nav-prev">
+                    <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
+                    <span class="nav-project-title">Enterprise Operational Systems</span>
+                </a>
+                <a href="project_marvellous.html" class="nav-next">
+                    <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="nav-project-title">Marvellous Packaging Redesign</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightboxOverlay" class="lightbox-overlay hidden" aria-hidden="true" role="dialog">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Preview">&times;</button>
+        <img id="lightboxImg" src="" alt="Full size preview" class="lightbox-img">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo">Aditya<span class="logo-dot">.</span></a>
+                <p>Creating impact-driven user experiences since 2020.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-socials">
+                <h3>Social Connect</h3>
+                <div class="social-icons">
+                    <a href="mailto:nandaneas1595@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="#" class="social-icon" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                    <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to Top Button -->
+        <div class="back-to-top-container">
+            <button id="backToTop" class="back-to-top-btn" aria-label="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i> Back to Top
+            </button>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="currentYear">2026</span> Aditya Nandane. All Rights Reserved. Made with <i class="fa-solid fa-heart text-accent"></i> and Code.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Aditya Nandane | Senior Product Designer</title>
+    <meta name="description" content="Learn about Aditya Nandane's design philosophy, career journey, and experience as a Senior Product Designer building SaaS, Fintech, and E-commerce products.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Isolated CSS overrides for the redesigned About page -->
+    <style>
+        .about-page-wrapper {
+            background-color: #090B12;
+            color: #f3f4f6;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            padding: 160px 0 80px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-hero-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        
+        /* Editorial portrait style */
+        .about-hero-portrait {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .portrait-editorial-frame {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 4/5;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg), 0 20px 40px rgba(0, 0, 0, 0.5);
+            background: var(--bg-secondary);
+        }
+        
+        .portrait-editorial-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            transition: transform var(--transition-slow);
+        }
+        
+        .portrait-editorial-frame:hover .portrait-editorial-img {
+            transform: scale(1.03);
+        }
+        
+        .editorial-badge {
+            font-family: var(--font-heading);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent-primary);
+            margin-bottom: 12px;
+            display: block;
+        }
+        
+        .about-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(36px, 5vw, 54px);
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+        }
+        
+        .about-hero-lead {
+            font-size: clamp(15px, 2vw, 17px);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+        
+        /* Bio facts table style */
+        .bio-meta-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 24px;
+        }
+        
+        .meta-item {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 16px;
+            font-size: 14px;
+            align-items: center;
+        }
+        
+        .meta-label {
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+        
+        .meta-value {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        /* Section Spacing */
+        .about-section {
+            padding: 100px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Grid background pattern */
+        .about-grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(91, 124, 255, 0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        /* Summary Card */
+        .summary-box {
+            background: rgba(20, 26, 44, 0.4);
+            border: 1.5px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            padding: 48px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+        
+        .summary-lead {
+            font-family: var(--font-heading);
+            font-size: clamp(20px, 3vw, 28px);
+            font-weight: 600;
+            line-height: 1.4;
+            color: #ffffff;
+            margin-bottom: 32px;
+            letter-spacing: -0.5px;
+        }
+        
+        .summary-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        
+        .summary-col h4 {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .summary-col p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Timeline */
+        .about-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 32px;
+        }
+        
+        .about-timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent-primary), rgba(91, 124, 255, 0.1));
+        }
+        
+        .about-timeline-item {
+            position: relative;
+            margin-bottom: 56px;
+        }
+        
+        .about-timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .about-timeline-dot {
+            position: absolute;
+            left: -32px;
+            top: 6px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #090B12;
+            border: 3px solid var(--accent-primary);
+            box-shadow: 0 0 10px var(--accent-glow);
+            z-index: 2;
+        }
+        
+        .about-timeline-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .about-timeline-date {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .about-timeline-role {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        
+        .about-timeline-company {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .about-timeline-body {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .about-timeline-body p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        
+        .about-timeline-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 16px;
+        }
+        
+        .about-timeline-skill-pill {
+            font-size: 11px;
+            font-weight: 600;
+            background: rgba(91, 124, 255, 0.1);
+            border: 1px solid rgba(91, 124, 255, 0.15);
+            color: var(--text-primary);
+            padding: 4px 10px;
+            border-radius: 9999px;
+        }
+        
+        /* Design Expertise Redesign */
+        .expertise-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+        
+        .expertise-card {
+            background: rgba(20, 26, 44, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(91, 124, 255, 0.3);
+            box-shadow: var(--shadow-lg), 0 10px 30px rgba(91, 124, 255, 0.05);
+        }
+        
+        .expertise-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(91, 124, 255, 0.1);
+            border: 1px solid rgba(91, 124, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-primary);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .expertise-card h3 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+        
+        .expertise-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .expertise-list li {
+            font-size: 13px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .expertise-list li i {
+            color: var(--accent-primary);
+            font-size: 10px;
+        }
+        
+        /* Design Philosophy */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        
+        .ph-card {
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: var(--radius-md);
+            padding: 36px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .ph-num {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--accent-primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        
+        .ph-card h3 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        
+        .ph-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        /* Collaboration Style Diagram */
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            position: relative;
+        }
+        
+        .collab-node {
+            background: rgba(20, 26, 44, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: var(--shadow-sm);
+            transition: border-color 0.3s;
+        }
+        
+        .collab-node:hover {
+            border-color: rgba(91, 124, 255, 0.3);
+        }
+        
+        .collab-node-icon {
+            font-size: 24px;
+            color: var(--accent-primary);
+            margin-bottom: 16px;
+        }
+        
+        .collab-node h4 {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+        
+        .collab-node p {
+            font-size: 11px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        
+        /* Impact Highlights */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+        
+        .highlight-card {
+            background: rgba(20, 26, 44, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .highlight-num {
+            font-family: var(--font-heading);
+            font-size: clamp(36px, 5vw, 48px);
+            font-weight: 800;
+            color: var(--accent-primary);
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .highlight-lbl {
+            font-family: var(--font-heading);
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 4px;
+            display: block;
+        }
+        
+        .highlight-desc {
+            font-size: 12px;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+        
+        /* Bottom CTA Redesign */
+        .about-cta-section {
+            background: radial-gradient(circle at center, rgba(91, 124, 255, 0.06) 0%, transparent 60%);
+            text-align: center;
+            padding: 120px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+        
+        .about-cta-section h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(28px, 5vw, 44px);
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        
+        .about-cta-section p {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 36px auto;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 992px) {
+            .about-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                text-align: center;
+            }
+            .about-hero-grid .hero-actions {
+                justify-content: center;
+            }
+            .about-hero-grid .portrait-wrapper {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme about-page-wrapper">
+    <!-- Decorative Glowing Background Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AN<span class="logo-dot">.</span></a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="work.html" class="nav-link">Work</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="about.html#resume" class="nav-link">Resume</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="index.html#contact" class="btn btn-nav-cta">Let's Connect</a>
+                
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="about-hero">
+            <div class="container about-hero-grid">
+                <!-- Left Column: Clean Editorial Portrait -->
+                <div class="about-hero-portrait">
+                    <div class="portrait-editorial-frame">
+                        <img src="assets/aditya_portrait.jpg" alt="Aditya Nandane Portrait" class="portrait-editorial-img">
+                    </div>
+                </div>
+                
+                <!-- Right Column: Structured Editorial Bio -->
+                <div class="about-hero-bio">
+                    <span class="editorial-badge">Senior Product Designer • 6+ Years Experience</span>
+                    <h1 class="about-hero-title">Aditya Nandane</h1>
+                    
+                    <p class="about-hero-lead">
+                        I bridge the gap between user empathy, complex product structures, and front-end engineering execution. Over the last six years, I have led end-to-end design lifecycles for high-growth Fintech, Cloud SaaS, and E-commerce platforms.
+                    </p>
+                    
+                    <!-- Quick Fact Meta Rows -->
+                    <div class="bio-meta-list">
+                        <div class="meta-item">
+                            <span class="meta-label">Core Focus</span>
+                            <span class="meta-value">Fintech, Enterprise SaaS, Conversion Funnels</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Location</span>
+                            <span class="meta-value">Pune, India (Available for Remote / Relocation)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Education</span>
+                            <span class="meta-value">Bachelor of Engineering (Computer Science)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions" style="margin-top: 32px;">
+                        <a href="work.html" class="btn btn-primary">Explore Case Studies <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#resume" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> Download Resume</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Professional Summary -->
+        <section class="about-section">
+            <div class="container">
+                <div class="summary-box">
+                    <h2 class="summary-lead">I believe that great product design sits at the intersection of user needs, engineering logic, and business viability.</h2>
+                    <div class="summary-details-grid">
+                        <div class="summary-col">
+                            <h4><i class="fa-solid fa-compass"></i> Strategic UX Discovery</h4>
+                            <p>Over the last six years, I've worked closely with cross-functional stakeholders to align roadmap requirements with qualitative user insights. I focus on reducing funnel drop-offs and friction points.</p>
+                        </div>
+                        <div class="summary-col">
+                            <h4><i class="fa-solid fa-bezier-curve"></i> High-Fidelity Craftsmanship</h4>
+                            <p>My hybrid technical engineering background helps me bridge the gap between design specs and front-end code. I establish logical grid systems, semantic component tokens, and accessible WCAG layouts.</p>
+                        </div>
+                        <div class="summary-col">
+                            <h4><i class="fa-solid fa-chart-simple"></i> Business-Driven Decisions</h4>
+                            <p>Design is a core business driver. I define UX KPIs (like KYC drop-offs and checkout task success rates) and iteratively improve interface structures using quantitative conversion analytics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Career Journey (Timeline) -->
+        <section class="about-section" id="resume">
+            <div class="about-grid-overlay"></div>
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">CAREER progression</span>
+                    <h2 class="section-title">My Career Journey</h2>
+                    <p class="section-desc">Leading user experience and interface engineering across retail fintech, D2C retail, and real estate SaaS.</p>
+                </div>
+                
+                <div class="about-timeline">
+                    <!-- Experience 1 -->
+                    <div class="about-timeline-item">
+                        <div class="about-timeline-dot"></div>
+                        <div class="about-timeline-meta">
+                            <div>
+                                <h3 class="about-timeline-role">Lead UI/UX Designer</h3>
+                                <span class="about-timeline-company">Bigul.co • Retail Trading Fintech</span>
+                            </div>
+                            <span class="about-timeline-date">Nov 2024 - Present</span>
+                        </div>
+                        <div class="about-timeline-body">
+                            <p>Leading end-to-end design lifecycles for retail web and mobile trading consoles, portfolio tracking systems, and secure user profiles.</p>
+                            <p><strong>Key Impact:</strong> Redesigned KYC verification flows, driving a +22% lift in onboarding completion rate and -25% support ticket volumes.</p>
+                            <div class="about-timeline-skills">
+                                <span class="about-timeline-skill-pill">Fintech Workflows</span>
+                                <span class="about-timeline-skill-pill">Product Analytics</span>
+                                <span class="about-timeline-skill-pill">Onboarding UX</span>
+                                <span class="about-timeline-skill-pill">Stakeholder Alignment</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="about-timeline-item">
+                        <div class="about-timeline-dot"></div>
+                        <div class="about-timeline-meta">
+                            <div>
+                                <h3 class="about-timeline-role">Lead UX Designer</h3>
+                                <span class="about-timeline-company">Kimirica Lifestyle • D2C E-commerce Retail</span>
+                            </div>
+                            <span class="about-timeline-date">Jul 2022 - Apr 2024</span>
+                        </div>
+                        <div class="about-timeline-body">
+                            <p>Optimized the checkout funnel, product landing pages, and discovery architectures for a premium cosmetics and retail storefront.</p>
+                            <p><strong>Key Impact:</strong> Decreased cart drop-off rates by -15% and boosted checkout conversion success rates by +18% to +25%.</p>
+                            <div class="about-timeline-skills">
+                                <span class="about-timeline-skill-pill">Funnel Optimization</span>
+                                <span class="about-timeline-skill-pill">A/B Testing</span>
+                                <span class="about-timeline-skill-pill">Interaction Prototyping</span>
+                                <span class="about-timeline-skill-pill">Growth UX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="about-timeline-item">
+                        <div class="about-timeline-dot"></div>
+                        <div class="about-timeline-meta">
+                            <div>
+                                <h3 class="about-timeline-role">Lead UI/UX Designer</h3>
+                                <span class="about-timeline-company">Cubedots • PropTech Cloud SaaS</span>
+                            </div>
+                            <span class="about-timeline-date">Dec 2021 - Jul 2022</span>
+                        </div>
+                        <div class="about-timeline-body">
+                            <p>Designed multi-tenant real estate agent portals, contract submission forms, and established a scalable SaaS design system framework.</p>
+                            <p><strong>Key Impact:</strong> Rebuilt component libraries and handoff flows, lowering visual developer rework cycles by 20%.</p>
+                            <div class="about-timeline-skills">
+                                <span class="about-timeline-skill-pill">Design Systems</span>
+                                <span class="about-timeline-skill-pill">SaaS Dashboards</span>
+                                <span class="about-timeline-skill-pill">Developer Handoff</span>
+                                <span class="about-timeline-skill-pill">Information Architecture</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Experience 4 -->
+                    <div class="about-timeline-item">
+                        <div class="about-timeline-dot"></div>
+                        <div class="about-timeline-meta">
+                            <div>
+                                <h3 class="about-timeline-role">UI/UX Designer & Consultant</h3>
+                                <span class="about-timeline-company">Freelance Consulting & Agency Contracts</span>
+                            </div>
+                            <span class="about-timeline-date">Jan 2020 - Dec 2021</span>
+                        </div>
+                        <div class="about-timeline-body">
+                            <p>Shipped responsive mobile application wireframes, dashboards, brand guidelines, and layouts for early-stage B2B/B2C SaaS projects.</p>
+                            <p><strong>Key Impact:</strong> Shipped 10+ visual client properties, establishing brand systems and initial MVP layouts.</p>
+                            <div class="about-timeline-skills">
+                                <span class="about-timeline-skill-pill">Freelance Consulting</span>
+                                <span class="about-timeline-skill-pill">Wireframing</span>
+                                <span class="about-timeline-skill-pill">Visual Design</span>
+                                <span class="about-timeline-skill-pill">Client Pitching</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Design Expertise -->
+        <section class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">CORE SKILLSET</span>
+                    <h2 class="section-title">Design Expertise</h2>
+                    <p class="section-desc">My toolkit spans strategic product discovery, visual craftsmanship, and agile code alignment.</p>
+                </div>
+                
+                <div class="expertise-cards-grid">
+                    <!-- Product Thinking -->
+                    <div class="expertise-card">
+                        <div class="expertise-card-icon"><i class="fa-solid fa-chess"></i></div>
+                        <h3>Product Thinking</h3>
+                        <ul class="expertise-list">
+                            <li><i class="fa-solid fa-circle"></i> Product Strategy</li>
+                            <li><i class="fa-solid fa-circle"></i> Problem Framing</li>
+                            <li><i class="fa-solid fa-circle"></i> Opportunity Discovery</li>
+                            <li><i class="fa-solid fa-circle"></i> Feature Prioritization</li>
+                            <li><i class="fa-solid fa-circle"></i> Roadmapping</li>
+                        </ul>
+                    </div>
+
+                    <!-- UX Design -->
+                    <div class="expertise-card">
+                        <div class="expertise-card-icon"><i class="fa-solid fa-compass"></i></div>
+                        <h3>UX Design</h3>
+                        <ul class="expertise-list">
+                            <li><i class="fa-solid fa-circle"></i> User Research</li>
+                            <li><i class="fa-solid fa-circle"></i> Information Architecture</li>
+                            <li><i class="fa-solid fa-circle"></i> User Journeys & IA</li>
+                            <li><i class="fa-solid fa-circle"></i> Interaction Prototyping</li>
+                            <li><i class="fa-solid fa-circle"></i> Usability Testing</li>
+                        </ul>
+                    </div>
+
+                    <!-- UI Design -->
+                    <div class="expertise-card">
+                        <div class="expertise-card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>UI Design</h3>
+                        <ul class="expertise-list">
+                            <li><i class="fa-solid fa-circle"></i> Visual Design System</li>
+                            <li><i class="fa-solid fa-circle"></i> Grid Alignment</li>
+                            <li><i class="fa-solid fa-circle"></i> WCAG Accessibility</li>
+                            <li><i class="fa-solid fa-circle"></i> Component Libraries</li>
+                            <li><i class="fa-solid fa-circle"></i> Responsive Grids</li>
+                        </ul>
+                    </div>
+
+                    <!-- Product Delivery -->
+                    <div class="expertise-card">
+                        <div class="expertise-card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3>Product Delivery</h3>
+                        <ul class="expertise-list">
+                            <li><i class="fa-solid fa-circle"></i> Developer Handoff</li>
+                            <li><i class="fa-solid fa-circle"></i> Design QA Review</li>
+                            <li><i class="fa-solid fa-circle"></i> Agile Alignment</li>
+                            <li><i class="fa-solid fa-circle"></i> Cross-Team Collaboration</li>
+                            <li><i class="fa-solid fa-circle"></i> Iterative Releases</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Design Philosophy -->
+        <section class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">CORE BELIEFS</span>
+                    <h2 class="section-title">Design Philosophy</h2>
+                    <p class="section-desc">Core principles that guide my day-to-day work, layout iterations, and strategic decisions.</p>
+                </div>
+                
+                <div class="philosophy-grid">
+                    <div class="ph-card">
+                        <span class="ph-num">Belief 01</span>
+                        <h3>Understand Users Before Designing</h3>
+                        <p>Visual UI details are meaningless without deep target empathy. I ground every workflow in qualitative user feedback, behavioral pain points, and product metrics data.</p>
+                    </div>
+                    <div class="ph-card">
+                        <span class="ph-num">Belief 02</span>
+                        <h3>Simplicity Solves Complexity</h3>
+                        <p>SaaS and Fintech consoles contain overwhelming statistics. My goal is to reduce cognitive overload through progressive disclosure and minimal, clear information hierarchies.</p>
+                    </div>
+                    <div class="ph-card">
+                        <span class="ph-num">Belief 03</span>
+                        <h3>Measure Success Through Outcomes</h3>
+                        <p>Great design is evaluated by its real-world business impact. I gauge layout success by conversion rate metrics, transaction speeds, and decreased customer support volumes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Collaboration Style -->
+        <section class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">CROSS-FUNCTIONAL WORKFLOW</span>
+                    <h2 class="section-title">Collaboration Style</h2>
+                    <p class="section-desc">How I partner across teams to take features from concept to production-ready code.</p>
+                </div>
+                
+                <div class="collab-grid">
+                    <!-- PM -->
+                    <div class="collab-node">
+                        <div class="collab-node-icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <h4>Product Managers</h4>
+                        <p>Aligning strategic discovery requirements, mapping product scopes, and setting measurable UX KPI priorities.</p>
+                    </div>
+                    <!-- Engineers -->
+                    <div class="collab-node">
+                        <div class="collab-node-icon"><i class="fa-solid fa-code"></i></div>
+                        <h4>Engineering Teams</h4>
+                        <p>Providing clean Figma layout systems, component specifications, and running detailed design QA checks on frontend code.</p>
+                    </div>
+                    <!-- Users -->
+                    <div class="collab-node">
+                        <div class="collab-node-icon"><i class="fa-solid fa-user-group"></i></div>
+                        <h4>Users & Research</h4>
+                        <p>Running usability tests, analyzing prototype click drop-offs, and iterating on accessibility feedback loops.</p>
+                    </div>
+                    <!-- Stakeholders -->
+                    <div class="collab-node">
+                        <div class="collab-node-icon"><i class="fa-solid fa-user-tie"></i></div>
+                        <h4>Stakeholders</h4>
+                        <p>Presenting design decisions through the lens of business value, conversions, and target audience needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Impact Highlights -->
+        <section class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="sub-title">DELIVERED VALUE</span>
+                    <h2 class="section-title">Impact Highlights</h2>
+                    <p class="section-desc">A snapshot of the business outcomes and design scale achieved across past roles.</p>
+                </div>
+                
+                <div class="highlights-grid">
+                    <div class="highlight-card">
+                        <span class="highlight-num"><span class="stat-pct" data-target="6">6</span>+</span>
+                        <span class="highlight-lbl">Years Experience</span>
+                        <p class="highlight-desc">Leading end-to-end user experience strategy.</p>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-num"><span class="stat-pct" data-target="25">25</span>+</span>
+                        <span class="highlight-lbl">Products Delivered</span>
+                        <span class="highlight-desc">Shipped across mobile apps & responsive web SaaS.</span>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-num"><span class="stat-pct" data-target="22">22</span>%</span>
+                        <span class="highlight-lbl">KYC Funnel Lift</span>
+                        <span class="highlight-desc">Accomplished via onboarding redesign at Bigul.co.</span>
+                    </div>
+                    <div class="highlight-card">
+                        <span class="highlight-num"><span class="stat-pct" data-target="20">20</span>%</span>
+                        <span class="highlight-lbl">Handoff Efficiency</span>
+                        <span class="highlight-desc">Lowered developer rework via design systems.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Call to Action -->
+        <section class="about-cta-section">
+            <div class="container">
+                <h2>Let's Build Something Exceptional</h2>
+                <p>Are you looking to scale your design systems, improve conversion funnels, or partner on a strategic fintech or enterprise application? Let's connect.</p>
+                <div class="hero-actions" style="justify-content: center; gap: 20px;">
+                    <a href="work.html" class="btn btn-primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#resume" class="btn btn-secondary"><i class="fa-solid fa-file-pdf"></i> Download Resume</a>
+                    <a href="mailto:nandaneas1595@gmail.com" class="btn btn-primary" style="background: var(--bg-surface); border: 1px solid var(--bg-surface-border); box-shadow: none;">Contact Me <i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo">Aditya<span class="logo-dot">.</span></a>
+                <p>Creating impact-driven user experiences since 2020.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="about.html#resume">Resume</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-socials">
+                <h3>Social Connect</h3>
+                <div class="social-icons">
+                    <a href="mailto:nandaneas1595@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="#" class="social-icon" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                    <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to Top Button -->
+        <div class="back-to-top-container">
+            <button id="backToTop" class="back-to-top-btn" aria-label="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i> Back to Top
+            </button>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="currentYear">2026</span> Aditya Nandane. All Rights Reserved. Made with <i class="fa-solid fa-heart text-accent"></i> and Code.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

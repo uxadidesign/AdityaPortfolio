@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimirica E-commerce Checkout Optimization | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on optimizing the D2C checkout funnel and purchase experience for Kimirica Lifestyle, driving conversion rates and reducing cart abandonment.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Decorative Glowing Background Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Personal monogram logo -->
+            <a href="index.html" class="nav-logo">AN<span class="logo-dot">.</span></a>
+            
+            <!-- Center navigation menu items -->
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="work.html" class="nav-link active">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="about.html#resume" class="nav-link">Resume</a></li>
+                </ul>
+            </nav>
+
+            <!-- Right nav actions: CTA + Theme Toggle + Mobile Hamburger -->
+            <div class="nav-actions">
+                <a href="index.html#contact" class="btn btn-nav-cta">Let's Connect</a>
+                
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Case Study Hero Section -->
+    <section class="cs-hero">
+        <div class="container">
+            <div class="cs-back-link">
+                <a href="work.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+            </div>
+            
+            <div class="cs-hero-header">
+                <span class="cs-category-tag"><i class="fa-solid fa-cart-shopping"></i> E-commerce • Growth UX & D2C</span>
+                <h1 class="cs-title">Kimirica E-commerce Checkout Optimization</h1>
+                <p class="cs-tagline">Redesigning the shopping cart drawer, multi-step shipping validation, and single-click payment checkouts to boost sales conversion rates.</p>
+            </div>
+            
+            <div class="cs-hero-mockup-wrapper">
+                <img src="assets/kimirica_ecommerce.jpg" alt="Kimirica E-commerce Mobile Shop UI Layout mockup" class="cs-hero-mockup main-lightbox-trigger">
+            </div>
+            
+            <div class="cs-metadata-grid">
+                <div class="meta-item">
+                    <h5>Role</h5>
+                    <p>Lead UX Designer<br><span>(Checkout & Discovery Ownership)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Duration</h5>
+                    <p>Jul 2022 - Apr 2024<br><span>(22 Months Duration)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Team Size</h5>
+                    <p>6 cross-functional members<br><span>(1 PM, 3 Devs, 1 QA, 1 Designer)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Key Results</h5>
+                    <p>+12-18% Conversion Lift<br><span>+18-25% Checkout Speed</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Layout: Sticky Sidebar TOC + Scrollable Content -->
+    <div class="cs-layout-container container">
+        <!-- Sticky Sidebar Table of Contents -->
+        <aside class="cs-sidebar">
+            <div class="cs-toc-wrapper" id="tocWrapper">
+                <h4 class="toc-title">ON THIS PAGE</h4>
+                <ul class="toc-list">
+                    <li><a href="#overview" class="toc-link active">1. Overview & Context</a></li>
+                    <li><a href="#role" class="toc-link">2. My Role & Collaboration</a></li>
+                    <li><a href="#research" class="toc-link">3. Research & Discovery</a></li>
+                    <li><a href="#problem" class="toc-link">4. Problem Definition</a></li>
+                    <li><a href="#process" class="toc-link">5. Design Process</a></li>
+                    <li><a href="#visual" class="toc-link">6. Visual Design System</a></li>
+                    <li><a href="#hifi" class="toc-link">7. High-Fidelity Walkthrough</a></li>
+                    <li><a href="#strategy" class="toc-link">8. Product Strategy</a></li>
+                    <li><a href="#challenges" class="toc-link">9. Challenges & Solutions</a></li>
+                    <li><a href="#impact" class="toc-link">10. Business Impact</a></li>
+                    <li><a href="#tools" class="toc-link">11. Tools & Tech</a></li>
+                    <li><a href="#gallery" class="toc-link">12. Design Gallery</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Scrollable Content Column -->
+        <main class="cs-content">
+            
+            <!-- 1. Overview & Context -->
+            <section id="overview" class="cs-section">
+                <h2>1. Project Overview</h2>
+                <div class="cs-section-body">
+                    <h3>Background & Business Context</h3>
+                    <p>
+                        Kimirica Lifestyle is a premium D2C e-commerce platform specializing in luxury bath, body, and wellness products. E-commerce success is determined by micro-conversions in the shopping cart: a fraction of a percent difference in cart abandonments translates directly into millions of dollars in annual revenue.
+                    </p>
+                    <p>
+                        Before our checkout optimization project, Kimirica suffered from a high **68% cart abandonment rate**. Analytics indicated that users were adding items to their cart but dropping out immediately when faced with shipping charge surprises, mandatory account registrations, and slow loading forms.
+                    </p>
+                    
+                    <div class="goal-box">
+                        <h4>Goals & Objectives:</h4>
+                        <ul>
+                            <li><strong>Increase overall platform conversion rate</strong> by 12% to 18% through user discovery improvements.</li>
+                            <li><strong>Accelerate checkout flow completion time</strong> by 20% by introducing guest checkout.</li>
+                            <li><strong>Minimize cart drop-offs</strong> by revealing shipping fees early in the user journey.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Target Audience</h3>
+                    <p>
+                        Our primary e-commerce customers fall into:
+                    </p>
+                    <div class="audience-grid">
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-gift"></i></span>
+                            <h5>Gifting Customers (45%)</h5>
+                            <p>Users buying premium sets for birthdays or festivals. They value custom greetings, premium packaging options, and guaranteed delivery timelines.</p>
+                        </div>
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-sparkles"></i></span>
+                            <h5>Self-Care Shoppers (55%)</h5>
+                            <p>Repeat customers purchasing personal products. They value fast checkouts, personalized recommendations, and active order trackers.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. My Role & Collaboration -->
+            <section id="role" class="cs-section">
+                <h2>2. My Role & Collaboration</h2>
+                <div class="cs-section-body">
+                    <p>
+                        As the <strong>Lead UX Designer</strong>, I owned the e-commerce growth strategy, user testing, shopping cart interaction flows, and developer handoff guidelines.
+                    </p>
+                    <p>
+                        I collaborated extensively with:
+                    </p>
+                    <ul class="collab-list">
+                        <li><strong>Growth & Marketing Managers:</strong> Aligning promo code application logic and cross-sell recommendation engines.</li>
+                        <li><strong>Frontend Engineering:</strong> Integrating third-party payment gateways and optimizing page loading speeds for mobile shoppers.</li>
+                        <li><strong>QA Team:</strong> Validating coupon failures, payment timeouts, and slow connection states.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 3. Research & Discovery -->
+            <section id="research" class="cs-section">
+                <h2>3. Research & Discovery</h2>
+                <div class="cs-section-body">
+                    <p>
+                        We set up heatmaps (Hotjar) and ran remote interviews with 12 frequent online shoppers to understand funnel barriers.
+                    </p>
+                    
+                    <h3>Funnel Loss Audit</h3>
+                    <table class="research-table">
+                        <thead>
+                            <tr>
+                                <th>Journey Stage</th>
+                                <th>Completion Rate (Before)</th>
+                                <th>Primary Drop-Off Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Product View → Add to Cart</td>
+                                <td>42% (Normal)</td>
+                                <td>Price comparison, sizing queries</td>
+                            </tr>
+                            <tr>
+                                <td>Cart drawer → Enter Details</td>
+                                <td>28% (Poor)</td>
+                                <td>Hidden delivery charges shown late, forced registration</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong>Payment Gateway Success</strong></td>
+                                <td>54% (Low)</td>
+                                <td>Slow OTP inputs, lack of express UPI checkout options</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>User Pain Points</h3>
+                    <div class="pain-points-grid">
+                        <div class="pain-card">
+                            <span class="pain-num">01</span>
+                            <h5>Surprise Shipping Fees</h5>
+                            <p>Shipping charges were calculated at the very last payment screen, causing instant user anger and cart abandonment.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">02</span>
+                            <h5>Forced Account Creation</h5>
+                            <p>Forcing users to create accounts, verify passwords, and validate emails before buying a simple soap took 3+ minutes.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">03</span>
+                            <h5>Poor Coupon Usability</h5>
+                            <p>Applying coupon codes required manual copying. When codes failed without explanation, users left to search for deals elsewhere.</p>
+                        </div>
+                    </div>
+
+                    <div class="strategy-tip">
+                        <h5><i class="fa-solid fa-brain"></i> Product Thinking Insight:</h5>
+                        <p>We realized users shopping online have a high baseline expectation set by Amazon and Shopify checkout speeds. If a premium D2C platform takes more than 4 clicks to pay, it feels dated. We had to implement an Express Checkout strategy.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Problem Definition -->
+            <section id="problem" class="cs-section">
+                <h2>4. Problem Definition</h2>
+                <div class="cs-section-body">
+                    <h3>The Challenges & Constraints</h3>
+                    <p>
+                        We had to balance high D2C branding requirements (showing beautiful lifestyle visuals and up-sell gifting boxes) with high checkout speeds.
+                    </p>
+                    
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <span class="kpi-metric">+15%</span>
+                            <span class="kpi-lbl">Target checkout speed</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">&lt; 3 mins</span>
+                            <span class="kpi-lbl">Target purchase duration</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">-15%</span>
+                            <span class="kpi-lbl">Cart abandonment reduction</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Design Process -->
+            <section id="process" class="cs-section">
+                <h2>5. Design Process</h2>
+                <div class="cs-section-body">
+                    <p>
+                        We mapped out a 3-step checkout flow (Cart → Shipping → Payment) and introduced a "Slide-out Express Cart Drawer" that allowed checkout without reloading.
+                    </p>
+                    
+                    <div class="process-img-wrapper">
+                        <img src="assets/bigul_userflow.jpg" alt="User flow optimization" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 1. User flow transition from detailed shopping catalog to cart details.</span>
+                    </div>
+
+                    <h3>Low-Fidelity Iterations</h3>
+                    <p>
+                        We iterated heavily on the "Promo Code Selector" UI. In early sketches, the discount input field was hidden behind an accordion menu. Users rarely clicked it, causing them to abandon the cart to search for codes. We redesigned it into a visible modal showcasing active deals.
+                    </p>
+                    
+                    <div class="process-img-wrapper">
+                        <img src="assets/bigul_wireframes.jpg" alt="Wireframe iterations" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 2. Iterations optimizing the promo code modal container on mobile viewports.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Visual Design System -->
+            <section id="visual" class="cs-section">
+                <h2>6. Visual Design System</h2>
+                <div class="cs-section-body">
+                    <p>
+                        To reinforce luxury brand consistency, we upgraded the typography guidelines and visual design buttons to support high contrast, elegant frames, and clean input lines.
+                    </p>
+                    
+                    <div class="process-img-wrapper">
+                        <img src="assets/bigul_designsystem.jpg" alt="Apex Design System components" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 3. E-commerce UI components library, typography, and card tokens.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. High-Fidelity Walkthrough -->
+            <section id="hifi" class="cs-section">
+                <h2>7. High-Fidelity Walkthrough</h2>
+                <div class="cs-section-body">
+                    <p>
+                        The final design implements:
+                    </p>
+
+                    <div class="hifi-feature">
+                        <h4>Slide-out Interactive Cart Drawer</h4>
+                        <p>
+                            Users can verify items, choose shipping method, select gift wrapping options, and see exact delivery times directly in the cart drawer.
+                        </p>
+                    </div>
+
+                    <div class="hifi-feature">
+                        <h4>Single-Click Payment Integrations</h4>
+                        <p>
+                            We integrated Apple Pay, Google Pay, and major UPI providers at the first stage of the checkout drawer, bypassing 3 pages of details.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Product Strategy -->
+            <section id="strategy" class="cs-section">
+                <h2>8. Product Strategy & Trade-offs</h2>
+                <div class="cs-section-body">
+                    <p>
+                        We chose to make "Guest Checkout" the default journey. The marketing team initially worried about losing customer data. We solved this by offering a 10% coupon *after* checkout on the confirmation page if they saved their password, converting 42% of guest checkouts into accounts without funnel friction.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 9. Challenges & Solutions -->
+            <section id="challenges" class="cs-section">
+                <h2>9. Challenges & Solutions</h2>
+                <div class="cs-section-body">
+                    <div class="challenge-item">
+                        <h5>Challenge: Complex Gifting Address Handling</h5>
+                        <p><strong>The Problem:</strong> Gifting orders required shipping to multiple addresses, but the original interface made users place separate orders, driving up shipping costs and frustration.</p>
+                        <p><strong>Design Solution:</strong> We created a "Send as Gift" option allowing custom messaging cards and address split workflows in the same transaction loop.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. Business Impact -->
+            <section id="impact" class="cs-section">
+                <h2>10. Impact & Results</h2>
+                <div class="cs-section-body">
+                    <p>
+                        Quantified gains measured 60 days post-release:
+                    </p>
+
+                    <div class="impact-metrics-row">
+                        <div class="metric-circle">
+                            <span class="m-val">+12-18%</span>
+                            <span class="m-lbl">Conversion Lift</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">+18-25%</span>
+                            <span class="m-lbl">Checkout Speed</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">-15%</span>
+                            <span class="m-lbl">Cart Drop-offs</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. Tools & Tech -->
+            <section id="tools" class="cs-section">
+                <h2>11. Tools & Tech</h2>
+                <div class="cs-section-body">
+                    <div class="tools-flex">
+                        <div class="tool-item-box"><i class="fa-brands fa-figma"></i> Figma</div>
+                        <div class="tool-item-box">Adobe XD</div>
+                        <div class="tool-item-box">Miro</div>
+                        <div class="tool-item-box">Jira</div>
+                        <div class="tool-item-box">Notion</div>
+                        <div class="tool-item-box">Maze</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. Design Gallery -->
+            <section id="gallery" class="cs-section">
+                <h2>12. Design Gallery</h2>
+                <div class="cs-section-body">
+                    <p>Click on any of the screens or wireframes to open a full-resolution interactive lightbox preview.</p>
+                    <div class="cs-gallery-grid">
+                        <div class="gallery-card">
+                            <img src="assets/kimirica_ecommerce.jpg" alt="Cart Drawer UI Design layout" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="assets/bigul_userflow.jpg" alt="Checkout User flow details" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="assets/bigul_wireframes.jpg" alt="Wireframe iterations screen layouts" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="assets/bigul_designsystem.jpg" alt="Design system atoms and variables guide" class="gallery-img main-lightbox-trigger">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Project Navigation Section -->
+            <div class="cs-project-nav" id="navigation">
+                <a href="project_bigul.html" class="nav-prev">
+                    <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
+                    <span class="nav-project-title">Bigul Trading Experience</span>
+                </a>
+                <a href="project_cubedots.html" class="nav-next">
+                    <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="nav-project-title">Cubedots PropTech SaaS</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightboxOverlay" class="lightbox-overlay hidden" aria-hidden="true" role="dialog">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Preview">&times;</button>
+        <img id="lightboxImg" src="" alt="Full size preview" class="lightbox-img">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo">Aditya<span class="logo-dot">.</span></a>
+                <p>Creating impact-driven user experiences since 2020.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-socials">
+                <h3>Social Connect</h3>
+                <div class="social-icons">
+                    <a href="mailto:nandaneas1595@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="#" class="social-icon" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                    <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to Top Button -->
+        <div class="back-to-top-container">
+            <button id="backToTop" class="back-to-top-btn" aria-label="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i> Back to Top
+            </button>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="currentYear">2026</span> Aditya Nandane. All Rights Reserved. Made with <i class="fa-solid fa-heart text-accent"></i> and Code.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

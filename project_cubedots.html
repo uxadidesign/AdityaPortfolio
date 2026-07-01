@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubedots PropTech SaaS Dashboard | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on designing unified cloud-based dashboards and reusable component frameworks for Cubedots, a leading PropTech SaaS platform.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Decorative Glowing Background Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Personal monogram logo -->
+            <a href="index.html" class="nav-logo">AN<span class="logo-dot">.</span></a>
+            
+            <!-- Center navigation menu items -->
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="work.html" class="nav-link active">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="about.html#resume" class="nav-link">Resume</a></li>
+                </ul>
+            </nav>
+
+            <!-- Right nav actions: CTA + Theme Toggle + Mobile Hamburger -->
+            <div class="nav-actions">
+                <a href="index.html#contact" class="btn btn-nav-cta">Let's Connect</a>
+                
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Case Study Hero Section -->
+    <section class="cs-hero">
+        <div class="container">
+            <div class="cs-back-link">
+                <a href="work.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+            </div>
+            
+            <div class="cs-hero-header">
+                <span class="cs-category-tag"><i class="fa-solid fa-cubes"></i> SaaS • Design Systems & PropTech</span>
+                <h1 class="cs-title">Cubedots PropTech SaaS Platform</h1>
+                <p class="cs-tagline">Designing unified high-density property dashboards and reusable web-component design tokens to accelerate cross-functional feature cycles.</p>
+            </div>
+            
+            <div class="cs-hero-mockup-wrapper">
+                <img src="assets/cubedots_saas.jpg" alt="Cubedots SaaS Admin Console dashboard mockup" class="cs-hero-mockup main-lightbox-trigger">
+            </div>
+            
+            <div class="cs-metadata-grid">
+                <div class="meta-item">
+                    <h5>Role</h5>
+                    <p>Lead Designer<br><span>(Dashboard & System Ownership)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Duration</h5>
+                    <p>Dec 2021 - Jul 2022<br><span>(8 Months Duration)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Team Size</h5>
+                    <p>5 cross-functional members<br><span>(1 PM, 2 Devs, 1 QA, 1 Designer)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Key Results</h5>
+                    <p>-15% User Task Errors<br><span>-20% Dev Rework</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Layout: Sticky Sidebar TOC + Scrollable Content -->
+    <div class="cs-layout-container container">
+        <!-- Sticky Sidebar Table of Contents -->
+        <aside class="cs-sidebar">
+            <div class="cs-toc-wrapper" id="tocWrapper">
+                <h4 class="toc-title">ON THIS PAGE</h4>
+                <ul class="toc-list">
+                    <li><a href="#overview" class="toc-link active">1. Overview & Context</a></li>
+                    <li><a href="#role" class="toc-link">2. My Role & Collaboration</a></li>
+                    <li><a href="#research" class="toc-link">3. Research & Discovery</a></li>
+                    <li><a href="#problem" class="toc-link">4. Problem Definition</a></li>
+                    <li><a href="#process" class="toc-link">5. Design Process</a></li>
+                    <li><a href="#visual" class="toc-link">6. Visual Design System</a></li>
+                    <li><a href="#hifi" class="toc-link">7. High-Fidelity Walkthrough</a></li>
+                    <li><a href="#strategy" class="toc-link">8. Product Strategy</a></li>
+                    <li><a href="#challenges" class="toc-link">9. Challenges & Solutions</a></li>
+                    <li><a href="#impact" class="toc-link">10. Business Impact</a></li>
+                    <li><a href="#tools" class="toc-link">11. Tools & Tech</a></li>
+                    <li><a href="#gallery" class="toc-link">12. Design Gallery</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Scrollable Content Column -->
+        <main class="cs-content">
+            
+            <!-- 1. Overview & Context -->
+            <section id="overview" class="cs-section">
+                <h2>1. Project Overview</h2>
+                <div class="cs-section-body">
+                    <h3>Background & Business Context</h3>
+                    <p>
+                        Cubedots is a real estate transaction SaaS platform connecting builders, brokers, and buyers. Real estate is high-value and slow-moving, requiring extensive compliance review and high-density financial contract tracking.
+                    </p>
+                    <p>
+                        Before our redesign project, Cubedots users struggled with an outdated dashboard designed around separate data tables. Real estate agents could not get a unified status overview of their current listings, and developers wasted over 20% of their sprints rebuild ad-hoc buttons and input states.
+                    </p>
+                    
+                    <div class="goal-box">
+                        <h4>Goals & Objectives:</h4>
+                        <ul>
+                            <li><strong>Reduce task error rates by 15%</strong> through clean information architecture and visual prioritization.</li>
+                            <li><strong>Speed up developer onboarding</strong> and eliminate rework by building standard Figma tokens.</li>
+                            <li><strong>Accelerate overall client transaction cycles</strong> by 25%.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Target Audience</h3>
+                    <p>
+                        Our primary dashboard audience:
+                    </p>
+                    <div class="audience-grid">
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-user-shield"></i></span>
+                            <h5>Real Estate Agents (70%)</h5>
+                            <p>Power users processing transactions, uploading customer contracts, and monitoring pricing status updates. They value speed, hotkeys, and data density.</p>
+                        </div>
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-building-user"></i></span>
+                            <h5>Property Developers (30%)</h5>
+                            <p>Enterprise clients managing pricing configurations and listing allocations. They value clear reporting graphs and csv import logs.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. My Role & Collaboration -->
+            <section id="role" class="cs-section">
+                <h2>2. My Role & Collaboration</h2>
+                <div class="cs-section-body">
+                    <p>
+                        As the <strong>Lead Designer</strong>, I owned the layout structures, high-density data table guidelines, and component specifications inside Figma.
+                    </p>
+                    <p>
+                        I worked alongside:
+                    </p>
+                    <ul class="collab-list">
+                        <li><strong>Product Managers:</strong> Mapping out complex compliance approval gates and paperwork validations.</li>
+                        <li><strong>Engineering team:</strong> Standardizing spacing variables and button states inside a shared design library.</li>
+                        <li><strong>QA engineers:</strong> Creating checks for edge-case dashboard table scenarios (overflow text, extreme values, loading state blocks).</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 3. Research & Discovery -->
+            <section id="research" class="cs-section">
+                <h2>3. Research & Discovery</h2>
+                <div class="cs-section-body">
+                    <p>
+                        We ran contextual inquiries with 8 real estate agents, shadowing their typical daily routines as they managed client profiles.
+                    </p>
+                    
+                    <h3>Contextual Audit Pain Points</h3>
+                    <div class="pain-points-grid">
+                        <div class="pain-card">
+                            <span class="pain-num">01</span>
+                            <h5>Tab Overload</h5>
+                            <p>Agents kept 10+ browser tabs open because they couldn't compare multiple listings or transaction histories in a single screen.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">02</span>
+                            <h5>Visual Distraction</h5>
+                            <p>Primary action buttons (Approve Contract, Archive Listing) had identical gray styling, leading to accidental deletions.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">03</span>
+                            <h5>Dev-Design Mismatch</h5>
+                            <p>Developers coded pages by eyeing mockups, leading to inconsistent font-sizes and input fields that broke accessibility guidelines.</p>
+                        </div>
+                    </div>
+
+                    <div class="strategy-tip">
+                        <h5><i class="fa-solid fa-brain"></i> Product Thinking Insight:</h5>
+                        <p>We realized that SaaS layouts are productivity tools. Users don't log in to admire beautiful spacing; they log in to finish a task. Every extra click is wasted business cost. We had to focus on visual prioritization and high-density layouts.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Problem Definition -->
+            <section id="problem" class="cs-section">
+                <h2>4. Problem Definition</h2>
+                <div class="cs-section-body">
+                    <h3>The Challenges & Constraints</h3>
+                    <p>
+                        We had to balance displaying dense, complex property tables (sometimes holding 18+ columns of records) with fitting on standard laptop screens.
+                    </p>
+                    
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <span class="kpi-metric">-15%</span>
+                            <span class="kpi-lbl">Task error reduction</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">-20%</span>
+                            <span class="kpi-lbl">Development rework savings</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">+25%</span>
+                            <span class="kpi-lbl">Transaction speed increase</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Design Process -->
+            <section id="process" class="cs-section">
+                <h2>5. Design Process</h2>
+                <div class="cs-section-body">
+                    <p>
+                        We mapped out a unified, tab-based layout that combined property specifications, pricing history, and files inside a single responsive pane.
+                    </p>
+                    
+                    <div class="process-img-wrapper">
+                        <img src="assets/bigul_userflow.jpg" alt="User flow optimization" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 1. User flow transition from detailed property tables to file management actions.</span>
+                    </div>
+
+                    <h3>Low-Fidelity Wireframes</h3>
+                    <p>
+                        We tested multiple sidebar navigation configurations. Early prototypes used complex tree-structures that expanded nested submenus, which users found confusing. We redesigned it into a flat, sticky navigation layout.
+                    </p>
+                    
+                    <div class="process-img-wrapper">
+                        <img src="assets/bigul_wireframes.jpg" alt="Wireframe iterations" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 2. Low-Fidelity wireframes testing high-density listing tables and action placement.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Visual Design System -->
+            <section id="visual" class="cs-section">
+                <h2>6. Visual Design System</h2>
+                <div class="cs-section-body">
+                    <p>
+                        We established Apex Design System core layout modules for the SaaS framework:
+                    </p>
+                    
+                    <div class="process-img-wrapper">
+                        <img src="assets/bigul_designsystem.jpg" alt="Apex Design System components" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 3. Spacing systems, borders, inputs, and button components library.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. High-Fidelity Walkthrough -->
+            <section id="hifi" class="cs-section">
+                <h2>7. High-Fidelity Walkthrough</h2>
+                <div class="cs-section-body">
+                    <div class="hifi-feature">
+                        <h4>Unified Property Admin Panel</h4>
+                        <p>
+                            Combines active contract checklists, property images, and CSV transaction logs in one dense screen, cutting tab-switching by 90%.
+                        </p>
+                    </div>
+
+                    <div class="hifi-feature">
+                        <h4>Frictionless CSV Import Wizard</h4>
+                        <p>
+                            A step-by-step mapper that auto-detects column names, validates entries inline, and highlights formatting issues before final upload.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Product Strategy -->
+            <section id="strategy" class="cs-section">
+                <h2>8. Product Strategy & Trade-offs</h2>
+                <p>
+                    We traded fancy visual animations for speed. High-volume data loading is heavily throttled by custom animation scripts. We chose to implement a native web layout structure that loaded instantly, prioritizing speed over visual styling.
+                </p>
+            </section>
+
+            <!-- 9. Challenges & Solutions -->
+            <section id="challenges" class="cs-section">
+                <h2>9. Challenges & Solutions</h2>
+                <div class="cs-section-body">
+                    <div class="challenge-item">
+                        <h5>Challenge: Standardizing Complex Financial Formulas</h5>
+                        <p><strong>The Problem:</strong> Property pricing involved complex calculations for broker payouts, VAT structures, and progressive commissions, leading to manual accounting errors.</p>
+                        <p><strong>Design Solution:</strong> We created an interactive calculator with real-time feedback that computed margins inline, reducing input errors by 15%.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. Business Impact -->
+            <section id="impact" class="cs-section">
+                <h2>10. Impact & Results</h2>
+                <div class="cs-section-body">
+                    <div class="impact-metrics-row">
+                        <div class="metric-circle">
+                            <span class="m-val">-15%</span>
+                            <span class="m-lbl">User Errors</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">-20%</span>
+                            <span class="m-lbl">Dev Rework</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">+25%</span>
+                            <span class="m-lbl">Transaction Speed</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. Tools & Tech -->
+            <section id="tools" class="cs-section">
+                <h2>11. Tools & Tech</h2>
+                <div class="cs-section-body">
+                    <div class="tools-flex">
+                        <div class="tool-item-box"><i class="fa-brands fa-figma"></i> Figma</div>
+                        <div class="tool-item-box">Adobe XD</div>
+                        <div class="tool-item-box">Miro</div>
+                        <div class="tool-item-box">Jira</div>
+                        <div class="tool-item-box">Notion</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. Design Gallery -->
+            <section id="gallery" class="cs-section">
+                <h2>12. Design Gallery</h2>
+                <div class="cs-section-body">
+                    <p>Click on any of the screens or wireframes to open a full-resolution interactive lightbox preview.</p>
+                    <div class="cs-gallery-grid">
+                        <div class="gallery-card">
+                            <img src="assets/cubedots_saas.jpg" alt="Cubedots Dashboard Layout" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="assets/bigul_userflow.jpg" alt="User flow diagram" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="assets/bigul_wireframes.jpg" alt="Wireframe mockups" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="assets/bigul_designsystem.jpg" alt="Design system atoms" class="gallery-img main-lightbox-trigger">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Project Navigation Section -->
+            <div class="cs-project-nav" id="navigation">
+                <a href="project_kimirica.html" class="nav-prev">
+                    <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
+                    <span class="nav-project-title">Kimirica Checkout Funnel</span>
+                </a>
+                <a href="project_shanti.html" class="nav-next">
+                    <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="nav-project-title">Enterprise Operational Systems</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightboxOverlay" class="lightbox-overlay hidden" aria-hidden="true" role="dialog">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Preview">&times;</button>
+        <img id="lightboxImg" src="" alt="Full size preview" class="lightbox-img">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo">Aditya<span class="logo-dot">.</span></a>
+                <p>Creating impact-driven user experiences since 2020.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-socials">
+                <h3>Social Connect</h3>
+                <div class="social-icons">
+                    <a href="mailto:nandaneas1595@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="#" class="social-icon" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                    <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to Top Button -->
+        <div class="back-to-top-container">
+            <button id="backToTop" class="back-to-top-btn" aria-label="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i> Back to Top
+            </button>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="currentYear">2026</span> Aditya Nandane. All Rights Reserved. Made with <i class="fa-solid fa-heart text-accent"></i> and Code.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>

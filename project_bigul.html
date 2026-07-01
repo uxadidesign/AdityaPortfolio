@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigul.co Retail Trading Redesign | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on redesigning the Bigul.co Retail Trading Platform, optimizing KYC conversions, and streamlining order execution.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <!-- Decorative Glowing Background Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Personal monogram logo -->
+            <a href="index.html" class="nav-logo">AN<span class="logo-dot">.</span></a>
+            
+            <!-- Center navigation menu items -->
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="work.html" class="nav-link active">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="about.html#resume" class="nav-link">Resume</a></li>
+                </ul>
+            </nav>
+
+            <!-- Right nav actions: CTA + Theme Toggle + Mobile Hamburger -->
+            <div class="nav-actions">
+                <a href="index.html#contact" class="btn btn-nav-cta">Let's Connect</a>
+                
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Case Study Hero Section -->
+    <section class="cs-hero">
+        <div class="container">
+            <div class="cs-back-link">
+                <a href="work.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+            </div>
+            
+            <div class="cs-hero-header">
+                <span class="cs-category-tag"><i class="fa-solid fa-chart-line"></i> Fintech • Web & Mobile App</span>
+                <h1 class="cs-title">Bigul.co Trading Experience Redesign</h1>
+                <p class="cs-tagline">Optimizing user onboarding, simplifying KYC compliance, and streamlining order execution flows for a retail investment audience.</p>
+            </div>
+            
+            <div class="cs-hero-mockup-wrapper">
+                <img src="assets/bigul_trading.jpg" alt="Bigul.co Mobile and Web Trading Terminal Mockup" class="cs-hero-mockup main-lightbox-trigger">
+            </div>
+            
+            <div class="cs-metadata-grid">
+                <div class="meta-item">
+                    <h5>Role</h5>
+                    <p>Lead UI/UX Designer<br><span>(End-to-End Ownership)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Duration</h5>
+                    <p>Nov 2024 - Present<br><span>(Ongoing Optimization)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Team Size</h5>
+                    <p>8 cross-functional members<br><span>(1 PM, 4 Devs, 2 QA, 1 UX)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Key Results</h5>
+                    <p>+22% KYC Completion<br><span>+28% Task Success Rate</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Layout: Sticky Sidebar TOC + Scrollable Content -->
+    <div class="cs-layout-container container">
+        <!-- Sticky Sidebar Table of Contents -->
+        <aside class="cs-sidebar">
+            <div class="cs-toc-wrapper" id="tocWrapper">
+                <h4 class="toc-title">ON THIS PAGE</h4>
+                <ul class="toc-list">
+                    <li><a href="#overview" class="toc-link active">1. Overview & Context</a></li>
+                    <li><a href="#role" class="toc-link">2. My Role & Collaboration</a></li>
+                    <li><a href="#research" class="toc-link">3. Research & Discovery</a></li>
+                    <li><a href="#problem" class="toc-link">4. Problem Definition</a></li>
+                    <li><a href="#process" class="toc-link">5. Design Process</a></li>
+                    <li><a href="#visual" class="toc-link">6. Visual Design System</a></li>
+                    <li><a href="#hifi" class="toc-link">7. High-Fidelity Walkthrough</a></li>
+                    <li><a href="#strategy" class="toc-link">8. Product Strategy</a></li>
+                    <li><a href="#challenges" class="toc-link">9. Challenges & Solutions</a></li>
+                    <li><a href="#impact" class="toc-link">10. Business Impact</a></li>
+                    <li><a href="#tools" class="toc-link">11. Tools & Tech</a></li>
+                    <li><a href="#gallery" class="toc-link">12. Design Gallery</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Scrollable Content Column -->
+        <main class="cs-content">
+            
+            <!-- 1. Overview & Context -->
+            <section id="overview" class="cs-section">
+                <h2>1. Project Overview</h2>
+                <div class="cs-section-body">
+                    <h3>Background & Business Context</h3>
+                    <p>
+                        Bigul.co is a retail trading platform aimed at making capital market investments accessible to regular retail users. In a highly saturated fintech space, user onboarding and speed-to-trade are the ultimate competitive advantages. 
+                    </p>
+                    <p>
+                        Before the redesign, Bigul.co was facing severe drop-offs during its mandatory regulatory onboarding (KYC) process, and novice traders were struggling to execute basic orders due to a cluttered web/mobile interface designed around professional trader specifications.
+                    </p>
+                    
+                    <div class="goal-box">
+                        <h4>Goals & Objectives:</h4>
+                        <ul>
+                            <li><strong>Increase KYC funnel conversion</strong> by streamlining registration steps and decreasing form fatigue.</li>
+                            <li><strong>Improve order placement speed</strong> for first-time traders.</li>
+                            <li><strong>Decrease customer support load</strong> linked to confusing onboarding requirements.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Target Audience</h3>
+                    <p>
+                        Our primary users fall into two categories:
+                    </p>
+                    <div class="audience-grid">
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-seedling"></i></span>
+                            <h5>Novice Investors (65%)</h5>
+                            <p>Users aged 21-35 trying to grow their savings. They feel easily intimidated by complex charts, stock terminal jargon, and heavy tax documents.</p>
+                        </div>
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-chart-pie"></i></span>
+                            <h5>Active Retail Traders (35%)</h5>
+                            <p>Experienced users demanding speed, reliable order routing, extensive indicators, and advanced chart tools without UI lag.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. My Role & Collaboration -->
+            <section id="role" class="cs-section">
+                <h2>2. My Role & Collaboration</h2>
+                <div class="cs-section-body">
+                    <p>
+                        As the <strong>Lead UI/UX Designer</strong> on the project, I held complete ownership of the UX strategy, customer research, visual design, and developer handoff.
+                    </p>
+                    <p>
+                        Fintech products cannot be built in design isolation. I worked closely with:
+                    </p>
+                    <ul class="collab-list">
+                        <li><strong>Product Managers:</strong> Aligning regulatory compliance goals with interactive screen milestones to ensure zero compliance gaps while maintaining usability.</li>
+                        <li><strong>Engineering Team:</strong> Standardizing visual components into a scalable library. Working with front-end engineers to implement CSS layout systems, resulting in pixel-perfect rendering.</li>
+                        <li><strong>QA Engineers:</strong> Creating UX validation checklist states (error cases, network lag alerts, slow response screens) during design QA.</li>
+                        <li><strong>Stakeholders:</strong> Reviewing early mockups to balance trading risk mitigation with rapid trade conversions.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 3. Research & Discovery -->
+            <section id="research" class="cs-section">
+                <h2>3. Research & Discovery</h2>
+                <div class="cs-section-body">
+                    <p>
+                        To understand where users were dropping off, we initiated a dual research pathway: quantitative analysis of clickstream data combined with qualitative remote usability sessions.
+                    </p>
+                    
+                    <h3>Competitive Benchmarking</h3>
+                    <table class="research-table">
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>KYC Onboarding Duration</th>
+                                <th>Order Execution Friction</th>
+                                <th>Novice Accessibility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Traditional Broker A</td>
+                                <td>15 - 20 minutes (Poor)</td>
+                                <td>4 clicks (Moderate)</td>
+                                <td>Very Low (Complex)</td>
+                            </tr>
+                            <tr>
+                                <td>Modern Fintech B</td>
+                                <td>5 - 8 minutes (Great)</td>
+                                <td>2 clicks (Excellent)</td>
+                                <td>High (Simplistic)</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong>Bigul (Pre-redesign)</strong></td>
+                                <td>18 minutes (Poor)</td>
+                                <td>5 clicks (High)</td>
+                                <td>Low (Overwhelming)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>User Persona & Key Pain Points</h3>
+                    <p>
+                        Meet <strong>Rohan</strong>, a 26-year-old software engineer representing our novice segment. Rohan wants to invest in tech stocks but is blocked by three main friction points:
+                    </p>
+                    <div class="pain-points-grid">
+                        <div class="pain-card">
+                            <span class="pain-num">01</span>
+                            <h5>Documentation Overhead</h5>
+                            <p>KYC required uploading multiple physical documents, leading to instant abandonment when Rohan didn't have papers handy.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">02</span>
+                            <h5>Jargon Overload</h5>
+                            <p>Terms like "DIS", "Power of Attorney", and "Margin limits" were dropped into step flows without contextual explanation.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">03</span>
+                            <h5>Trading Terminal Anxiety</h5>
+                            <p>Novice users feared making mistakes and losing money because buttons like "Buy" vs "Short Sell" were visually identical.</p>
+                        </div>
+                    </div>
+
+                    <div class="strategy-tip">
+                        <h5><i class="fa-solid fa-brain"></i> Product Thinking Insight:</h5>
+                        <p>We realized users were not dropping off because of lazy UI styling; they dropped off due to **cognitive load** and **anxiety**. Our redesign had to focus on progressive disclosure—only showing complex settings when users requested them.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Problem Definition -->
+            <section id="problem" class="cs-section">
+                <h2>4. Problem Definition</h2>
+                <div class="cs-section-body">
+                    <h3>The Challenges & Constraints</h3>
+                    <p>
+                        We had to comply with strict regulatory guidelines (KYC verification required validating physical signatures, bank verifications, and live photo check). We couldn't eliminate these steps, but we could change *how* users experienced them.
+                    </p>
+                    
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <span class="kpi-metric">+22%</span>
+                            <span class="kpi-lbl">Target KYC rate</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">&lt; 5 mins</span>
+                            <span class="kpi-lbl">Onboarding goal</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">-30%</span>
+                            <span class="kpi-lbl">Support ticket reduction</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Design Process -->
+            <section id="process" class="cs-section">
+                <h2>5. Design Process</h2>
+                <div class="cs-section-body">
+                    <p>
+                        We mapped out a revamped user flow that broke down the 18 steps into 5 distinct visual categories. Below is the simplified Information Architecture and User Flow designed to eliminate loopbacks.
+                    </p>
+                    
+                    <div class="process-img-wrapper">
+                        <img src="assets/bigul_userflow.jpg" alt="Information Architecture and User Flow Diagram" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 1. User flow mapping showing progressive disclosure paths for trading configuration.</span>
+                    </div>
+
+                    <h3>From Low-Fidelity Wireframes to Iterations</h3>
+                    <p>
+                        We tested early sketches with a cohort of 15 users. Initially, we put bank account linking and digital signature in one scrollable view. However, users were overwhelmed by seeing bank details and signature boxes together. 
+                    </p>
+                    
+                    <div class="process-img-wrapper">
+                        <img src="assets/bigul_wireframes.jpg" alt="Low fidelity wireframe comparison views" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 2. Low-Fidelity wireframes iterating on step-by-step onboarding wizard.</span>
+                    </div>
+
+                    <div class="rationale-box">
+                        <h5>Design Rationale:</h5>
+                        <p><strong>Decoupling Steps:</strong> We split bank linking and signature collection into two separate screens with auto-validation. Although this added 1 extra click, it eliminated the form-abandonment rate by 34% in user tests because each step felt quick and clear.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Visual Design System -->
+            <section id="visual" class="cs-section">
+                <h2>6. Visual Design System</h2>
+                <div class="cs-section-body">
+                    <p>
+                        To ensure design consistency and speed up development, we established **Apex**, a centralized Design System tailored to high-density financial layouts.
+                    </p>
+                    
+                    <div class="process-img-wrapper">
+                        <img src="assets/bigul_designsystem.jpg" alt="Apex Design System Typography, Colors and Button elements" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 3. Apex Design System guide showing components, typography rules, and theme variables.</span>
+                    </div>
+
+                    <h3>Design Tokens Overview</h3>
+                    <div class="tokens-grid">
+                        <div class="token-card">
+                            <h6>Typography</h6>
+                            <p><strong>Outfit</strong> (Headings) for modern look & <strong>Inter</strong> (Body / Numbers) for geometric spacing readability.</p>
+                        </div>
+                        <div class="token-card">
+                            <h6>Color Palette</h6>
+                            <p>Deep Navy backgrounds (`#0a0e17`) paired with electric blue (`#3b82f6`) and rich emerald green (`#10b981`) for buy actions.</p>
+                        </div>
+                        <div class="token-card">
+                            <h6>Grid & Spacing</h6>
+                            <p>8px baseline grid to ensure alignment across complex data tables and interactive charts.</p>
+                        </div>
+                    </div>
+
+                    <div class="accessibility-checklist">
+                        <h4>WCAG 2.1 Accessibility Considerations:</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Contrast Ratios:</strong> All financial textual data (price quotes, yields) meets a minimum 4.5:1 ratio against background.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Color Independence:</strong> Price movements are never shown solely through green/red color shifts; secondary icon identifiers (up/down chevron indicators) accompany value adjustments.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. High-Fidelity Walkthrough -->
+            <section id="hifi" class="cs-section">
+                <h2>7. High-Fidelity Walkthrough</h2>
+                <div class="cs-section-body">
+                    <p>
+                        Below are the final designs addressing core usability drop-offs in the terminal and onboarding flows:
+                    </p>
+
+                    <div class="hifi-feature">
+                        <h4>The Simplified Quick-Trade Pad</h4>
+                        <p>
+                            Novice users frequently complained about making trade errors in the original layout because the trade panel looked identical to advanced analytics panels.
+                        </p>
+                        <p>
+                            <strong>The Solution:</strong> A isolated, slide-out drawer featuring a clear card layout separating Buy and Sell options with distinctive, contrasting header highlights.
+                        </p>
+                    </div>
+
+                    <div class="hifi-feature">
+                        <h4>Auto-extract KYC Uploads</h4>
+                        <p>
+                            Instead of forcing manual entry of 16 bank account digits, we integrated instant UPI verification and camera OCR to scan tax cards automatically.
+                        </p>
+                        <p>
+                            <strong>The Solution:</strong> Users simply take a photo, and our app instantly fills in the required field lines, reducing typing friction by 80%.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Product Strategy -->
+            <section id="strategy" class="cs-section">
+                <h2>8. Product Strategy & Trade-offs</h2>
+                <div class="cs-section-body">
+                    <p>
+                        Designing digital products requires knowing what to leave out. We had to negotiate crucial trade-offs between business requirements and user preferences.
+                    </p>
+
+                    <div class="tradeoff-card">
+                        <h5>User Desire vs. Regulatory Necessity</h5>
+                        <p><strong>The Conflict:</strong> Users wanted to start trading immediately without submitting KYC. Regulatory compliance demanded verification before any capital trade.</p>
+                        <p><strong>The Strategy:</strong> We introduced "Simulated Paper Trading" as the default state for unverified accounts. Users could download the app and trade fake credits immediately, experiencing the product value. Once they attempted to place a real order, we dynamically routed them to the KYC sequence.</p>
+                    </div>
+
+                    <div class="roadmap-box">
+                        <h4>MVP Phase vs Future Roadmap</h4>
+                        <p>For the MVP, we focused entirely on simplifying the onboarding funnel and quick trade placement. The future roadmap includes introducing AI-guided portfolio balancing tools and advanced charting features for power users.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Challenges & Solutions -->
+            <section id="challenges" class="cs-section">
+                <h2>9. Challenges & Solutions</h2>
+                <div class="cs-section-body">
+                    <div class="challenge-item">
+                        <h5>Challenge: High digital signature rejection rate</h5>
+                        <p><strong>The Problem:</strong> Over 15% of KYC applications were rejected manually by backend compliance officers because users signed with clumsy finger swipes on mobile, resulting in illegible squiggles.</p>
+                        <p><strong>Design Iteration:</strong> We built an alternative fallback tool. Users could either use a simplified type-to-sign component (generating an official digital script) or upload a photo of a physical signature. </p>
+                        <p><strong>The Result:</strong> Rejections fell from 15% to 2.4% within two weeks of launch.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. Business Impact -->
+            <section id="impact" class="cs-section">
+                <h2>10. Impact & Results</h2>
+                <div class="cs-section-body">
+                    <p>
+                        The redesign delivered quantifiable business gains within 60 days of launch:
+                    </p>
+
+                    <div class="impact-metrics-row">
+                        <div class="metric-circle">
+                            <span class="m-val">+22%</span>
+                            <span class="m-lbl">KYC Success</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">+28%</span>
+                            <span class="m-lbl">Trade Success</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">-25%</span>
+                            <span class="m-lbl">Support Load</span>
+                        </div>
+                    </div>
+
+                    <div class="comparison-block">
+                        <h4>Before vs. After Comparison</h4>
+                        <div class="comparison-grid">
+                            <div class="comp-card before">
+                                <h5>Previous Experience</h5>
+                                <ul>
+                                    <li>18 mins to onboard</li>
+                                    <li>Form validation shown post-submission</li>
+                                    <li>Unexplained trading settings</li>
+                                    <li>No simulation environment</li>
+                                </ul>
+                            </div>
+                            <div class="comp-card after">
+                                <h5>Redesigned Experience</h5>
+                                <ul>
+                                    <li>5.5 mins average onboarding</li>
+                                    <li>Real-time inline error alerts</li>
+                                    <li>Contextual tooltips for jargon</li>
+                                    <li>Immediate paper trading value</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lessons-learned">
+                        <h5>Key Lessons Learned:</h5>
+                        <p>
+                            Sometimes, adding step count leads to higher confidence. Breaking a giant regulatory form into quick, bite-sized tasks is significantly better than cramming it all into one page, even if the user has to click more times. Focus on *perceived* friction, not just actual clicks.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. Tools & Tech -->
+            <section id="tools" class="cs-section">
+                <h2>11. Tools & Tech</h2>
+                <div class="cs-section-body">
+                    <div class="tools-flex">
+                        <div class="tool-item-box"><i class="fa-brands fa-figma"></i> Figma</div>
+                        <div class="tool-item-box">FigJam</div>
+                        <div class="tool-item-box">Miro</div>
+                        <div class="tool-item-box">Adobe Illustrator</div>
+                        <div class="tool-item-box">Photoshop</div>
+                        <div class="tool-item-box">Jira</div>
+                        <div class="tool-item-box">Notion</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. Design Gallery -->
+            <section id="gallery" class="cs-section">
+                <h2>12. Design Gallery</h2>
+                <div class="cs-section-body">
+                    <p>Click on any of the screens or wireframes to open a full-resolution interactive lightbox preview.</p>
+                    <div class="cs-gallery-grid">
+                        <div class="gallery-card">
+                            <img src="assets/bigul_trading.jpg" alt="Trading Dashboard High-Fidelity UI" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="assets/bigul_userflow.jpg" alt="User Flow Diagram details" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="assets/bigul_wireframes.jpg" alt="Wireframe iterations screen layouts" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="assets/bigul_designsystem.jpg" alt="Design system atoms and variables guide" class="gallery-img main-lightbox-trigger">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Project Navigation Section -->
+            <div class="cs-project-nav" id="navigation">
+                <a href="project_fittrack.html" class="nav-prev">
+                    <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
+                    <span class="nav-project-title">Fittrack Companion App</span>
+                </a>
+                <a href="project_kimirica.html" class="nav-next">
+                    <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="nav-project-title">Kimirica Checkout Funnel</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightboxOverlay" class="lightbox-overlay hidden" aria-hidden="true" role="dialog">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Preview">&times;</button>
+        <img id="lightboxImg" src="" alt="Full size preview" class="lightbox-img">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="nav-logo">Aditya<span class="logo-dot">.</span></a>
+                <p>Creating impact-driven user experiences since 2020.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-socials">
+                <h3>Social Connect</h3>
+                <div class="social-icons">
+                    <a href="mailto:nandaneas1595@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="#" class="social-icon" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                    <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Back to Top Button -->
+        <div class="back-to-top-container">
+            <button id="backToTop" class="back-to-top-btn" aria-label="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i> Back to Top
+            </button>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; <span id="currentYear">2026</span> Aditya Nandane. All Rights Reserved. Made with <i class="fa-solid fa-heart text-accent"></i> and Code.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+</html>
