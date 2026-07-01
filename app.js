@@ -1,33 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Dark / Light Theme Toggle ---
-    const themeToggleBtn = document.getElementById('themeToggle');
-    const body = document.body;
-    
-    // Check local storage for saved theme
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        body.className = savedTheme;
-        updateThemeIcon(savedTheme === 'light-theme');
-    }
-    
-    themeToggleBtn.addEventListener('click', () => {
-        const isLightTheme = body.classList.toggle('light-theme');
-        body.classList.toggle('dark-theme', !isLightTheme);
-        
-        // Save theme to local storage
-        localStorage.setItem('theme', isLightTheme ? 'light-theme' : 'dark-theme');
-        updateThemeIcon(isLightTheme);
-    });
-    
-    function updateThemeIcon(isLight) {
-        const icon = themeToggleBtn.querySelector('i');
-        if (isLight) {
-            icon.className = 'fa-solid fa-sun';
-        } else {
-            icon.className = 'fa-solid fa-moon';
-        }
-    }
-    
     // --- Mobile Menu Toggle ---
     const mobileToggle = document.getElementById('mobileToggle');
     const navMenu = document.getElementById('navMenu');
