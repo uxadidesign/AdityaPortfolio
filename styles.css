@@ -35,6 +35,68 @@
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    /* === TYPOGRAPHY SCALE === */
+    /* Display / Hero Heading: 72px (desktop), 48px (tablet), 36px (mobile) */
+    --display-size: clamp(36px, 8vw, 72px);
+    --display-weight: 800;
+    --display-line-height: 110%;
+    
+    /* H1 - Section Heading: 56px (desktop), 44px (tablet), 32px (mobile) */
+    --h1-size: clamp(32px, 6vw, 56px);
+    --h1-weight: 700;
+    --h1-line-height: 120%;
+    
+    /* H2 - Project Heading: 40px (desktop), 32px (tablet), 28px (mobile) */
+    --h2-size: clamp(28px, 5vw, 40px);
+    --h2-weight: 700;
+    --h2-line-height: 120%;
+    
+    /* H3 - Subheading: 28px (desktop), 24px (tablet), 22px (mobile) */
+    --h3-size: clamp(22px, 4vw, 28px);
+    --h3-weight: 600;
+    --h3-line-height: 130%;
+    
+    /* H4 - Small Heading: 22px (desktop), 20px (tablet), 18px (mobile) */
+    --h4-size: clamp(18px, 2.5vw, 22px);
+    --h4-weight: 600;
+    --h4-line-height: 140%;
+    
+    /* Body Large: 20px - for introductions and featured descriptions */
+    --body-large-size: 20px;
+    --body-large-weight: 400;
+    --body-large-line-height: 170%;
+    
+    /* Body Regular: 18px - for paragraphs throughout the website */
+    --body-regular-size: 18px;
+    --body-regular-weight: 400;
+    --body-regular-line-height: 170%;
+    
+    /* Body Small: 16px - for supporting content */
+    --body-small-size: 16px;
+    --body-small-weight: 400;
+    --body-small-line-height: 160%;
+    
+    /* Caption / Labels: 14px - tags, dates, metadata, buttons, captions */
+    --caption-size: 14px;
+    --caption-weight: 500;
+    --caption-line-height: 150%;
+    
+    /* Overline / Eyebrow: 12px - uppercase, tracked */
+    --overline-size: 12px;
+    --overline-weight: 600;
+    --overline-line-height: 150%;
+    --overline-letter-spacing: 0.15em;
+    
+    /* 8px Modular Spacing Grid */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-4xl: 96px;
 }
 
 /* --- Base & Reset Styles --- */
@@ -96,6 +158,150 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 24px;
+}
+
+/* === TYPOGRAPHY CLASSES - REUSABLE DESIGN TOKENS === */
+/* Display / Hero Heading */
+.display,
+.display-heading {
+    font-family: var(--font-heading);
+    font-size: var(--display-size);
+    font-weight: var(--display-weight);
+    line-height: var(--display-line-height);
+    letter-spacing: -0.02em;
+}
+
+/* H1 - Section Heading */
+.h1,
+.section-heading {
+    font-family: var(--font-heading);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    line-height: var(--h1-line-height);
+    letter-spacing: -0.01em;
+}
+
+/* H2 - Project Heading */
+.h2,
+.project-heading {
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+    line-height: var(--h2-line-height);
+    letter-spacing: -0.01em;
+}
+
+/* H3 - Subheading */
+.h3,
+.subheading {
+    font-family: var(--font-heading);
+    font-size: var(--h3-size);
+    font-weight: var(--h3-weight);
+    line-height: var(--h3-line-height);
+    letter-spacing: -0.005em;
+}
+
+/* H4 - Small Heading */
+.h4,
+.small-heading {
+    font-family: var(--font-heading);
+    font-size: var(--h4-size);
+    font-weight: var(--h4-weight);
+    line-height: var(--h4-line-height);
+}
+
+/* Body Large - for introductions and featured descriptions */
+.body-large {
+    font-family: var(--font-body);
+    font-size: var(--body-large-size);
+    font-weight: var(--body-large-weight);
+    line-height: var(--body-large-line-height);
+    color: var(--text-secondary);
+}
+
+/* Body Regular - default for paragraphs throughout the website */
+.body-regular,
+p {
+    font-family: var(--font-body);
+    font-size: var(--body-regular-size);
+    font-weight: var(--body-regular-weight);
+    line-height: var(--body-regular-line-height);
+    color: var(--text-secondary);
+}
+
+/* Body Small - for supporting content */
+.body-small {
+    font-family: var(--font-body);
+    font-size: var(--body-small-size);
+    font-weight: var(--body-small-weight);
+    line-height: var(--body-small-line-height);
+    color: var(--text-muted);
+}
+
+/* Caption / Labels - tags, dates, metadata, buttons, captions */
+.caption,
+.label {
+    font-family: var(--font-body);
+    font-size: var(--caption-size);
+    font-weight: var(--caption-weight);
+    line-height: var(--caption-line-height);
+    color: var(--text-secondary);
+}
+
+/* Overline / Eyebrow - uppercase labels */
+.overline,
+.eyebrow {
+    font-family: var(--font-heading);
+    font-size: var(--overline-size);
+    font-weight: var(--overline-weight);
+    line-height: var(--overline-line-height);
+    letter-spacing: var(--overline-letter-spacing);
+    text-transform: uppercase;
+    color: var(--accent-primary);
+}
+
+/* HTML semantic heading overrides */
+h1 {
+    font-family: var(--font-heading);
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    line-height: var(--h1-line-height);
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+}
+
+h2 {
+    font-family: var(--font-heading);
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+    line-height: var(--h2-line-height);
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+}
+
+h3 {
+    font-family: var(--font-heading);
+    font-size: var(--h3-size);
+    font-weight: var(--h3-weight);
+    line-height: var(--h3-line-height);
+    letter-spacing: -0.005em;
+    color: var(--text-primary);
+}
+
+h4 {
+    font-family: var(--font-heading);
+    font-size: var(--h4-size);
+    font-weight: var(--h4-weight);
+    line-height: var(--h4-line-height);
+    color: var(--text-primary);
+}
+
+h5, h6 {
+    font-family: var(--font-heading);
+    font-size: var(--caption-size);
+    font-weight: var(--caption-weight);
+    line-height: var(--caption-line-height);
+    color: var(--text-primary);
 }
 
 .gradient-text {
@@ -379,51 +585,67 @@ img {
 }
 
 .hero-content {
-    max-width: 800px;
-    margin-bottom: 64px;
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0;
 }
 
-.hero-tag {
-    font-family: var(--font-heading);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--accent-primary);
-    background-color: var(--bg-surface-border);
-    padding: 6px 16px;
-    border-radius: 9999px;
-    display: inline-block;
-    margin-bottom: 24px;
-    border: 1px solid var(--bg-surface-border);
-}
-
-.hero-title {
-    font-family: var(--font-heading);
-    font-size: clamp(40px, 6vw, 68px);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -1.5px;
-    margin-bottom: 24px;
-}
-
-.hero-subtitle {
-    font-size: clamp(16px, 2.5vw, 20px);
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 40px;
-    font-weight: 300;
-}
-
-.hero-subtitle strong {
-    color: var(--text-primary);
+.hero .overline {
+    display: block;
+    margin-bottom: 28px;
+    letter-spacing: 0.15em;
+    font-size: 13px;
     font-weight: 600;
+}
+
+.hero .display {
+    max-width: 620px;
+    margin-bottom: 16px;
+    line-height: 1.05;
+    font-size: clamp(48px, 7vw, 72px);
+    letter-spacing: -0.02em;
+}
+
+.hero .h1:not(.section-title) {
+    font-size: clamp(20px, 4vw, 28px);
+    line-height: 1.55;
+    color: var(--text-primary);
+    max-width: 680px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+}
+
+.hero .body-large {
+    max-width: 680px;
+    margin-bottom: 48px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.75;
+    letter-spacing: -0.003em;
 }
 
 .hero-actions {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    margin-bottom: 56px;
+    align-items: center;
+}
+
+.hero-actions .btn {
+    height: 52px;
+    padding: 0 28px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .hero-badges {
@@ -2212,53 +2434,63 @@ img {
     margin-bottom: 24px;
     letter-spacing: -0.5px;
 }
+
 .hero-trust-indicators {
     display: flex;
-    gap: 40px;
-    margin-bottom: 40px;
-    flex-wrap: wrap;
+    gap: 56px;
+    padding-top: 32px;
     border-top: 1px solid var(--bg-surface-border);
-    border-bottom: 1px solid var(--bg-surface-border);
-    padding: 20px 0;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
+
 .trust-indicator {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
+    align-items: flex-start;
 }
+
 .trust-val {
     font-family: var(--font-heading);
-    font-size: 26px;
+    font-size: 42px;
     font-weight: 800;
     color: var(--accent-primary);
-    letter-spacing: -0.5px;
+    letter-spacing: -0.8px;
+    line-height: 1.1;
 }
+
 .trust-lbl {
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     color: var(--text-secondary);
+    text-transform: uppercase;
 }
 
 @media (max-width: 992px) {
     .hero-grid {
         grid-template-columns: 1fr;
-        gap: 56px;
-        text-align: center;
+        gap: 48px;
+        text-align: left;
+        align-items: flex-start;
     }
     .hero-content {
         max-width: 100%;
-        margin-bottom: 0;
+    }
+    .hero .display,
+    .hero .h1:not(.section-title),
+    .hero .body-large {
+        max-width: 100%;
     }
     .hero-actions {
-        justify-content: center;
+        justify-content: flex-start;
     }
     .hero-trust-indicators {
-        justify-content: center;
+        gap: 40px;
     }
     .portrait-wrapper {
-        margin: 0 auto;
+        margin: 0;
     }
 }
 
