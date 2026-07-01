@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Study: Bigul.co Trading Platform | Aditya Nandane Portfolio</title>
-    <meta name="description" content="Detailed UX/UI case study of the Bigul.co retail trading platform redesign by Aditya Nandane. Highlighting product thinking, UX research, conversion metrics, and visual design systems.">
+    <title>Bigul.co Retail Trading Redesign | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on redesigning the Bigul.co Retail Trading Platform, optimizing KYC conversions, and streamlining order execution.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +12,10 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+  <script type="module" crossorigin src="/app.js"></script>
+  <link rel="stylesheet" crossorigin href="/app.css">
 </head>
-<body class="dark-theme case-study-page">
+<body class="dark-theme">
     <!-- Decorative Glowing Background Orbs -->
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
@@ -29,11 +30,10 @@
             <!-- Center navigation menu items -->
             <nav class="nav-menu" id="navMenu">
                 <ul>
-                    <li><a href="index.html#about" class="nav-link">Home</a></li>
-                    <li><a href="index.html#work" class="nav-link active">Work</a></li>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="work.html" class="nav-link active">Work</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                     <li><a href="about.html#resume" class="nav-link">Resume</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
 
@@ -55,7 +55,7 @@
     <section class="cs-hero">
         <div class="container">
             <div class="cs-back-link">
-                <a href="index.html#work"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+                <a href="work.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
             </div>
             
             <div class="cs-hero-header">
@@ -65,7 +65,7 @@
             </div>
             
             <div class="cs-hero-mockup-wrapper">
-                <img src="assets/bigul_trading.jpg" alt="Bigul.co Mobile and Web Trading Terminal Mockup" class="cs-hero-mockup main-lightbox-trigger">
+                <img src="/bigul_trading.jpg" alt="Bigul.co Mobile and Web Trading Terminal Mockup" class="cs-hero-mockup main-lightbox-trigger">
             </div>
             
             <div class="cs-metadata-grid">
@@ -254,7 +254,7 @@
                     
                     <div class="kpi-grid">
                         <div class="kpi-card">
-                            <span class="kpi-metric">+20%</span>
+                            <span class="kpi-metric">+22%</span>
                             <span class="kpi-lbl">Target KYC rate</span>
                         </div>
                         <div class="kpi-card">
@@ -274,11 +274,11 @@
                 <h2>5. Design Process</h2>
                 <div class="cs-section-body">
                     <p>
-                        We mapped out a revamped user flow that broken down the 18 steps into 5 distinct visual categories. Below is the simplified Information Architecture and User Flow designed to eliminate loopbacks.
+                        We mapped out a revamped user flow that broke down the 18 steps into 5 distinct visual categories. Below is the simplified Information Architecture and User Flow designed to eliminate loopbacks.
                     </p>
                     
                     <div class="process-img-wrapper">
-                        <img src="assets/bigul_userflow.jpg" alt="Information Architecture and User Flow Diagram" class="process-img main-lightbox-trigger">
+                        <img src="/bigul_userflow.jpg" alt="Information Architecture and User Flow Diagram" class="process-img main-lightbox-trigger">
                         <span class="img-caption">Fig 1. User flow mapping showing progressive disclosure paths for trading configuration.</span>
                     </div>
 
@@ -288,7 +288,7 @@
                     </p>
                     
                     <div class="process-img-wrapper">
-                        <img src="assets/bigul_wireframes.jpg" alt="Low fidelity wireframe comparison views" class="process-img main-lightbox-trigger">
+                        <img src="/bigul_wireframes.jpg" alt="Low fidelity wireframe comparison views" class="process-img main-lightbox-trigger">
                         <span class="img-caption">Fig 2. Low-Fidelity wireframes iterating on step-by-step onboarding wizard.</span>
                     </div>
 
@@ -308,7 +308,7 @@
                     </p>
                     
                     <div class="process-img-wrapper">
-                        <img src="assets/bigul_designsystem.jpg" alt="Apex Design System Typography, Colors and Button elements" class="process-img main-lightbox-trigger">
+                        <img src="/bigul_designsystem.jpg" alt="Apex Design System Typography, Colors and Button elements" class="process-img main-lightbox-trigger">
                         <span class="img-caption">Fig 3. Apex Design System guide showing components, typography rules, and theme variables.</span>
                     </div>
 
@@ -481,16 +481,16 @@
                     <p>Click on any of the screens or wireframes to open a full-resolution interactive lightbox preview.</p>
                     <div class="cs-gallery-grid">
                         <div class="gallery-card">
-                            <img src="assets/bigul_trading.jpg" alt="Trading Dashboard High-Fidelity UI" class="gallery-img main-lightbox-trigger">
+                            <img src="/bigul_trading.jpg" alt="Trading Dashboard High-Fidelity UI" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="assets/bigul_userflow.jpg" alt="User Flow Diagram details" class="gallery-img main-lightbox-trigger">
+                            <img src="/bigul_userflow.jpg" alt="User Flow Diagram details" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="assets/bigul_wireframes.jpg" alt="Wireframe iterations screen layouts" class="gallery-img main-lightbox-trigger">
+                            <img src="/bigul_wireframes.jpg" alt="Wireframe iterations screen layouts" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="assets/bigul_designsystem.jpg" alt="Design system atoms and variables guide" class="gallery-img main-lightbox-trigger">
+                            <img src="/bigul_designsystem.jpg" alt="Design system atoms and variables guide" class="gallery-img main-lightbox-trigger">
                         </div>
                     </div>
                 </div>
@@ -498,13 +498,13 @@
 
             <!-- Next Project Navigation Section -->
             <div class="cs-project-nav" id="navigation">
-                <a href="index.html#work" class="nav-prev">
+                <a href="project_fittrack.html" class="nav-prev">
                     <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
-                    <span class="nav-project-title">Go back to main portfolio</span>
+                    <span class="nav-project-title">Fittrack Companion App</span>
                 </a>
-                <a href="index.html#work" class="nav-next">
+                <a href="project_kimirica.html" class="nav-next">
                     <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
-                    <span class="nav-project-title">Kimirica E-commerce checkout</span>
+                    <span class="nav-project-title">Kimirica Checkout Funnel</span>
                 </a>
             </div>
 
@@ -528,11 +528,10 @@
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#impact">Impact</a></li>
-                    <li><a href="index.html#experience">Experience</a></li>
-                    <li><a href="index.html#skills">Skills</a></li>
-                    <li><a href="index.html#work">Work</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </div>
             
@@ -540,13 +539,21 @@
                 <h3>Social Connect</h3>
                 <div class="social-icons">
                     <a href="mailto:nandaneas1595@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="tel:+919518758653" class="social-icon" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
                     <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" class="social-icon" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
                     <a href="#" class="social-icon" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                    <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                 </div>
             </div>
         </div>
+        
+        <!-- Back to Top Button -->
+        <div class="back-to-top-container">
+            <button id="backToTop" class="back-to-top-btn" aria-label="Back to Top">
+                <i class="fa-solid fa-arrow-up"></i> Back to Top
+            </button>
+        </div>
+
         <div class="footer-bottom">
             <div class="container">
                 <p>&copy; <span id="currentYear">2026</span> Aditya Nandane. All Rights Reserved. Made with <i class="fa-solid fa-heart text-accent"></i> and Code.</p>
@@ -555,6 +562,5 @@
     </footer>
 
     <!-- Scripts -->
-    <script type="module" src="app.js"></script>
 </body>
 </html>

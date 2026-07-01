@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenith HRMS Dashboard | UI/UX Case Study</title>
-    <meta name="description" content="Detailed UI/UX Case Study on standardizing HR payroll and employee management portals for Zenith HRMS.">
+    <title>Cubedots PropTech SaaS Dashboard | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on designing unified cloud-based dashboards and reusable component frameworks for Cubedots, a leading PropTech SaaS platform.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,8 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+  <script type="module" crossorigin src="/app.js"></script>
+  <link rel="stylesheet" crossorigin href="/app.css">
 </head>
 <body class="dark-theme">
     <!-- Decorative Glowing Background Orbs -->
@@ -58,23 +59,23 @@
             </div>
             
             <div class="cs-hero-header">
-                <span class="cs-category-tag"><i class="fa-solid fa-people-roof"></i> SaaS • HRMS Enterprise</span>
-                <h1 class="cs-title">Zenith HRMS Dashboard</h1>
-                <p class="cs-tagline">Designing high-density payroll grids, employee attendance panels, and leaf request managers to simplify corporate administration.</p>
+                <span class="cs-category-tag"><i class="fa-solid fa-cubes"></i> SaaS • Design Systems & PropTech</span>
+                <h1 class="cs-title">Cubedots PropTech SaaS Platform</h1>
+                <p class="cs-tagline">Designing unified high-density property dashboards and reusable web-component design tokens to accelerate cross-functional feature cycles.</p>
             </div>
             
             <div class="cs-hero-mockup-wrapper">
-                <img src="assets/bigul_designsystem.jpg" alt="Zenith HRMS application screens mockup" class="cs-hero-mockup main-lightbox-trigger">
+                <img src="/cubedots_saas.jpg" alt="Cubedots SaaS Admin Console dashboard mockup" class="cs-hero-mockup main-lightbox-trigger">
             </div>
             
             <div class="cs-metadata-grid">
                 <div class="meta-item">
                     <h5>Role</h5>
-                    <p>Lead UI/UX Designer<br><span>(Dashboard & Portal Ownership)</span></p>
+                    <p>Lead Designer<br><span>(Dashboard & System Ownership)</span></p>
                 </div>
                 <div class="meta-item">
                     <h5>Duration</h5>
-                    <p>Jan 2020 - May 2020<br><span>(5 Months Duration)</span></p>
+                    <p>Dec 2021 - Jul 2022<br><span>(8 Months Duration)</span></p>
                 </div>
                 <div class="meta-item">
                     <h5>Team Size</h5>
@@ -82,7 +83,7 @@
                 </div>
                 <div class="meta-item">
                     <h5>Key Results</h5>
-                    <p>-35% Onboarding Time<br><span>+40% Task Success Rate</span></p>
+                    <p>-15% User Task Errors<br><span>-20% Dev Rework</span></p>
                 </div>
             </div>
         </div>
@@ -120,19 +121,36 @@
                 <div class="cs-section-body">
                     <h3>Background & Business Context</h3>
                     <p>
-                        Zenith is a workforce management SaaS platform used by mid-market enterprises. The legacy interface was heavily siloed, forcing managers to navigate separate sub-portals to run monthly payrolls and approve time sheets.
+                        Cubedots is a real estate transaction SaaS platform connecting builders, brokers, and buyers. Real estate is high-value and slow-moving, requiring extensive compliance review and high-density financial contract tracking.
                     </p>
                     <p>
-                        We aimed to design a unified payroll and attendance dashboard that streamlines operations and decreases employee onboarding friction.
+                        Before our redesign project, Cubedots users struggled with an outdated dashboard designed around separate data tables. Real estate agents could not get a unified status overview of their current listings, and developers wasted over 20% of their sprints rebuild ad-hoc buttons and input states.
                     </p>
                     
                     <div class="goal-box">
                         <h4>Goals & Objectives:</h4>
                         <ul>
-                            <li><strong>Accelerate new hire onboarding</strong> by 35%.</li>
-                            <li><strong>Unify monthly payroll approvals</strong> in under 3 clicks.</li>
-                            <li><strong>Improve feature adoption success</strong> to 40%.</li>
+                            <li><strong>Reduce task error rates by 15%</strong> through clean information architecture and visual prioritization.</li>
+                            <li><strong>Speed up developer onboarding</strong> and eliminate rework by building standard Figma tokens.</li>
+                            <li><strong>Accelerate overall client transaction cycles</strong> by 25%.</li>
                         </ul>
+                    </div>
+
+                    <h3>Target Audience</h3>
+                    <p>
+                        Our primary dashboard audience:
+                    </p>
+                    <div class="audience-grid">
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-user-shield"></i></span>
+                            <h5>Real Estate Agents (70%)</h5>
+                            <p>Power users processing transactions, uploading customer contracts, and monitoring pricing status updates. They value speed, hotkeys, and data density.</p>
+                        </div>
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-building-user"></i></span>
+                            <h5>Property Developers (30%)</h5>
+                            <p>Enterprise clients managing pricing configurations and listing allocations. They value clear reporting graphs and csv import logs.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -142,8 +160,16 @@
                 <h2>2. My Role & Collaboration</h2>
                 <div class="cs-section-body">
                     <p>
-                        As the <strong>Lead UI/UX Designer</strong>, I owned layout restructuring, typography guidelines, interactive charts, and design tokens inside Figma.
+                        As the <strong>Lead Designer</strong>, I owned the layout structures, high-density data table guidelines, and component specifications inside Figma.
                     </p>
+                    <p>
+                        I worked alongside:
+                    </p>
+                    <ul class="collab-list">
+                        <li><strong>Product Managers:</strong> Mapping out complex compliance approval gates and paperwork validations.</li>
+                        <li><strong>Engineering team:</strong> Standardizing spacing variables and button states inside a shared design library.</li>
+                        <li><strong>QA engineers:</strong> Creating checks for edge-case dashboard table scenarios (overflow text, extreme values, loading state blocks).</li>
+                    </ul>
                 </div>
             </section>
 
@@ -152,8 +178,32 @@
                 <h2>3. Research & Discovery</h2>
                 <div class="cs-section-body">
                     <p>
-                        We observed HR managers run monthly salary closures, identifying that they kept multiple spreadsheet windows open to match basic employee shift timings.
+                        We ran contextual inquiries with 8 real estate agents, shadowing their typical daily routines as they managed client profiles.
                     </p>
+                    
+                    <h3>Contextual Audit Pain Points</h3>
+                    <div class="pain-points-grid">
+                        <div class="pain-card">
+                            <span class="pain-num">01</span>
+                            <h5>Tab Overload</h5>
+                            <p>Agents kept 10+ browser tabs open because they couldn't compare multiple listings or transaction histories in a single screen.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">02</span>
+                            <h5>Visual Distraction</h5>
+                            <p>Primary action buttons (Approve Contract, Archive Listing) had identical gray styling, leading to accidental deletions.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">03</span>
+                            <h5>Dev-Design Mismatch</h5>
+                            <p>Developers coded pages by eyeing mockups, leading to inconsistent font-sizes and input fields that broke accessibility guidelines.</p>
+                        </div>
+                    </div>
+
+                    <div class="strategy-tip">
+                        <h5><i class="fa-solid fa-brain"></i> Product Thinking Insight:</h5>
+                        <p>We realized that SaaS layouts are productivity tools. Users don't log in to admire beautiful spacing; they log in to finish a task. Every extra click is wasted business cost. We had to focus on visual prioritization and high-density layouts.</p>
+                    </div>
                 </div>
             </section>
 
@@ -161,14 +211,23 @@
             <section id="problem" class="cs-section">
                 <h2>4. Problem Definition</h2>
                 <div class="cs-section-body">
+                    <h3>The Challenges & Constraints</h3>
+                    <p>
+                        We had to balance displaying dense, complex property tables (sometimes holding 18+ columns of records) with fitting on standard laptop screens.
+                    </p>
+                    
                     <div class="kpi-grid">
                         <div class="kpi-card">
-                            <span class="kpi-metric">-35%</span>
-                            <span class="kpi-lbl">Onboarding time savings</span>
+                            <span class="kpi-metric">-15%</span>
+                            <span class="kpi-lbl">Task error reduction</span>
                         </div>
                         <div class="kpi-card">
-                            <span class="kpi-metric">+40%</span>
-                            <span class="kpi-lbl">Task success rate</span>
+                            <span class="kpi-metric">-20%</span>
+                            <span class="kpi-lbl">Development rework savings</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">+25%</span>
+                            <span class="kpi-lbl">Transaction speed increase</span>
                         </div>
                     </div>
                 </div>
@@ -179,10 +238,22 @@
                 <h2>5. Design Process</h2>
                 <div class="cs-section-body">
                     <p>
-                        We designed a structured, tab-based layout that aggregates employee profile data, tax parameters, and payouts.
+                        We mapped out a unified, tab-based layout that combined property specifications, pricing history, and files inside a single responsive pane.
                     </p>
+                    
                     <div class="process-img-wrapper">
-                        <img src="assets/bigul_userflow.jpg" alt="Zenith user journey flow maps" class="process-img main-lightbox-trigger">
+                        <img src="/bigul_userflow.jpg" alt="User flow optimization" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 1. User flow transition from detailed property tables to file management actions.</span>
+                    </div>
+
+                    <h3>Low-Fidelity Wireframes</h3>
+                    <p>
+                        We tested multiple sidebar navigation configurations. Early prototypes used complex tree-structures that expanded nested submenus, which users found confusing. We redesigned it into a flat, sticky navigation layout.
+                    </p>
+                    
+                    <div class="process-img-wrapper">
+                        <img src="/bigul_wireframes.jpg" alt="Wireframe iterations" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 2. Low-Fidelity wireframes testing high-density listing tables and action placement.</span>
                     </div>
                 </div>
             </section>
@@ -192,10 +263,12 @@
                 <h2>6. Visual Design System</h2>
                 <div class="cs-section-body">
                     <p>
-                        We established dense grids, high-density layout panels, and standard data table spacing tokens.
+                        We established Apex Design System core layout modules for the SaaS framework:
                     </p>
+                    
                     <div class="process-img-wrapper">
-                        <img src="assets/bigul_designsystem.jpg" alt="Design style tokens" class="process-img main-lightbox-trigger">
+                        <img src="/bigul_designsystem.jpg" alt="Apex Design System components" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 3. Spacing systems, borders, inputs, and button components library.</span>
                     </div>
                 </div>
             </section>
@@ -205,9 +278,16 @@
                 <h2>7. High-Fidelity Walkthrough</h2>
                 <div class="cs-section-body">
                     <div class="hifi-feature">
-                        <h4>Unified Payroll Approvals Sheet</h4>
+                        <h4>Unified Property Admin Panel</h4>
                         <p>
-                            Combines tax calculations, bonuses, and salary outputs in a single spreadsheet-like editable interface.
+                            Combines active contract checklists, property images, and CSV transaction logs in one dense screen, cutting tab-switching by 90%.
+                        </p>
+                    </div>
+
+                    <div class="hifi-feature">
+                        <h4>Frictionless CSV Import Wizard</h4>
+                        <p>
+                            A step-by-step mapper that auto-detects column names, validates entries inline, and highlights formatting issues before final upload.
                         </p>
                     </div>
                 </div>
@@ -215,9 +295,9 @@
 
             <!-- 8. Product Strategy -->
             <section id="strategy" class="cs-section">
-                <h2>8. Product Strategy</h2>
+                <h2>8. Product Strategy & Trade-offs</h2>
                 <p>
-                    We designed a flexible import utility that auto-matches column headers from legacy software systems, simplifying system migrations.
+                    We traded fancy visual animations for speed. High-volume data loading is heavily throttled by custom animation scripts. We chose to implement a native web layout structure that loaded instantly, prioritizing speed over visual styling.
                 </p>
             </section>
 
@@ -226,9 +306,9 @@
                 <h2>9. Challenges & Solutions</h2>
                 <div class="cs-section-body">
                     <div class="challenge-item">
-                        <h5>Challenge: High payout error rates</h5>
-                        <p><strong>The Problem:</strong> HR managers frequently calculated salaries incorrectly due to complex bonus logic variables, leading to bank transfer rejections.</p>
-                        <p><strong>Design Solution:</strong> We added an inline preview panel showing final breakdowns and calculations, preventing errors before bank transfers. </p>
+                        <h5>Challenge: Standardizing Complex Financial Formulas</h5>
+                        <p><strong>The Problem:</strong> Property pricing involved complex calculations for broker payouts, VAT structures, and progressive commissions, leading to manual accounting errors.</p>
+                        <p><strong>Design Solution:</strong> We created an interactive calculator with real-time feedback that computed margins inline, reducing input errors by 15%.</p>
                     </div>
                 </div>
             </section>
@@ -239,12 +319,16 @@
                 <div class="cs-section-body">
                     <div class="impact-metrics-row">
                         <div class="metric-circle">
-                            <span class="m-val">-35%</span>
-                            <span class="m-lbl">Onboarding</span>
+                            <span class="m-val">-15%</span>
+                            <span class="m-lbl">User Errors</span>
                         </div>
                         <div class="metric-circle">
-                            <span class="m-val">+40%</span>
-                            <span class="m-lbl">Task Success</span>
+                            <span class="m-val">-20%</span>
+                            <span class="m-lbl">Dev Rework</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">+25%</span>
+                            <span class="m-lbl">Transaction Speed</span>
                         </div>
                     </div>
                 </div>
@@ -256,6 +340,7 @@
                 <div class="cs-section-body">
                     <div class="tools-flex">
                         <div class="tool-item-box"><i class="fa-brands fa-figma"></i> Figma</div>
+                        <div class="tool-item-box">Adobe XD</div>
                         <div class="tool-item-box">Miro</div>
                         <div class="tool-item-box">Jira</div>
                         <div class="tool-item-box">Notion</div>
@@ -267,13 +352,19 @@
             <section id="gallery" class="cs-section">
                 <h2>12. Design Gallery</h2>
                 <div class="cs-section-body">
-                    <p>Click on any of the screens to open lightbox preview.</p>
+                    <p>Click on any of the screens or wireframes to open a full-resolution interactive lightbox preview.</p>
                     <div class="cs-gallery-grid">
                         <div class="gallery-card">
-                            <img src="assets/bigul_designsystem.jpg" alt="Zenith admin layout" class="gallery-img main-lightbox-trigger">
+                            <img src="/cubedots_saas.jpg" alt="Cubedots Dashboard Layout" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="assets/bigul_userflow.jpg" alt="Admin workflow mapping" class="gallery-img main-lightbox-trigger">
+                            <img src="/bigul_userflow.jpg" alt="User flow diagram" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="/bigul_wireframes.jpg" alt="Wireframe mockups" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="/bigul_designsystem.jpg" alt="Design system atoms" class="gallery-img main-lightbox-trigger">
                         </div>
                     </div>
                 </div>
@@ -281,13 +372,13 @@
 
             <!-- Next Project Navigation Section -->
             <div class="cs-project-nav" id="navigation">
-                <a href="project_medix.html" class="nav-prev">
+                <a href="project_kimirica.html" class="nav-prev">
                     <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
-                    <span class="nav-project-title">Medix Telehealth App</span>
+                    <span class="nav-project-title">Kimirica Checkout Funnel</span>
                 </a>
-                <a href="project_aero.html" class="nav-next">
+                <a href="project_shanti.html" class="nav-next">
                     <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
-                    <span class="nav-project-title">Aero Logistics Dispatcher</span>
+                    <span class="nav-project-title">Enterprise Operational Systems</span>
                 </a>
             </div>
 
@@ -314,6 +405,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="work.html">Work</a></li>
                     <li><a href="about.html">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
                 </ul>
             </div>
             
@@ -323,6 +415,7 @@
                     <a href="mailto:nandaneas1595@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                     <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#" class="social-icon" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                    <a href="#" class="social-icon" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
                     <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                 </div>
             </div>
@@ -343,6 +436,5 @@
     </footer>
 
     <!-- Scripts -->
-    <script type="module" src="app.js"></script>
 </body>
 </html>
