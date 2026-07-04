@@ -513,13 +513,72 @@
             .about-hero-grid {
                 grid-template-columns: 1fr;
                 gap: 48px;
-                text-align: center;
+                text-align: left;
             }
             .about-hero-grid .hero-actions {
-                justify-content: center;
+                justify-content: flex-start;
             }
             .about-hero-grid .portrait-wrapper {
-                margin: 0 auto;
+                margin: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            /* Stack CTA buttons vertically on mobile viewports */
+            .hero-actions {
+                flex-direction: column !important;
+                align-items: stretch !important;
+                width: 100% !important;
+                gap: 12px !important;
+            }
+            .hero-actions .btn {
+                width: 100% !important;
+                justify-content: center !important;
+            }
+            
+            /* Stack experience timeline header fields vertically on mobile */
+            .about-timeline-meta {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 6px !important;
+            }
+            
+            /* Reduce section spacing slightly on mobile */
+            .about-hero, .about-section {
+                padding-top: 60px !important;
+                padding-bottom: 60px !important;
+            }
+            .about-hero {
+                padding-top: 120px !important;
+            }
+            
+            /* Responsive content box and grid overrides to prevent overflow on mobile viewports */
+            .summary-box {
+                padding: 24px 20px !important;
+            }
+            .summary-details-grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+            .expertise-cards-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            .expertise-card {
+                padding: 24px 20px !important;
+            }
+            .philosophy-grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Stack bio facts metadata rows vertically */
+            .meta-item {
+                grid-template-columns: 1fr !important;
+                gap: 4px !important;
+                align-items: flex-start !important;
             }
         }
     </style>

@@ -37,13 +37,13 @@
     --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
     /* === TYPOGRAPHY SCALE === */
-    /* Display / Hero Heading: 72px (desktop), 48px (tablet), 36px (mobile) */
-    --display-size: clamp(36px, 8vw, 72px);
+    /* Display / Hero Heading: 72px (desktop), 48px (tablet), 32px (mobile) */
+    --display-size: clamp(2rem, 6vw, 4.5rem);
     --display-weight: 800;
     --display-line-height: 110%;
     
-    /* H1 - Section Heading: 56px (desktop), 44px (tablet), 32px (mobile) */
-    --h1-size: clamp(32px, 6vw, 56px);
+    /* H1 - Section Heading: 48px (desktop), 36px (tablet), 28px (mobile) */
+    --h1-size: clamp(1.75rem, 4vw, 3rem);
     --h1-weight: 700;
     --h1-line-height: 120%;
     
@@ -63,27 +63,27 @@
     --h4-line-height: 140%;
     
     /* Body Large: 20px - for introductions and featured descriptions */
-    --body-large-size: 20px;
+    --body-large-size: clamp(16px, 1.8vw, 20px);
     --body-large-weight: 400;
     --body-large-line-height: 170%;
     
     /* Body Regular: 18px - for paragraphs throughout the website */
-    --body-regular-size: 18px;
+    --body-regular-size: clamp(1rem, 2vw, 1.125rem);
     --body-regular-weight: 400;
     --body-regular-line-height: 170%;
     
     /* Body Small: 16px - for supporting content */
-    --body-small-size: 16px;
+    --body-small-size: clamp(14px, 1.4vw, 16px);
     --body-small-weight: 400;
     --body-small-line-height: 160%;
     
     /* Caption / Labels: 14px - tags, dates, metadata, buttons, captions */
-    --caption-size: 14px;
+    --caption-size: clamp(13px, 1.2vw, 14px);
     --caption-weight: 500;
     --caption-line-height: 150%;
     
     /* Overline / Eyebrow: 12px - uppercase, tracked */
-    --overline-size: 12px;
+    --overline-size: clamp(11px, 1vw, 12px);
     --overline-weight: 600;
     --overline-line-height: 150%;
     --overline-letter-spacing: 0.15em;
@@ -109,6 +109,8 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px; /* Offset for floating header */
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -117,6 +119,7 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
     transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
@@ -134,6 +137,7 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+    object-fit: contain;
 }
 
 /* --- Scrollbar Customization --- */
@@ -434,6 +438,11 @@ h5, h6 {
 @keyframes float-slow {
     0% { transform: translate(0, 0) scale(1); }
     100% { transform: translate(60px, 40px) scale(1.1); }
+}
+
+@keyframes float-slow-mobile {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(30px); }
 }
 
 /* --- Premium Navigation Header --- */
@@ -1445,39 +1454,105 @@ h5, h6 {
 
 /* --- Mobile Menu Styles & Responsive Adjustments --- */
 @media (max-width: 768px) {
+    body.menu-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Constrain ambient glowing orbs on mobile to prevent horizontal overflow */
+    .orb {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .orb-1 {
+        right: 0 !important;
+        left: auto !important;
+        width: 300px !important;
+        height: 300px !important;
+        animation: float-slow-mobile 20s infinite alternate !important;
+    }
+    .orb-2 {
+        left: 0 !important;
+        right: auto !important;
+        width: 250px !important;
+        height: 250px !important;
+        animation: float-slow-mobile 25s infinite alternate-reverse !important;
+    }
+    .orb-3 {
+        right: 0 !important;
+        left: auto !important;
+        width: 300px !important;
+        height: 300px !important;
+        animation: float-slow-mobile 18s infinite alternate !important;
+    }
+    
     .navbar {
         top: 0;
         left: 0;
         width: 100%;
-        height: 64px;
+        height: 64px; /* Fixed height for mobile header bar */
         border-radius: 0;
         border-bottom: 1px solid var(--bg-surface-border);
     }
     
     .nav-container {
-        padding: 0 20px;
+        display: flex;
+        flex-wrap: nowrap; /* Prevent horizontal wrapping */
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .nav-logo {
+        position: relative;
+        z-index: 1002; /* Keep logo on top of menu overlay */
+    }
+    
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        position: relative;
+        z-index: 1002; /* Keep action buttons on top of menu overlay */
     }
     
     .mobile-toggle {
         display: flex;
+        padding: 12px; /* Expand hit target size to meet mobile usability guidelines */
+        margin: -12px; /* Pull margin back so it aligns exactly without breaking adjacent layout spacing */
+        box-sizing: content-box; /* Keep original 24x18 dimensions for the inner bars spacing */
+        z-index: 1002;
     }
     
     .nav-menu {
-        position: absolute;
-        top: 64px;
+        position: fixed;
+        top: 0;
         left: 0;
         width: 100%;
-        background-color: var(--bg-navbar);
-        border: none;
-        border-bottom: 1px solid var(--bg-surface-border);
-        border-radius: 0 0 16px 16px;
-        box-shadow: var(--shadow-lg);
+        height: 100vh;
+        background-color: var(--bg-primary); /* Premium dark background */
+        z-index: 1001; /* Layer between fixed items and background */
+        display: flex !important; /* Force flex container */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        /* Hidden by default with smooth transitions */
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-10px);
-        transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
-        padding: 20px;
-        backdrop-filter: blur(20px);
+        transform: translateY(-20px);
+        transition: opacity var(--transition-normal), visibility var(--transition-normal), transform var(--transition-normal);
+        
+        padding: 80px 24px 24px 24px;
+        margin: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        overflow-y: auto;
     }
     
     .nav-menu.open {
@@ -1488,21 +1563,28 @@ h5, h6 {
     
     .nav-menu ul {
         flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
+        align-items: center;
+        gap: 24px; /* Spacious gaps for readability and touch safety */
+        width: 100%;
     }
     
     .nav-link {
-        display: block;
-        padding: 12px 16px;
-        font-size: 15px;
-        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 24px;
+        font-size: 20px; /* Touch-friendly larger font */
+        border-radius: 9999px;
+        min-height: 48px; /* Touch target minimum height */
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
     }
     
     .btn-nav-cta {
-        padding: 8px 14px;
-        font-size: 13px;
-        border-radius: 10px;
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 12px;
     }
     
     /* Hamburger Menu Animation */
@@ -1514,6 +1596,25 @@ h5, h6 {
     }
     .mobile-toggle.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* Style floating chips on mobile to render nicely without overflow */
+    .floating-chip {
+        display: flex !important;
+        padding: 5px 10px !important;
+        font-size: 10px !important;
+        gap: 4px !important;
+        --chip-scale-x: 0.45; /* pull chips horizontally closer to the portrait */
+    }
+    
+    .floating-chip i {
+        font-size: 10px !important;
+    }
+    
+    /* Force single column layout on tablet/mobile to prevent card grid overflow */
+    .work-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 }
 
@@ -2224,7 +2325,7 @@ h5, h6 {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: rgba(10, 14, 23, 0.95);
     backdrop-filter: blur(16px);
@@ -2405,8 +2506,8 @@ h5, h6 {
     animation-delay: var(--d);
     top: var(--t);
     bottom: var(--b);
-    left: var(--l);
-    right: var(--r);
+    left: calc(var(--l) * var(--chip-scale-x, 1));
+    right: calc(var(--r) * var(--chip-scale-x, 1));
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .floating-chip i {
@@ -2920,13 +3021,13 @@ h5, h6 {
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 40px;
-        text-align: center;
+        text-align: left;
     }
     .hero-content {
         margin-bottom: 0;
     }
     .hero-actions {
-        justify-content: center;
+        justify-content: flex-start;
     }
     .about-me-grid {
         grid-template-columns: 1fr;
@@ -3656,5 +3757,146 @@ h5, h6 {
         transform: translateY(0);
     }
 }
+
+/* --- Additional Mobile Responsiveness Overrides --- */
+
+@media (max-width: 992px) {
+    /* Stack redesign grid layout */
+    .redesign-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    /* Ensure redesign comparison box handles margins well */
+    .redesign-comparison-box {
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Section Spacing Reductions */
+    section, .about-section, .cs-hero, .work-header-section, .work-listing-section {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+    .hero {
+        padding-top: 120px !important;
+        padding-bottom: 60px !important;
+    }
+
+    /* Make research/benchmarking tables responsive and scrollable horizontally */
+    table, .research-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Ensure the hero section does not scroll horizontally */
+    .hero {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Hide CTA button in mobile header to prevent logo compression/crowding */
+    .btn-nav-cta {
+        display: none !important;
+    }
+
+    /* Reduce padded containers for smaller viewport space */
+    .premium-exp-card {
+        padding: 24px 20px !important;
+    }
+    
+    .redesign-comparison-box {
+        padding: 24px 20px !important;
+    }
+    
+    .contact-form-container {
+        padding: 24px 20px !important;
+    }
+    
+    /* Ensure resume tab navigation buttons wrap correctly */
+    .resume-tabs {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-start;
+    }
+    
+    .resume-tab-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    .resume-tab-btn.active::after {
+        bottom: -10px;
+    }
+    
+    /* Fluid single-column grid items on small viewports to prevent overflow */
+    .work-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
+    
+    .hero-badges {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+    
+    /* Scale down hero portrait on small viewports to prevent clipping and overflow */
+    .portrait-wrapper {
+        width: 210px !important;
+        height: 260px !important;
+    }
+    
+    /* Stack Hero CTA Buttons Vertically */
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 12px;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+    }
+    
+    /* Stack Card Metadata Vertically */
+    .cs-card-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    /* Stack Case Study Bottom Navigation Footer Vertically */
+    .cs-project-nav {
+        flex-direction: column;
+        gap: 24px;
+        align-items: stretch;
+    }
+    .nav-prev, .nav-next {
+        text-align: center;
+        align-items: center;
+    }
+    
+    /* Adjust text size slightly for display size to look good on tiny displays */
+    .display {
+        font-size: clamp(32px, 9vw, 48px) !important;
+    }
+
+    /* Force process flow steps to single-column to prevent grid column overflow */
+    .process-flow {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    /* Force testimonials to single-column to prevent overflow on mobile */
+    .testimonials-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+
 
 
