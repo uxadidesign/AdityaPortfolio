@@ -1598,19 +1598,21 @@ h5, h6 {
         transform: translateY(-8px) rotate(-45deg);
     }
     
-    /* Style floating chips on mobile to render nicely without overflow */
+    /* Style floating chips on mobile to render nicely without overflow.
+       Chip positions are percentages of the portrait wrapper, so they already scale down
+       proportionally with it on mobile - no extra compression needed (that previously pulled
+       chips inward until they mostly covered the photo instead of floating around its edges). */
     .floating-chip {
         display: flex !important;
         padding: 5px 10px !important;
         font-size: 10px !important;
         gap: 4px !important;
-        --chip-scale-x: 0.45; /* pull chips horizontally closer to the portrait */
     }
     
     .floating-chip i {
         font-size: 10px !important;
     }
-    
+
     /* Force single column layout on tablet/mobile to prevent card grid overflow */
     .work-grid {
         grid-template-columns: 1fr;
@@ -1778,6 +1780,7 @@ h5, h6 {
 /* Case Study Main Content */
 .cs-content {
     max-width: 800px;
+    min-width: 0; /* prevent wide descendants (e.g. research-table) from blowing out the grid track */
 }
 .cs-section {
     padding-bottom: 80px;
@@ -2506,8 +2509,8 @@ h5, h6 {
     animation-delay: var(--d);
     top: var(--t);
     bottom: var(--b);
-    left: calc(var(--l) * var(--chip-scale-x, 1));
-    right: calc(var(--r) * var(--chip-scale-x, 1));
+    left: var(--l);
+    right: var(--r);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .floating-chip i {
@@ -3782,6 +3785,12 @@ h5, h6 {
     .hero {
         padding-top: 120px !important;
         padding-bottom: 60px !important;
+    }
+
+    /* Scroll cue is redundant on mobile (single-column layout makes "more below" obvious) and its fixed
+       bottom position collides with the floating chips around the portrait, so hide it below desktop. */
+    .scroll-indicator {
+        display: none !important;
     }
 
     /* Make research/benchmarking tables responsive and scrollable horizontally */
