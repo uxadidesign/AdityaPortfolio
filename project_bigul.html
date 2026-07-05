@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bigul.co Retail Trading Redesign | UI/UX Case Study</title>
-    <meta name="description" content="Detailed UI/UX Case Study on redesigning the Bigul.co Retail Trading Platform, optimizing KYC conversions, and streamlining order execution.">
+    <title>Bigul Trading App | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on redesigning the Bigul Trading App — onboarding, KYC, market watch, and order execution for retail investors.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,8 +59,8 @@
             
             <div class="cs-hero-header">
                 <span class="cs-category-tag"><i class="fa-solid fa-chart-line"></i> Fintech • Web & Mobile App</span>
-                <h1 class="cs-title">Bigul.co Trading Experience Redesign</h1>
-                <p class="cs-tagline">Optimizing user onboarding, simplifying KYC compliance, and streamlining order execution flows for a retail investment audience.</p>
+                <h1 class="cs-title">Bigul Trading App</h1>
+                <p class="cs-tagline">Restructuring onboarding, KYC, market watch, and order execution to turn intimidated first-time investors into confident, repeat traders — without slowing down the professionals.</p>
             </div>
             
             <div class="cs-hero-mockup-wrapper">
@@ -107,6 +107,7 @@
                     <li><a href="#impact" class="toc-link">10. Business Impact</a></li>
                     <li><a href="#tools" class="toc-link">11. Tools & Tech</a></li>
                     <li><a href="#gallery" class="toc-link">12. Design Gallery</a></li>
+                    <li><a href="#learnings" class="toc-link">13. Key Learnings</a></li>
                 </ul>
             </div>
         </aside>
@@ -448,12 +449,6 @@
                         </div>
                     </div>
 
-                    <div class="lessons-learned">
-                        <h5>Key Lessons Learned:</h5>
-                        <p>
-                            Sometimes, adding step count leads to higher confidence. Breaking a giant regulatory form into quick, bite-sized tasks is significantly better than cramming it all into one page, even if the user has to click more times. Focus on *perceived* friction, not just actual clicks.
-                        </p>
-                    </div>
                 </div>
             </section>
 
@@ -495,15 +490,42 @@
                 </div>
             </section>
 
+            <!-- 13. Key Learnings -->
+            <section id="learnings" class="cs-section">
+                <h2>13. Key Learnings</h2>
+                <div class="cs-section-body">
+                    <p>
+                        A few things from this project changed how I approach fintech onboarding generally, and I've carried them into every trading feature I've shipped since.
+                    </p>
+                    <div class="pain-points-grid">
+                        <div class="pain-card">
+                            <span class="pain-num">01</span>
+                            <h5>More steps can feel faster</h5>
+                            <p>Breaking one dense regulatory form into five bite-sized screens added clicks but removed dread. Perceived friction, not click count, is what actually predicts abandonment in compliance-heavy flows.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">02</span>
+                            <h5>Simulation builds trust before compliance does</h5>
+                            <p>Letting unverified users trade on paper credits gave them a reason to finish KYC — the product proved its value before asking for a signature, instead of the other way around.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">03</span>
+                            <h5>Design a system, not a screen</h5>
+                            <p>Apex outlived this one project. Every subsequent Bigul feature — API Connect, Algo, Mutual Fund — shipped faster because the tokens, states, and accessibility rules already existed.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Next Project Navigation Section -->
             <div class="cs-project-nav" id="navigation">
-                <a href="project_fittrack.html" class="nav-prev">
+                <a href="project_kansa.html" class="nav-prev">
                     <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
-                    <span class="nav-project-title">Fittrack Companion App</span>
+                    <span class="nav-project-title">Kansa Organic Skincare</span>
                 </a>
-                <a href="project_kimirica.html" class="nav-next">
+                <a href="project_bigul_apiconnect.html" class="nav-next">
                     <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
-                    <span class="nav-project-title">Kimirica Checkout Funnel</span>
+                    <span class="nav-project-title">Bigul API Connect</span>
                 </a>
             </div>
 
@@ -516,46 +538,82 @@
         <img id="lightboxImg" src="" alt="Full size preview" class="lightbox-img">
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <a href="#" class="nav-logo">Aditya<span class="logo-dot">.</span></a>
-                <p>Creating impact-driven user experiences since 2020.</p>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="work.html">Work</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-socials">
-                <h3>Social Connect</h3>
-                <div class="social-icons">
-                    <a href="mailto:nandaneas1595@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-                    <a href="#" class="social-icon" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
-                    <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Back to Top Button -->
-        <div class="back-to-top-container">
-            <button id="backToTop" class="back-to-top-btn" aria-label="Back to Top">
-                <i class="fa-solid fa-arrow-up"></i> Back to Top
-            </button>
+        <!-- Footer -->
+    <footer class="footer-premium" id="siteFooter">
+        <div class="footer-bg" aria-hidden="true">
+            <div class="footer-aurora"></div>
+            <div class="footer-blob footer-blob-a"></div>
+            <div class="footer-blob footer-blob-b"></div>
+            <div class="footer-noise"></div>
+            <div class="footer-particles" id="footerParticles"></div>
+            <div class="footer-spotlight" id="footerSpotlight"></div>
         </div>
 
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; <span id="currentYear">2026</span> Aditya Nandane. All Rights Reserved. Made with <i class="fa-solid fa-heart text-accent"></i> and Code.</p>
+        <div class="container footer-inner">
+            <div class="footer-grid">
+                <!-- Column 1: Personal Brand -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="footer-logo">Aditya<span class="logo-dot">.</span></a>
+                    <p class="footer-tagline">Product Designer crafting intuitive digital products that solve complex problems and create measurable business impact.</p>
+                    <p class="footer-focus"><span>Fintech</span><span class="dot-sep" aria-hidden="true">•</span><span>SaaS</span><span class="dot-sep" aria-hidden="true">•</span><span>E-commerce</span></p>
+
+                    <div class="footer-availability">
+                        <span class="availability-dot"><span class="availability-ping"></span></span>
+                        Available for Product Design Opportunities
+                    </div>
+
+                    <div class="footer-cta-row">
+                        <a href="assets/Aditya_Nandane_Resume.pdf" download class="btn-footer btn-footer-primary magnetic">
+                            <span>Download Resume</span>
+                            <i class="fa-solid fa-arrow-down-to-line btn-footer-icon"></i>
+                        </a>
+                        <a href="index.html#contact" class="btn-footer btn-footer-secondary magnetic">
+                            <span>Let's Talk</span>
+                            <i class="fa-solid fa-arrow-right btn-footer-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <nav class="footer-col footer-col-nav" aria-label="Footer">
+                    <h4 class="footer-col-title">Navigate</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="about.html" class="footer-nav-link"><i class="fa-solid fa-user footer-nav-icon"></i><span>About</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="work.html" class="footer-nav-link"><i class="fa-solid fa-diagram-project footer-nav-icon"></i><span>Projects</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="work.html" class="footer-nav-link"><i class="fa-solid fa-book-open footer-nav-icon"></i><span>Case Studies</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="about.html#resume" class="footer-nav-link"><i class="fa-solid fa-briefcase footer-nav-icon"></i><span>Experience</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="assets/Aditya_Nandane_Resume.pdf" download class="footer-nav-link"><i class="fa-solid fa-file-pdf footer-nav-icon"></i><span>Resume</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="index.html#contact" class="footer-nav-link"><i class="fa-solid fa-envelope footer-nav-icon"></i><span>Contact</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                    </ul>
+                </nav>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-col footer-col-connect">
+                    <h4 class="footer-connect-title">Let's Build Something Meaningful</h4>
+                    <p class="footer-connect-desc">I'm always open to discussing product design, fintech, startups, or exciting product opportunities.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-icon magnetic" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:nandaneas1595@gmail.com" class="footer-social-icon magnetic" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider" aria-hidden="true"></div>
+
+            <div class="footer-backtotop-row">
+                <button id="backToTop" class="back-to-top-pill" aria-label="Back to top of page">
+                    <i class="fa-solid fa-arrow-up back-to-top-arrow" aria-hidden="true"></i>
+                    <span>Back to Top</span>
+                </button>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p class="footer-bottom-item footer-copyright">&copy; <span id="currentYear">2026</span> Aditya Nandane</p>
+                <p class="footer-bottom-item footer-crafted">Crafted with curiosity, precision, and purpose.</p>
+                <p class="footer-bottom-item footer-builtwith">Designed in Figma • Built with Code</p>
             </div>
         </div>
     </footer>

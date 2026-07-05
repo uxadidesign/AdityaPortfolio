@@ -1058,46 +1058,82 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-brand">
-                <a href="index.html" class="nav-logo">Aditya<span class="logo-dot">.</span></a>
-                <p>Creating impact-driven user experiences since 2020.</p>
-            </div>
-            
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="work.html">Work</a></li>
-                    <li><a href="about.html#resume">Resume</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-socials">
-                <h3>Social Connect</h3>
-                <div class="social-icons">
-                    <a href="mailto:nandaneas1595@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" class="social-icon" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
-                    <a href="#" class="social-icon" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
-                    <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Back to Top Button -->
-        <div class="back-to-top-container">
-            <button id="backToTop" class="back-to-top-btn" aria-label="Back to Top">
-                <i class="fa-solid fa-arrow-up"></i> Back to Top
-            </button>
+        <!-- Footer -->
+    <footer class="footer-premium" id="siteFooter">
+        <div class="footer-bg" aria-hidden="true">
+            <div class="footer-aurora"></div>
+            <div class="footer-blob footer-blob-a"></div>
+            <div class="footer-blob footer-blob-b"></div>
+            <div class="footer-noise"></div>
+            <div class="footer-particles" id="footerParticles"></div>
+            <div class="footer-spotlight" id="footerSpotlight"></div>
         </div>
 
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; <span id="currentYear">2026</span> Aditya Nandane. All Rights Reserved. Made with <i class="fa-solid fa-heart text-accent"></i> and Code.</p>
+        <div class="container footer-inner">
+            <div class="footer-grid">
+                <!-- Column 1: Personal Brand -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="footer-logo">Aditya<span class="logo-dot">.</span></a>
+                    <p class="footer-tagline">Product Designer crafting intuitive digital products that solve complex problems and create measurable business impact.</p>
+                    <p class="footer-focus"><span>Fintech</span><span class="dot-sep" aria-hidden="true">•</span><span>SaaS</span><span class="dot-sep" aria-hidden="true">•</span><span>E-commerce</span></p>
+
+                    <div class="footer-availability">
+                        <span class="availability-dot"><span class="availability-ping"></span></span>
+                        Available for Product Design Opportunities
+                    </div>
+
+                    <div class="footer-cta-row">
+                        <a href="assets/Aditya_Nandane_Resume.pdf" download class="btn-footer btn-footer-primary magnetic">
+                            <span>Download Resume</span>
+                            <i class="fa-solid fa-arrow-down-to-line btn-footer-icon"></i>
+                        </a>
+                        <a href="index.html#contact" class="btn-footer btn-footer-secondary magnetic">
+                            <span>Let's Talk</span>
+                            <i class="fa-solid fa-arrow-right btn-footer-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <nav class="footer-col footer-col-nav" aria-label="Footer">
+                    <h4 class="footer-col-title">Navigate</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="about.html" class="footer-nav-link"><i class="fa-solid fa-user footer-nav-icon"></i><span>About</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="work.html" class="footer-nav-link"><i class="fa-solid fa-diagram-project footer-nav-icon"></i><span>Projects</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="work.html" class="footer-nav-link"><i class="fa-solid fa-book-open footer-nav-icon"></i><span>Case Studies</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="about.html#resume" class="footer-nav-link"><i class="fa-solid fa-briefcase footer-nav-icon"></i><span>Experience</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="assets/Aditya_Nandane_Resume.pdf" download class="footer-nav-link"><i class="fa-solid fa-file-pdf footer-nav-icon"></i><span>Resume</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="index.html#contact" class="footer-nav-link"><i class="fa-solid fa-envelope footer-nav-icon"></i><span>Contact</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                    </ul>
+                </nav>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-col footer-col-connect">
+                    <h4 class="footer-connect-title">Let's Build Something Meaningful</h4>
+                    <p class="footer-connect-desc">I'm always open to discussing product design, fintech, startups, or exciting product opportunities.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-icon magnetic" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:nandaneas1595@gmail.com" class="footer-social-icon magnetic" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider" aria-hidden="true"></div>
+
+            <div class="footer-backtotop-row">
+                <button id="backToTop" class="back-to-top-pill" aria-label="Back to top of page">
+                    <i class="fa-solid fa-arrow-up back-to-top-arrow" aria-hidden="true"></i>
+                    <span>Back to Top</span>
+                </button>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p class="footer-bottom-item footer-copyright">&copy; <span id="currentYear">2026</span> Aditya Nandane</p>
+                <p class="footer-bottom-item footer-crafted">Crafted with curiosity, precision, and purpose.</p>
+                <p class="footer-bottom-item footer-builtwith">Designed in Figma • Built with Code</p>
             </div>
         </div>
     </footer>

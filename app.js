@@ -315,6 +315,119 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 350);
         });
     });
+
+    // --- Premium Footer Interactions ---
+    const footer = document.querySelector('.footer-premium');
+    if (footer) {
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Entrance reveal: fade/slide up the three columns once, staggered via CSS transition-delay
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    footer.classList.add('is-revealed');
+                    initFooterEffects(); // lazy-init decorative effects only once footer is actually in view
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.15 });
+        revealObserver.observe(footer);
+
+        let effectsInitialized = false;
+        function initFooterEffects() {
+            if (effectsInitialized) return;
+            effectsInitialized = true;
+
+            if (reducedMotion) return; // skip all decorative motion for reduced-motion users
+
+            spawnParticles();
+            setupSpotlight();
+            setupMagnetic();
+        }
+
+        // Floating particles (~5% opacity, slow drift), generated once and lazily
+        function spawnParticles() {
+            const field = document.getElementById('footerParticles');
+            if (!field) return;
+            const count = 14;
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('span');
+                p.className = 'footer-particle';
+                p.style.left = `${Math.random() * 100}%`;
+                p.style.top = `${Math.random() * 100}%`;
+                p.style.animationDuration = `${8 + Math.random() * 10}s`;
+                p.style.animationDelay = `${Math.random() * 6}s`;
+                field.appendChild(p);
+            }
+        }
+
+        // Cursor spotlight: soft radial glow follows the pointer within the footer
+        function setupSpotlight() {
+            const spotlight = document.getElementById('footerSpotlight');
+            if (!spotlight) return;
+            let ticking = false;
+            let lastX = 0.5, lastY = 0.3;
+
+            footer.addEventListener('mousemove', (e) => {
+                const rect = footer.getBoundingClientRect();
+                lastX = ((e.clientX - rect.left) / rect.width) * 100;
+                lastY = ((e.clientY - rect.top) / rect.height) * 100;
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        spotlight.style.setProperty('--spot-x', `${lastX}%`);
+                        spotlight.style.setProperty('--spot-y', `${lastY}%`);
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        }
+
+        // Magnetic hover: buttons/icons drift subtly toward the cursor within their own bounds
+        function setupMagnetic() {
+            const magnets = footer.querySelectorAll('.magnetic');
+            const strength = 0.25;
+            magnets.forEach(el => {
+                let ticking = false;
+                let offsetX = 0, offsetY = 0;
+
+                el.addEventListener('mousemove', (e) => {
+                    const rect = el.getBoundingClientRect();
+                    offsetX = (e.clientX - rect.left - rect.width / 2) * strength;
+                    offsetY = (e.clientY - rect.top - rect.height / 2) * strength;
+                    if (!ticking) {
+                        requestAnimationFrame(() => {
+                            el.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+                            ticking = false;
+                        });
+                        ticking = true;
+                    }
+                });
+
+                el.addEventListener('mouseleave', () => {
+                    el.style.transform = '';
+                });
+            });
+        }
+
+        // Ripple feedback on click for footer buttons and social icons
+        footer.querySelectorAll('.btn-footer, .back-to-top-pill, .footer-social-icon').forEach(el => {
+            el.style.position = el.style.position || 'relative';
+            el.style.overflow = 'hidden';
+            el.addEventListener('click', (e) => {
+                if (reducedMotion) return;
+                const rect = el.getBoundingClientRect();
+                const ripple = document.createElement('span');
+                const size = Math.max(rect.width, rect.height) * 1.4;
+                ripple.className = 'footer-ripple';
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+                ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+                el.appendChild(ripple);
+                ripple.addEventListener('animationend', () => ripple.remove());
+            });
+        });
+    }
 });
 
 

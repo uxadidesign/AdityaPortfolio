@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigul API Connect | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on designing Bigul API Connect, a self-serve developer console for trading API key management, usage monitoring, and secure key rotation.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+  <script type="module" crossorigin src="/app.js"></script>
+  <link rel="stylesheet" crossorigin href="/app.css">
+</head>
+<body class="dark-theme">
+    <!-- Decorative Glowing Background Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AN<span class="logo-dot">.</span></a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="work.html" class="nav-link active">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="about.html#resume" class="nav-link">Resume</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#contact" class="btn btn-nav-cta">Let's Connect</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Case Study Hero Section -->
+    <section class="cs-hero">
+        <div class="container">
+            <div class="cs-back-link">
+                <a href="work.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+            </div>
+
+            <div class="cs-hero-header">
+                <span class="cs-category-tag"><i class="fa-solid fa-plug"></i> Fintech • Developer Platform • Web Console</span>
+                <h1 class="cs-title">Bigul API Connect</h1>
+                <p class="cs-tagline">A self-serve developer console that replaced a manual, support-driven API key request process with transparent, secure self-service for algo-traders and third-party integrators.</p>
+            </div>
+
+            <div class="cs-hero-mockup-wrapper">
+                <img src="/ph-dashboard.svg" alt="Bigul API Connect developer console dashboard mockup" class="cs-hero-mockup main-lightbox-trigger">
+            </div>
+
+            <div class="cs-metadata-grid">
+                <div class="meta-item">
+                    <h5>Role</h5>
+                    <p>UI/UX Designer<br><span>(API Platform Ownership)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Duration</h5>
+                    <p>Feb 2025 - Apr 2025<br><span>(3 Month Sprint)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Team Size</h5>
+                    <p>5 cross-functional members<br><span>(1 PM, 3 Devs, 1 Security Engineer)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Key Results</h5>
+                    <p>−30% API Support Tickets<br><span>&lt; 2 min Self-Serve Key Setup</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Layout: Sticky Sidebar TOC + Scrollable Content -->
+    <div class="cs-layout-container container">
+        <aside class="cs-sidebar">
+            <div class="cs-toc-wrapper" id="tocWrapper">
+                <h4 class="toc-title">ON THIS PAGE</h4>
+                <ul class="toc-list">
+                    <li><a href="#overview" class="toc-link active">1. Overview & Context</a></li>
+                    <li><a href="#role" class="toc-link">2. My Role & Collaboration</a></li>
+                    <li><a href="#research" class="toc-link">3. Research & Discovery</a></li>
+                    <li><a href="#problem" class="toc-link">4. Problem Definition</a></li>
+                    <li><a href="#process" class="toc-link">5. Design Process</a></li>
+                    <li><a href="#visual" class="toc-link">6. Visual Design System</a></li>
+                    <li><a href="#hifi" class="toc-link">7. High-Fidelity Walkthrough</a></li>
+                    <li><a href="#strategy" class="toc-link">8. Product Strategy</a></li>
+                    <li><a href="#challenges" class="toc-link">9. Challenges & Solutions</a></li>
+                    <li><a href="#impact" class="toc-link">10. Business Impact</a></li>
+                    <li><a href="#tools" class="toc-link">11. Tools & Tech</a></li>
+                    <li><a href="#gallery" class="toc-link">12. Design Gallery</a></li>
+                    <li><a href="#learnings" class="toc-link">13. Key Learnings</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="cs-content">
+
+            <!-- 1. Overview & Context -->
+            <section id="overview" class="cs-section">
+                <h2>1. Project Overview</h2>
+                <div class="cs-section-body">
+                    <h3>Background & Business Context</h3>
+                    <p>
+                        As Bigul's retail trading base matured, a growing segment of power users wanted programmatic access to their own accounts — to build personal trading bots, connect third-party charting tools, or automate portfolio rebalancing. Every modern brokerage eventually faces this fork: keep trading data locked inside your own app, or open a controlled API layer and let a developer ecosystem grow around your platform.
+                    </p>
+                    <p>
+                        Bigul chose to open up, but the existing process for getting API access was entirely manual: a user emailed support, a backend engineer manually generated a key, and it was shared back over email with no audit trail, no scoping, and no way for the user to see how much of their rate limit they'd consumed until they hit a wall.
+                    </p>
+
+                    <div class="goal-box">
+                        <h4>Goals & Objectives:</h4>
+                        <ul>
+                            <li><strong>Replace manual key issuance</strong> with a self-serve console requiring no support intervention.</li>
+                            <li><strong>Make permissions explicit</strong> so users only grant the access their integration actually needs.</li>
+                            <li><strong>Give developers real-time visibility</strong> into usage and rate limits before they get throttled.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Target Audience</h3>
+                    <p>Two distinct developer segments used this console very differently:</p>
+                    <div class="audience-grid">
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-user-astronaut"></i></span>
+                            <h5>Retail Power Users (72%)</h5>
+                            <p>Hobbyist coders building personal trading bots or connecting to charting tools like Amibroker. Comfortable with APIs but not security specialists.</p>
+                        </div>
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-building"></i></span>
+                            <h5>Integration Partners (28%)</h5>
+                            <p>Small fintech teams building products on top of Bigul's infrastructure, needing higher rate limits, webhook support, and audit-grade logging.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. My Role & Collaboration -->
+            <section id="role" class="cs-section">
+                <h2>2. My Role & Collaboration</h2>
+                <div class="cs-section-body">
+                    <p>
+                        I owned the end-to-end UX for the console — from the security model's user-facing implications through to the final visual design of every screen state.
+                    </p>
+                    <p>This was the most security-sensitive interface I'd designed at Bigul, so collaboration was tighter than usual:</p>
+                    <ul class="collab-list">
+                        <li><strong>Security Engineering:</strong> Translating key-scoping, encryption-at-rest, and audit-log requirements into a permission model regular developers could actually understand without reading documentation first.</li>
+                        <li><strong>Backend Team:</strong> Aligning on what rate-limit data could be surfaced in real time versus what would require polling, which directly shaped the usage dashboard's refresh design.</li>
+                        <li><strong>Product Management:</strong> Positioning API access as a future monetizable platform tier, which meant designing the free tier's constraints to feel like a fair starting point, not an artificial limitation.</li>
+                        <li><strong>Developer Relations:</strong> Making sure every UI label matched the terminology already used in the public API documentation, so users never had to mentally translate between the console and the docs.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 3. Research & Discovery -->
+            <section id="research" class="cs-section">
+                <h2>3. Research & Discovery</h2>
+                <div class="cs-section-body">
+                    <p>
+                        I audited how established brokers (Zerodha's Kite Connect, Alpaca, Interactive Brokers) present API access, and ran short remote interviews with five active Bigul users who had previously emailed support requesting API keys.
+                    </p>
+
+                    <h3>Competitive Benchmarking</h3>
+                    <table class="research-table">
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Key Issuance Time</th>
+                                <th>Usage Visibility</th>
+                                <th>Self-Serve Revoke</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Legacy Broker A</td>
+                                <td>3-5 business days (email)</td>
+                                <td>None</td>
+                                <td>No (support only)</td>
+                            </tr>
+                            <tr>
+                                <td>Modern API-First Broker B</td>
+                                <td>Instant (self-serve)</td>
+                                <td>Real-time dashboard</td>
+                                <td>Yes, one click</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong>Bigul (Pre-redesign)</strong></td>
+                                <td>2-5 business days (email)</td>
+                                <td>None</td>
+                                <td>No (support only)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>User Persona & Key Pain Points</h3>
+                    <p>
+                        Meet <strong>Priya</strong>, a 29-year-old data analyst who builds trading bots on weekends. She represents our largest API user segment:
+                    </p>
+                    <div class="pain-points-grid">
+                        <div class="pain-card">
+                            <span class="pain-num">01</span>
+                            <h5>The Multi-Day Wait</h5>
+                            <p>Priya would email support for a key and wait days, often losing momentum on a weekend side project by the time access finally arrived.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">02</span>
+                            <h5>Invisible Rate Limits</h5>
+                            <p>Her bot would silently start failing when she hit an undocumented rate limit, with no dashboard telling her how close she was until it broke.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">03</span>
+                            <h5>All-or-Nothing Access</h5>
+                            <p>The one key she received had full trading permissions, even though her bot only needed to read market data — a real security exposure she was uncomfortable with.</p>
+                        </div>
+                    </div>
+
+                    <div class="strategy-tip">
+                        <h5><i class="fa-solid fa-brain"></i> Product Thinking Insight:</h5>
+                        <p>The support tickets weren't really about access speed — they were a symptom of a missing self-service layer. Every ticket represented a developer who was ready to build immediately, but the platform had no path for that except a human in the loop.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Problem Definition -->
+            <section id="problem" class="cs-section">
+                <h2>4. Problem Definition</h2>
+                <div class="cs-section-body">
+                    <h3>The Challenges & Constraints</h3>
+                    <p>
+                        Security and compliance requirements were non-negotiable: keys had to be encrypted at rest, every generation and revocation event needed an immutable audit log entry, and 2FA had to gate any key-generation action. The challenge was building a self-serve flow around those constraints without making it feel like a bureaucratic obstacle course.
+                    </p>
+
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <span class="kpi-metric">-30%</span>
+                            <span class="kpi-lbl">Support ticket target</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">&lt; 2 min</span>
+                            <span class="kpi-lbl">Self-serve setup goal</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">100%</span>
+                            <span class="kpi-lbl">Audit trail coverage</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Design Process -->
+            <section id="process" class="cs-section">
+                <h2>5. Design Process</h2>
+                <div class="cs-section-body">
+                    <p>
+                        I mapped the full lifecycle of a key — generation, scoping, active use, and rotation or revocation — before drawing a single screen, since a security-sensitive flow needed the state model settled first.
+                    </p>
+
+                    <div class="process-img-wrapper">
+                        <img src="/ph-flow.svg" alt="Bigul API Connect key lifecycle user flow diagram" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 1. Key lifecycle flow from generation through scoping, monitoring, and rotation.</span>
+                    </div>
+
+                    <h3>From Low-Fidelity Wireframes to Iterations</h3>
+                    <p>
+                        The first wireframe presented every available permission scope with a single "Select All" checkbox at the top. In testing, six of eight participants clicked "Select All" by default — the opposite of least-privilege access we needed to encourage.
+                    </p>
+
+                    <div class="process-img-wrapper">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYyMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjIwIj4KICA8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MjAiIGZpbGw9IiMwZjEyMWUiLz4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRiNTU2OCIgc3Ryb2tlLXdpZHRoPSIxLjUiPgogICAgPCEtLSB0aHJlZSBsb3ctZmkgcGhvbmUgZnJhbWVzIC0tPgogICAgPHJlY3QgeD0iNjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiM1QjdDRkYiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSI5MiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNiIgcng9IjMiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIxMjAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI4OCIgeT0iMTUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjkwIiByeD0iNiIvPgogICAgPGxpbmUgeDE9Ijg4IiB5MT0iMTUwIiB4Mj0iMjUyIiB5Mj0iMjQwIi8+CiAgICA8bGluZSB4MT0iMjUyIiB5MT0iMTUwIiB4Mj0iODgiIHkyPSIyNDAiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIyNTYiIHdpZHRoPSIxNjQiIGhlaWdodD0iMzAiIHJ4PSIxNSIvPgogICAgPHJlY3QgeD0iODgiIHk9IjMwMCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI1MCIgcng9IjYiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIzNjQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNTAiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSI4OCIgeT0iNDI4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjUwIiByeD0iNiIvPgoKICAgIDxyZWN0IHg9IjM0MCIgeT0iNjAiIHdpZHRoPSIyMjAiIGhlaWdodD0iNDgwIiByeD0iMTgiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLW9wYWNpdHk9IjAuNiIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSI5MiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjE2IiByeD0iMyIvPgogICAgPGNpcmNsZSBjeD0iNTAwIiBjeT0iMTAwIiByPSIxMCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIxMzAiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTIwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIyNjQiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjQ1MiIgeT0iMjY0IiB3aWR0aD0iNzYiIGhlaWdodD0iNzYiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSIzNjgiIHk9IjM1MiIgd2lkdGg9Ijc2IiBoZWlnaHQ9Ijc2IiByeD0iNiIvPgogICAgPHJlY3QgeD0iNDUyIiB5PSIzNTIiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjM2OCIgeT0iNDUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjM0IiByeD0iMTciLz4KCiAgICA8cmVjdCB4PSI2MjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iOTIiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTYiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjEyMiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNTAiIHJ4PSI2Ii8+CiAgICA8cGF0aCBkPSJNNjQ4IDE5NyBsMzAgLTM0IGwyNiAyMCBsNDAgLTQ2IGw2OCA2MCIgLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMjg4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjEyIiByeD0iMyIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSIzMTAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjM0MCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI0MCIgcng9IjgiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMzkyIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjQwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSI0NDQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNDAiIHJ4PSI4Ii8+CiAgPC9nPgogIDwhLS0gYW5ub3RhdGlvbiBjYWxsb3V0cyAtLT4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM2YjcyODAiPgogICAgPGNpcmNsZSBjeD0iNjAiIGN5PSI1NjAiIHI9IjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCN0NGRiIvPgogICAgPHRleHQgeD0iNjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVCN0NGRiIgZm9udC1zaXplPSIxMCI+QTwvdGV4dD4KICAgIDx0ZXh0IHg9IjgwIiB5PSI1NjQiPlN0ZXAtYnktc3RlcCB3aXphcmQ8L3RleHQ+CgogICAgPGNpcmNsZSBjeD0iMzQwIiBjeT0iNTYwIiByPSI5IiBmaWxsPSJub25lIiBzdHJva2U9IiM5Y2EzYWYiLz4KICAgIDx0ZXh0IHg9IjM0MCIgeT0iNTY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOWNhM2FmIiBmb250LXNpemU9IjEwIj5CPC90ZXh0PgogICAgPHRleHQgeD0iMzYwIiB5PSI1NjQiPkdyaWQtYmFzZWQgc2VsZWN0aW9uPC90ZXh0PgoKICAgIDxjaXJjbGUgY3g9IjYyMCIgY3k9IjU2MCIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTBiOTgxIi8+CiAgICA8dGV4dCB4PSI2MjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzEwYjk4MSIgZm9udC1zaXplPSIxMCI+QzwvdGV4dD4KICAgIDx0ZXh0IHg9IjY0MCIgeT0iNTY0Ij5TdW1tYXJ5ICsgY29uZmlybWF0aW9uPC90ZXh0PgogIDwvZz4KICA8dGV4dCB4PSIxMDUwIiB5PSIzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgbGV0dGVyLXNwYWNpbmc9IjEuNSIgZmlsbD0iIzVCN0NGRiIgb3BhY2l0eT0iMC43IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCAxMDUwIDMwMCkiPldJUkVGUkFNRSBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Bigul API Connect scope selection wireframe iterations" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 2. Wireframe iteration removing the "Select All" shortcut in favor of risk-tiered, individually confirmed scopes.</span>
+                    </div>
+
+                    <div class="rationale-box">
+                        <h5>Design Rationale:</h5>
+                        <p><strong>Removing the shortcut:</strong> We removed "Select All" entirely and grouped scopes into risk tiers (Read-Only, Order Placement, Fund Movement), requiring an extra tap to expand and confirm the higher-risk tiers. Setup took slightly longer, but over-permissioned keys dropped sharply in the beta.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Visual Design System -->
+            <section id="visual" class="cs-section">
+                <h2>6. Visual Design System</h2>
+                <div class="cs-section-body">
+                    <p>
+                        API Connect extended Bigul's existing <strong>Apex</strong> design system with a "developer console" density mode, rather than inventing a new visual language from scratch.
+                    </p>
+
+                    <div class="process-img-wrapper">
+                        <img src="/ph-designsystem.svg" alt="Bigul API Connect design system extension for developer console patterns" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 3. Apex extension covering monospace key display, scope-tier chips, and status indicators.</span>
+                    </div>
+
+                    <h3>Design Tokens Overview</h3>
+                    <div class="tokens-grid">
+                        <div class="token-card">
+                            <h6>Typography</h6>
+                            <p><strong>JetBrains Mono</strong> for key values and code snippets so characters like "0", "O", "1", and "l" are always visually distinct.</p>
+                        </div>
+                        <div class="token-card">
+                            <h6>Status Color Coding</h6>
+                            <p>Active (emerald), Expiring within 7 days (amber), Revoked (muted grey) — each paired with an icon, never color alone.</p>
+                        </div>
+                        <div class="token-card">
+                            <h6>Risk-Tier Chips</h6>
+                            <p>Read-only scopes use a calm blue chip; fund-movement scopes use a warning-red outline to visually flag higher-stakes permissions.</p>
+                        </div>
+                    </div>
+
+                    <div class="accessibility-checklist">
+                        <h4>WCAG 2.1 Accessibility Considerations:</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Copy Actions:</strong> Every key or token value ships with a labeled "Copy" button, so keyboard and screen-reader users never depend on a manual select gesture.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Status Independence:</strong> Key status is always conveyed with a text label and icon, never color alone, so color-blind developers can read state at a glance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. High-Fidelity Walkthrough -->
+            <section id="hifi" class="cs-section">
+                <h2>7. High-Fidelity Walkthrough</h2>
+                <div class="cs-section-body">
+                    <div class="hifi-feature">
+                        <h4>The Scoped Key Generator</h4>
+                        <p>
+                            Instead of a blanket access toggle, users build a key by explicitly opting into individual capabilities — read positions, place orders, cancel orders — each shown with a one-line explanation of what it allows.
+                        </p>
+                        <p>
+                            <strong>The Solution:</strong> A risk-tiered accordion where read-only scopes are visible by default and higher-risk scopes require an explicit expand-and-confirm step, keeping the safest option the path of least resistance.
+                        </p>
+                    </div>
+
+                    <div class="hifi-feature">
+                        <h4>Live Usage Dashboard</h4>
+                        <p>
+                            Developers previously had no idea how close they were to a rate limit until their integration broke. We built a real-time consumption bar tied to each key.
+                        </p>
+                        <p>
+                            <strong>The Solution:</strong> A simple horizontal usage meter with a proactive warning state at 80% of quota, plus a one-tap request for a temporary limit increase — turning a silent failure into a visible, actionable signal.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Product Strategy -->
+            <section id="strategy" class="cs-section">
+                <h2>8. Product Strategy & Trade-offs</h2>
+                <div class="cs-section-body">
+                    <p>
+                        Opening a trading API means constantly weighing developer convenience against platform risk. A few trade-offs defined this project.
+                    </p>
+
+                    <div class="tradeoff-card">
+                        <h5>Convenience vs. Security Default</h5>
+                        <p><strong>The Conflict:</strong> Developers wanted long-lived keys with broad access so they wouldn't have to reconfigure their bots often. Security wanted short-lived, narrowly scoped keys as the default.</p>
+                        <p><strong>The Strategy:</strong> Keys default to a 90-day expiry with the minimum scopes the user selects, but power users can extend expiry through an additional 2FA step. Convenience is available on request — it is never the silent default.</p>
+                    </div>
+
+                    <div class="roadmap-box">
+                        <h4>MVP Phase vs Future Roadmap</h4>
+                        <p>The MVP shipped scoped key generation and the live usage dashboard. The roadmap includes webhook event subscriptions for order-fill notifications and a sandbox environment so developers can test integrations against fake market data before going live.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Challenges & Solutions -->
+            <section id="challenges" class="cs-section">
+                <h2>9. Challenges & Solutions</h2>
+                <div class="cs-section-body">
+                    <div class="challenge-item">
+                        <h5>Challenge: Beta users kept regenerating lost keys</h5>
+                        <p><strong>The Problem:</strong> Following security best practice, we showed each new key's secret exactly once and never again. Beta testers who lost that value were regenerating keys constantly — creating the very support burden we set out to eliminate.</p>
+                        <p><strong>Design Iteration:</strong> We added a clearly labeled reminder step encouraging developers to store the key in their own secrets manager during the one-time reveal, plus a prominent one-click "Rotate Key" action so a lost key became a 10-second fix instead of a support ticket.</p>
+                        <p><strong>The Result:</strong> Key-loss-related support contact dropped sharply within the first month of the beta.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. Business Impact -->
+            <section id="impact" class="cs-section">
+                <h2>10. Impact & Results</h2>
+                <div class="cs-section-body">
+                    <p>The redesigned console delivered measurable gains within the first quarter of launch:</p>
+
+                    <div class="impact-metrics-row">
+                        <div class="metric-circle">
+                            <span class="m-val">-30%</span>
+                            <span class="m-lbl">API Support Tickets</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">&lt; 2 min</span>
+                            <span class="m-lbl">Key Setup Time</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">100%</span>
+                            <span class="m-lbl">Audit Trail Coverage</span>
+                        </div>
+                    </div>
+
+                    <div class="comparison-block">
+                        <h4>Before vs. After Comparison</h4>
+                        <div class="comparison-grid">
+                            <div class="comp-card before">
+                                <h5>Previous Experience</h5>
+                                <ul>
+                                    <li>2-5 day manual key issuance via email</li>
+                                    <li>Full-access keys with no scoping</li>
+                                    <li>No usage or rate-limit visibility</li>
+                                    <li>Revocation required a support ticket</li>
+                                </ul>
+                            </div>
+                            <div class="comp-card after">
+                                <h5>Redesigned Experience</h5>
+                                <ul>
+                                    <li>Under 2 minutes, fully self-serve</li>
+                                    <li>Explicit, risk-tiered scoped permissions</li>
+                                    <li>Real-time usage dashboard with alerts</li>
+                                    <li>One-click rotate and revoke</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. Tools & Tech -->
+            <section id="tools" class="cs-section">
+                <h2>11. Tools & Tech</h2>
+                <div class="cs-section-body">
+                    <div class="tools-flex">
+                        <div class="tool-item-box"><i class="fa-brands fa-figma"></i> Figma</div>
+                        <div class="tool-item-box">FigJam</div>
+                        <div class="tool-item-box">Miro</div>
+                        <div class="tool-item-box">Postman</div>
+                        <div class="tool-item-box">Notion</div>
+                        <div class="tool-item-box">Jira</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. Design Gallery -->
+            <section id="gallery" class="cs-section">
+                <h2>12. Design Gallery</h2>
+                <div class="cs-section-body">
+                    <p>Click on any of the screens to open a full-resolution interactive lightbox preview.</p>
+                    <div class="cs-gallery-grid">
+                        <div class="gallery-card">
+                            <img src="/ph-dashboard.svg" alt="API key management screen" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="/ph-flow.svg" alt="Key lifecycle flow diagram" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYyMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjIwIj4KICA8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MjAiIGZpbGw9IiMwZjEyMWUiLz4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRiNTU2OCIgc3Ryb2tlLXdpZHRoPSIxLjUiPgogICAgPCEtLSB0aHJlZSBsb3ctZmkgcGhvbmUgZnJhbWVzIC0tPgogICAgPHJlY3QgeD0iNjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiM1QjdDRkYiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSI5MiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNiIgcng9IjMiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIxMjAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI4OCIgeT0iMTUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjkwIiByeD0iNiIvPgogICAgPGxpbmUgeDE9Ijg4IiB5MT0iMTUwIiB4Mj0iMjUyIiB5Mj0iMjQwIi8+CiAgICA8bGluZSB4MT0iMjUyIiB5MT0iMTUwIiB4Mj0iODgiIHkyPSIyNDAiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIyNTYiIHdpZHRoPSIxNjQiIGhlaWdodD0iMzAiIHJ4PSIxNSIvPgogICAgPHJlY3QgeD0iODgiIHk9IjMwMCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI1MCIgcng9IjYiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIzNjQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNTAiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSI4OCIgeT0iNDI4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjUwIiByeD0iNiIvPgoKICAgIDxyZWN0IHg9IjM0MCIgeT0iNjAiIHdpZHRoPSIyMjAiIGhlaWdodD0iNDgwIiByeD0iMTgiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLW9wYWNpdHk9IjAuNiIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSI5MiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjE2IiByeD0iMyIvPgogICAgPGNpcmNsZSBjeD0iNTAwIiBjeT0iMTAwIiByPSIxMCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIxMzAiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTIwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIyNjQiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjQ1MiIgeT0iMjY0IiB3aWR0aD0iNzYiIGhlaWdodD0iNzYiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSIzNjgiIHk9IjM1MiIgd2lkdGg9Ijc2IiBoZWlnaHQ9Ijc2IiByeD0iNiIvPgogICAgPHJlY3QgeD0iNDUyIiB5PSIzNTIiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjM2OCIgeT0iNDUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjM0IiByeD0iMTciLz4KCiAgICA8cmVjdCB4PSI2MjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iOTIiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTYiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjEyMiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNTAiIHJ4PSI2Ii8+CiAgICA8cGF0aCBkPSJNNjQ4IDE5NyBsMzAgLTM0IGwyNiAyMCBsNDAgLTQ2IGw2OCA2MCIgLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMjg4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjEyIiByeD0iMyIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSIzMTAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjM0MCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI0MCIgcng9IjgiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMzkyIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjQwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSI0NDQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNDAiIHJ4PSI4Ii8+CiAgPC9nPgogIDwhLS0gYW5ub3RhdGlvbiBjYWxsb3V0cyAtLT4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM2YjcyODAiPgogICAgPGNpcmNsZSBjeD0iNjAiIGN5PSI1NjAiIHI9IjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCN0NGRiIvPgogICAgPHRleHQgeD0iNjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVCN0NGRiIgZm9udC1zaXplPSIxMCI+QTwvdGV4dD4KICAgIDx0ZXh0IHg9IjgwIiB5PSI1NjQiPlN0ZXAtYnktc3RlcCB3aXphcmQ8L3RleHQ+CgogICAgPGNpcmNsZSBjeD0iMzQwIiBjeT0iNTYwIiByPSI5IiBmaWxsPSJub25lIiBzdHJva2U9IiM5Y2EzYWYiLz4KICAgIDx0ZXh0IHg9IjM0MCIgeT0iNTY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOWNhM2FmIiBmb250LXNpemU9IjEwIj5CPC90ZXh0PgogICAgPHRleHQgeD0iMzYwIiB5PSI1NjQiPkdyaWQtYmFzZWQgc2VsZWN0aW9uPC90ZXh0PgoKICAgIDxjaXJjbGUgY3g9IjYyMCIgY3k9IjU2MCIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTBiOTgxIi8+CiAgICA8dGV4dCB4PSI2MjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzEwYjk4MSIgZm9udC1zaXplPSIxMCI+QzwvdGV4dD4KICAgIDx0ZXh0IHg9IjY0MCIgeT0iNTY0Ij5TdW1tYXJ5ICsgY29uZmlybWF0aW9uPC90ZXh0PgogIDwvZz4KICA8dGV4dCB4PSIxMDUwIiB5PSIzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgbGV0dGVyLXNwYWNpbmc9IjEuNSIgZmlsbD0iIzVCN0NGRiIgb3BhY2l0eT0iMC43IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCAxMDUwIDMwMCkiPldJUkVGUkFNRSBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Scope selection wireframes" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="/ph-designsystem.svg" alt="Developer console design system" class="gallery-img main-lightbox-trigger">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 13. Key Learnings -->
+            <section id="learnings" class="cs-section">
+                <h2>13. Key Learnings</h2>
+                <div class="cs-section-body">
+                    <p>Designing for developers instead of retail investors shifted a few of my assumptions about what "simple" actually means.</p>
+                    <div class="pain-points-grid">
+                        <div class="pain-card">
+                            <span class="pain-num">01</span>
+                            <h5>The safest default must also be the easiest one</h5>
+                            <p>Removing "Select All" wasn't about restricting users — it was about making the secure choice the path of least resistance, instead of relying on people to opt into safety.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">02</span>
+                            <h5>Design for the fear of losing access, not just gaining it</h5>
+                            <p>The one-click rotate action solved more support tickets than any onboarding tooltip could, because it addressed what users were actually anxious about: being locked out.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">03</span>
+                            <h5>Developer tools still need visual hierarchy</h5>
+                            <p>Treating a console as "just data" is a mistake — status color coding and risk-tier chips did as much work here as any consumer-facing onboarding screen.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Project Navigation Section -->
+            <div class="cs-project-nav" id="navigation">
+                <a href="project_bigul.html" class="nav-prev">
+                    <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
+                    <span class="nav-project-title">Bigul Trading App</span>
+                </a>
+                <a href="project_bigul_kyc.html" class="nav-next">
+                    <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="nav-project-title">Bigul KYC Enhancement</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightboxOverlay" class="lightbox-overlay hidden" aria-hidden="true" role="dialog">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Preview">&times;</button>
+        <img id="lightboxImg" src="" alt="Full size preview" class="lightbox-img">
+    </div>
+
+        <!-- Footer -->
+    <footer class="footer-premium" id="siteFooter">
+        <div class="footer-bg" aria-hidden="true">
+            <div class="footer-aurora"></div>
+            <div class="footer-blob footer-blob-a"></div>
+            <div class="footer-blob footer-blob-b"></div>
+            <div class="footer-noise"></div>
+            <div class="footer-particles" id="footerParticles"></div>
+            <div class="footer-spotlight" id="footerSpotlight"></div>
+        </div>
+
+        <div class="container footer-inner">
+            <div class="footer-grid">
+                <!-- Column 1: Personal Brand -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="footer-logo">Aditya<span class="logo-dot">.</span></a>
+                    <p class="footer-tagline">Product Designer crafting intuitive digital products that solve complex problems and create measurable business impact.</p>
+                    <p class="footer-focus"><span>Fintech</span><span class="dot-sep" aria-hidden="true">•</span><span>SaaS</span><span class="dot-sep" aria-hidden="true">•</span><span>E-commerce</span></p>
+
+                    <div class="footer-availability">
+                        <span class="availability-dot"><span class="availability-ping"></span></span>
+                        Available for Product Design Opportunities
+                    </div>
+
+                    <div class="footer-cta-row">
+                        <a href="assets/Aditya_Nandane_Resume.pdf" download class="btn-footer btn-footer-primary magnetic">
+                            <span>Download Resume</span>
+                            <i class="fa-solid fa-arrow-down-to-line btn-footer-icon"></i>
+                        </a>
+                        <a href="index.html#contact" class="btn-footer btn-footer-secondary magnetic">
+                            <span>Let's Talk</span>
+                            <i class="fa-solid fa-arrow-right btn-footer-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <nav class="footer-col footer-col-nav" aria-label="Footer">
+                    <h4 class="footer-col-title">Navigate</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="about.html" class="footer-nav-link"><i class="fa-solid fa-user footer-nav-icon"></i><span>About</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="work.html" class="footer-nav-link"><i class="fa-solid fa-diagram-project footer-nav-icon"></i><span>Projects</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="work.html" class="footer-nav-link"><i class="fa-solid fa-book-open footer-nav-icon"></i><span>Case Studies</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="about.html#resume" class="footer-nav-link"><i class="fa-solid fa-briefcase footer-nav-icon"></i><span>Experience</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="assets/Aditya_Nandane_Resume.pdf" download class="footer-nav-link"><i class="fa-solid fa-file-pdf footer-nav-icon"></i><span>Resume</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="index.html#contact" class="footer-nav-link"><i class="fa-solid fa-envelope footer-nav-icon"></i><span>Contact</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                    </ul>
+                </nav>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-col footer-col-connect">
+                    <h4 class="footer-connect-title">Let's Build Something Meaningful</h4>
+                    <p class="footer-connect-desc">I'm always open to discussing product design, fintech, startups, or exciting product opportunities.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-icon magnetic" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:nandaneas1595@gmail.com" class="footer-social-icon magnetic" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider" aria-hidden="true"></div>
+
+            <div class="footer-backtotop-row">
+                <button id="backToTop" class="back-to-top-pill" aria-label="Back to top of page">
+                    <i class="fa-solid fa-arrow-up back-to-top-arrow" aria-hidden="true"></i>
+                    <span>Back to Top</span>
+                </button>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p class="footer-bottom-item footer-copyright">&copy; <span id="currentYear">2026</span> Aditya Nandane</p>
+                <p class="footer-bottom-item footer-crafted">Crafted with curiosity, precision, and purpose.</p>
+                <p class="footer-bottom-item footer-builtwith">Designed in Figma • Built with Code</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+</body>
+</html>

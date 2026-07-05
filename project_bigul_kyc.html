@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kimirica Website | UI/UX Case Study</title>
-    <meta name="description" content="Detailed UI/UX Case Study on redesigning the Kimirica Website checkout funnel and discovery experience, driving conversion rates and reducing cart abandonment.">
+    <title>Bigul KYC Enhancement | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on rebuilding Bigul's regulatory KYC onboarding flow with camera-guided capture, video verification, and plain-language rejection handling.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,18 +15,13 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-theme">
-    <!-- Decorative Glowing Background Orbs -->
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
 
-    <!-- Header Navigation -->
     <header class="navbar" id="navbar">
         <div class="nav-container">
-            <!-- Personal monogram logo -->
             <a href="index.html" class="nav-logo">AN<span class="logo-dot">.</span></a>
-            
-            <!-- Center navigation menu items -->
             <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="index.html" class="nav-link">Home</a></li>
@@ -35,12 +30,8 @@
                     <li><a href="about.html#resume" class="nav-link">Resume</a></li>
                 </ul>
             </nav>
-
-            <!-- Right nav actions: CTA + Mobile Hamburger -->
             <div class="nav-actions">
                 <a href="index.html#contact" class="btn btn-nav-cta">Let's Connect</a>
-                
-
                 <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -50,47 +41,44 @@
         </div>
     </header>
 
-    <!-- Case Study Hero Section -->
     <section class="cs-hero">
         <div class="container">
             <div class="cs-back-link">
                 <a href="work.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
             </div>
-            
+
             <div class="cs-hero-header">
-                <span class="cs-category-tag"><i class="fa-solid fa-cart-shopping"></i> E-commerce • Growth UX & D2C</span>
-                <h1 class="cs-title">Kimirica Website</h1>
-                <p class="cs-tagline">Rebuilding the shopping cart, shipping validation, and payment checkout for a premium D2C cosmetics storefront — removing the friction points causing the highest drop-off.</p>
+                <span class="cs-category-tag"><i class="fa-solid fa-id-card"></i> Fintech • Compliance UX • Mobile App</span>
+                <h1 class="cs-title">Bigul KYC Enhancement</h1>
+                <p class="cs-tagline">A focused rebuild of Bigul's mandatory regulatory onboarding — replacing a document-heavy, jargon-filled process with camera-guided capture and plain-language rejection handling.</p>
             </div>
-            
+
             <div class="cs-hero-mockup-wrapper">
-                <img src="assets/kimirica_ecommerce.jpg" alt="Kimirica E-commerce Mobile Shop UI Layout mockup" class="cs-hero-mockup main-lightbox-trigger">
+                <img src="assets/placeholders/ph-mobile.svg" alt="Bigul KYC Enhancement onboarding flow mockup" class="cs-hero-mockup main-lightbox-trigger">
             </div>
-            
+
             <div class="cs-metadata-grid">
                 <div class="meta-item">
                     <h5>Role</h5>
-                    <p>UI/UX Designer<br><span>(Checkout & Discovery Ownership)</span></p>
+                    <p>UI/UX Designer<br><span>(Compliance UX Ownership)</span></p>
                 </div>
                 <div class="meta-item">
                     <h5>Duration</h5>
-                    <p>Jul 2022 - Apr 2024<br><span>(22 Months Duration)</span></p>
+                    <p>Dec 2024 - Feb 2025<br><span>(3 Month Sprint)</span></p>
                 </div>
                 <div class="meta-item">
                     <h5>Team Size</h5>
-                    <p>6 cross-functional members<br><span>(1 PM, 3 Devs, 1 QA, 1 Designer)</span></p>
+                    <p>6 cross-functional members<br><span>(1 PM, 3 Devs, 1 Compliance Officer, 1 UX)</span></p>
                 </div>
                 <div class="meta-item">
                     <h5>Key Results</h5>
-                    <p>+15-22% Conversion Lift<br><span>+18-22% Checkout Completion</span></p>
+                    <p>+22% KYC Completion<br><span>Rejections 15% → 2.4%</span></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Split Layout: Sticky Sidebar TOC + Scrollable Content -->
     <div class="cs-layout-container container">
-        <!-- Sticky Sidebar Table of Contents -->
         <aside class="cs-sidebar">
             <div class="cs-toc-wrapper" id="tocWrapper">
                 <h4 class="toc-title">ON THIS PAGE</h4>
@@ -112,44 +100,41 @@
             </div>
         </aside>
 
-        <!-- Main Scrollable Content Column -->
         <main class="cs-content">
-            
+
             <!-- 1. Overview & Context -->
             <section id="overview" class="cs-section">
                 <h2>1. Project Overview</h2>
                 <div class="cs-section-body">
                     <h3>Background & Business Context</h3>
                     <p>
-                        Kimirica Lifestyle is a premium D2C e-commerce platform specializing in luxury bath, body, and wellness products. E-commerce success is determined by micro-conversions in the shopping cart: a fraction of a percent difference in cart abandonments translates directly into millions of dollars in annual revenue.
+                        Every Indian brokerage is bound by SEBI's KYC regulations — PAN verification, address proof, bank account linking, a signature, and increasingly, video-based in-person verification (V-CIP). None of these steps are negotiable. What's negotiable is how much friction, confusion, and anxiety a user experiences while completing them.
                     </p>
                     <p>
-                        Before our checkout optimization project, Kimirica suffered from a high **68% cart abandonment rate**. Analytics indicated that users were adding items to their cart but dropping out immediately when faced with shipping charge surprises, mandatory account registrations, and slow loading forms.
+                        Within the broader Bigul Trading App redesign, KYC consistently surfaced as the single biggest drop-off point — worth pulling out as its own dedicated initiative rather than a line item inside a larger release, precisely because compliance requirements meant we couldn't simply remove steps to fix it.
                     </p>
-                    
+
                     <div class="goal-box">
                         <h4>Goals & Objectives:</h4>
                         <ul>
-                            <li><strong>Increase overall platform conversion rate</strong> by 12% to 18% through user discovery improvements.</li>
-                            <li><strong>Accelerate checkout flow completion time</strong> by 20% by introducing guest checkout.</li>
-                            <li><strong>Minimize cart drop-offs</strong> by revealing shipping fees early in the user journey.</li>
+                            <li><strong>Reduce document-related abandonment</strong> by making capture foolproof on the first attempt.</li>
+                            <li><strong>Cut manual rejection rates</strong> caused by illegible signatures and blurry uploads.</li>
+                            <li><strong>Replace compliance jargon</strong> with plain-language explanations at every step.</li>
                         </ul>
                     </div>
 
                     <h3>Target Audience</h3>
-                    <p>
-                        Our primary e-commerce customers fall into:
-                    </p>
+                    <p>KYC drop-off wasn't evenly distributed — it concentrated in one segment:</p>
                     <div class="audience-grid">
                         <div class="audience-card">
-                            <span class="aud-icon"><i class="fa-solid fa-gift"></i></span>
-                            <h5>Gifting Customers (45%)</h5>
-                            <p>Users buying premium sets for birthdays or festivals. They value custom greetings, premium packaging options, and guaranteed delivery timelines.</p>
+                            <span class="aud-icon"><i class="fa-solid fa-seedling"></i></span>
+                            <h5>First-Time Investors (68%)</h5>
+                            <p>Users opening their first-ever demat account, unfamiliar with terms like "DIS," "In-Person Verification," or why a bank statement was even required.</p>
                         </div>
                         <div class="audience-card">
-                            <span class="aud-icon"><i class="fa-solid fa-sparkles"></i></span>
-                            <h5>Self-Care Shoppers (55%)</h5>
-                            <p>Repeat customers purchasing personal products. They value fast checkouts, personalized recommendations, and active order trackers.</p>
+                            <span class="aud-icon"><i class="fa-solid fa-rotate"></i></span>
+                            <h5>Re-attempting Users (32%)</h5>
+                            <p>Users who had failed KYC once already and were re-entering the flow frustrated, often unsure exactly what had gone wrong the first time.</p>
                         </div>
                     </div>
                 </div>
@@ -160,15 +145,13 @@
                 <h2>2. My Role & Collaboration</h2>
                 <div class="cs-section-body">
                     <p>
-                        As the <strong>UI/UX Designer</strong>, I owned the e-commerce growth strategy, user testing, shopping cart interaction flows, and developer handoff guidelines.
-                    </p>
-                    <p>
-                        I collaborated extensively with:
+                        I led UX for the compliance flow end-to-end, working unusually closely with our in-house compliance officer since every screen change had regulatory implications.
                     </p>
                     <ul class="collab-list">
-                        <li><strong>Growth & Marketing Managers:</strong> Aligning promo code application logic and cross-sell recommendation engines.</li>
-                        <li><strong>Frontend Engineering:</strong> Integrating third-party payment gateways and optimizing page loading speeds for mobile shoppers.</li>
-                        <li><strong>QA Team:</strong> Validating coupon failures, payment timeouts, and slow connection states.</li>
+                        <li><strong>Compliance Officer:</strong> Reviewing every microcopy change against SEBI guidelines to make sure "plain language" never drifted into legally inaccurate territory.</li>
+                        <li><strong>Backend & OCR Vendor:</strong> Defining the confidence thresholds at which auto-extracted PAN and address data would be trusted versus flagged for manual review.</li>
+                        <li><strong>Customer Support Lead:</strong> Mining six months of rejection-related support transcripts to identify the exact phrases causing the most confusion.</li>
+                        <li><strong>Product Manager:</strong> Balancing the desire to add steps for clarity against a hard internal ceiling on total onboarding time.</li>
                     </ul>
                 </div>
             </section>
@@ -178,59 +161,62 @@
                 <h2>3. Research & Discovery</h2>
                 <div class="cs-section-body">
                     <p>
-                        We set up heatmaps (Hotjar) and ran remote interviews with 12 frequent online shoppers to understand funnel barriers.
+                        I combined support-ticket analysis with moderated usability sessions where participants completed KYC on their own phones while thinking aloud — this surfaced friction that clickstream data alone couldn't explain.
                     </p>
-                    
-                    <h3>Funnel Loss Audit</h3>
+
+                    <h3>Rejection Reason Breakdown (Pre-Redesign)</h3>
                     <table class="research-table">
                         <thead>
                             <tr>
-                                <th>Journey Stage</th>
-                                <th>Completion Rate (Before)</th>
-                                <th>Primary Drop-Off Reason</th>
+                                <th>Rejection Cause</th>
+                                <th>Share of Rejections</th>
+                                <th>Root Cause</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Product View → Add to Cart</td>
-                                <td>42% (Normal)</td>
-                                <td>Price comparison, sizing queries</td>
+                                <td>Illegible signature</td>
+                                <td>41% (Poor)</td>
+                                <td>Finger-drawn signatures on small screens</td>
                             </tr>
                             <tr>
-                                <td>Cart drawer → Enter Details</td>
-                                <td>28% (Poor)</td>
-                                <td>Hidden delivery charges shown late, forced registration</td>
+                                <td>Blurry document photo</td>
+                                <td>33% (Poor)</td>
+                                <td>No capture guidance or auto-retry prompt</td>
                             </tr>
                             <tr class="highlight-row">
-                                <td><strong>Payment Gateway Success</strong></td>
-                                <td>54% (Low)</td>
-                                <td>Slow OTP inputs, lack of express UPI checkout options</td>
+                                <td><strong>Mismatched name/address</strong></td>
+                                <td><strong>26% (Moderate)</strong></td>
+                                <td>Manual entry typos, no OCR cross-check</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <h3>User Pain Points</h3>
+                    <h3>User Persona & Key Pain Points</h3>
+                    <p>
+                        Meet <strong>Ananya</strong>, a 24-year-old first-jobber opening her first demat account with her first salary bonus. She represents our largest KYC segment:
+                    </p>
                     <div class="pain-points-grid">
                         <div class="pain-card">
                             <span class="pain-num">01</span>
-                            <h5>Surprise Shipping Fees</h5>
-                            <p>Shipping charges were calculated at the very last payment screen, causing instant user anger and cart abandonment.</p>
+                            <h5>No Capture Guidance</h5>
+                            <p>Ananya photographed her PAN card at an angle with glare on it. The app accepted the blurry image without warning, only rejecting it two days later.</p>
                         </div>
                         <div class="pain-card">
                             <span class="pain-num">02</span>
-                            <h5>Forced Account Creation</h5>
-                            <p>Forcing users to create accounts, verify passwords, and validate emails before buying a simple soap took 3+ minutes.</p>
+                            <h5>Opaque Rejection Reasons</h5>
+                            <p>Her rejection notice read "Document verification failed" with no indication of what specifically was wrong or how to fix it.</p>
                         </div>
                         <div class="pain-card">
                             <span class="pain-num">03</span>
-                            <h5>Poor Coupon Usability</h5>
-                            <p>Applying coupon codes required manual copying. When codes failed without explanation, users left to search for deals elsewhere.</p>
+                            <h5>Fear of Repeating the Mistake</h5>
+                            <p>Without knowing what failed, Ananya hesitated to re-upload anything, worried she'd waste another multi-day review cycle.</p>
                         </div>
                     </div>
 
                     <div class="strategy-tip">
                         <h5><i class="fa-solid fa-brain"></i> Product Thinking Insight:</h5>
-                        <p>We realized users shopping online have a high baseline expectation set by Amazon and Shopify checkout speeds. If a premium D2C platform takes more than 4 clicks to pay, it feels dated. We had to implement an Express Checkout strategy.</p>
+                        <p>The real fix wasn't a better rejection message after the fact — it was preventing the bad capture from ever entering the pipeline. Real-time validation at the point of capture would eliminate most rejections before they happened.</p>
                     </div>
                 </div>
             </section>
@@ -241,21 +227,21 @@
                 <div class="cs-section-body">
                     <h3>The Challenges & Constraints</h3>
                     <p>
-                        We had to balance high D2C branding requirements (showing beautiful lifestyle visuals and up-sell gifting boxes) with high checkout speeds.
+                        We could not skip or shorten any regulatory step, and OCR confidence thresholds had to stay conservative enough to satisfy the compliance team, who were understandably wary of automating away a manual review step entirely.
                     </p>
-                    
+
                     <div class="kpi-grid">
                         <div class="kpi-card">
-                            <span class="kpi-metric">+15%</span>
-                            <span class="kpi-lbl">Target checkout speed</span>
+                            <span class="kpi-metric">+22%</span>
+                            <span class="kpi-lbl">Target KYC completion</span>
                         </div>
                         <div class="kpi-card">
-                            <span class="kpi-metric">&lt; 3 mins</span>
-                            <span class="kpi-lbl">Target purchase duration</span>
+                            <span class="kpi-metric">&lt; 3%</span>
+                            <span class="kpi-lbl">Rejection rate goal</span>
                         </div>
                         <div class="kpi-card">
-                            <span class="kpi-metric">-15%</span>
-                            <span class="kpi-lbl">Cart abandonment reduction</span>
+                            <span class="kpi-metric">&lt; 6 mins</span>
+                            <span class="kpi-lbl">Average completion time</span>
                         </div>
                     </div>
                 </div>
@@ -266,22 +252,27 @@
                 <h2>5. Design Process</h2>
                 <div class="cs-section-body">
                     <p>
-                        We mapped out a 3-step checkout flow (Cart → Shipping → Payment) and introduced a "Slide-out Express Cart Drawer" that allowed checkout without reloading.
+                        I mapped the entire regulatory journey and identified exactly where real-time validation could intercept an error before submission, rather than after.
                     </p>
-                    
+
                     <div class="process-img-wrapper">
-                        <img src="assets/bigul_userflow.jpg" alt="User flow optimization" class="process-img main-lightbox-trigger">
-                        <span class="img-caption">Fig 1. User flow transition from detailed shopping catalog to cart details.</span>
+                        <img src="assets/placeholders/ph-flow.svg" alt="Bigul KYC Enhancement document capture and validation flow" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 1. Capture-to-verification flow showing where real-time validation was inserted ahead of submission.</span>
                     </div>
 
-                    <h3>Low-Fidelity Iterations</h3>
+                    <h3>From Low-Fidelity Wireframes to Iterations</h3>
                     <p>
-                        We iterated heavily on the "Promo Code Selector" UI. In early sketches, the discount input field was hidden behind an accordion menu. Users rarely clicked it, causing them to abandon the cart to search for codes. We redesigned it into a visible modal showcasing active deals.
+                        Early wireframes combined document capture and digital signature on one scrollable screen. Usability sessions showed users skimming past the signature box entirely, assuming it was decorative next to the document preview.
                     </p>
-                    
+
                     <div class="process-img-wrapper">
-                        <img src="assets/bigul_wireframes.jpg" alt="Wireframe iterations" class="process-img main-lightbox-trigger">
-                        <span class="img-caption">Fig 2. Iterations optimizing the promo code modal container on mobile viewports.</span>
+                        <img src="assets/placeholders/ph-wireframe.svg" alt="Bigul KYC Enhancement capture step wireframe iterations" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 2. Wireframe iteration separating capture and signature into distinct, sequential steps.</span>
+                    </div>
+
+                    <div class="rationale-box">
+                        <h5>Design Rationale:</h5>
+                        <p><strong>One task per screen:</strong> Splitting capture and signature into two dedicated screens, each with its own real-time validation, meant a slightly longer flow but a much clearer mental model of "one thing to get right at a time."</p>
                     </div>
                 </div>
             </section>
@@ -291,12 +282,36 @@
                 <h2>6. Visual Design System</h2>
                 <div class="cs-section-body">
                     <p>
-                        To reinforce luxury brand consistency, we upgraded the typography guidelines and visual design buttons to support high contrast, elegant frames, and clean input lines.
+                        This flow reused Bigul's <strong>Apex</strong> design system, extended with capture-specific components: a live framing guide overlay, inline validation states, and a plain-language error library reviewed by compliance.
                     </p>
-                    
+
                     <div class="process-img-wrapper">
-                        <img src="assets/bigul_designsystem.jpg" alt="Apex Design System components" class="process-img main-lightbox-trigger">
-                        <span class="img-caption">Fig 3. E-commerce UI components library, typography, and card tokens.</span>
+                        <img src="assets/placeholders/ph-designsystem.svg" alt="Bigul KYC Enhancement capture guide and validation component patterns" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 3. Capture guide overlay states and the plain-language error message library.</span>
+                    </div>
+
+                    <h3>Design Tokens Overview</h3>
+                    <div class="tokens-grid">
+                        <div class="token-card">
+                            <h6>Capture Guide Overlay</h6>
+                            <p>A live corner-bracket frame that turns green only when glare, blur, and cropping checks all pass — before the shutter is even pressed.</p>
+                        </div>
+                        <div class="token-card">
+                            <h6>Plain-Language Errors</h6>
+                            <p>Every rejection reason was rewritten in one sentence a non-finance user could act on immediately, reviewed line-by-line with compliance.</p>
+                        </div>
+                        <div class="token-card">
+                            <h6>Progress Transparency</h6>
+                            <p>A persistent step tracker so users always know exactly how many regulatory steps remain and roughly how long each takes.</p>
+                        </div>
+                    </div>
+
+                    <div class="accessibility-checklist">
+                        <h4>WCAG 2.1 Accessibility Considerations:</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Alternative Input:</strong> A type-to-sign fallback exists for users who cannot complete a smooth finger-drawn signature.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Screen Reader Support:</strong> Capture guide states announce pass/fail conditions audibly, not just through the visual green/red frame.</li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -305,21 +320,23 @@
             <section id="hifi" class="cs-section">
                 <h2>7. High-Fidelity Walkthrough</h2>
                 <div class="cs-section-body">
-                    <p>
-                        The final design implements:
-                    </p>
-
                     <div class="hifi-feature">
-                        <h4>Slide-out Interactive Cart Drawer</h4>
+                        <h4>Camera-Guided Document Capture</h4>
                         <p>
-                            Users can verify items, choose shipping method, select gift wrapping options, and see exact delivery times directly in the cart drawer.
+                            Instead of accepting any photo a user submitted, the camera view now overlays a framing guide that checks focus, glare, and cropping in real time before allowing capture.
+                        </p>
+                        <p>
+                            <strong>The Solution:</strong> A traffic-light border around the live camera preview — red until all quality checks pass, green with a haptic tap the instant the frame is submission-ready.
                         </p>
                     </div>
 
                     <div class="hifi-feature">
-                        <h4>Single-Click Payment Integrations</h4>
+                        <h4>Type-to-Sign Fallback</h4>
                         <p>
-                            We integrated Apple Pay, Google Pay, and major UPI providers at the first stage of the checkout drawer, bypassing 3 pages of details.
+                            Finger-drawn signatures on a small screen were the single largest cause of manual rejection. Forcing everyone through a better drawing tool wouldn't fully solve it.
+                        </p>
+                        <p>
+                            <strong>The Solution:</strong> A stylized type-to-sign component that renders an official-looking script signature, offered as an equally valid, clearly explained alternative alongside the draw option.
                         </p>
                     </div>
                 </div>
@@ -329,9 +346,18 @@
             <section id="strategy" class="cs-section">
                 <h2>8. Product Strategy & Trade-offs</h2>
                 <div class="cs-section-body">
-                    <p>
-                        We chose to make "Guest Checkout" the default journey. The marketing team initially worried about losing customer data. We solved this by offering a 10% coupon *after* checkout on the confirmation page if they saved their password, converting 42% of guest checkouts into accounts without funnel friction.
-                    </p>
+                    <p>Regulatory UX means constantly negotiating between what compliance requires and what users can realistically tolerate.</p>
+
+                    <div class="tradeoff-card">
+                        <h5>Automation Trust vs. Manual Review</h5>
+                        <p><strong>The Conflict:</strong> Fully automating document approval would speed things up, but compliance wasn't ready to remove human review entirely for edge cases.</p>
+                        <p><strong>The Strategy:</strong> High-confidence OCR matches auto-approve instantly; anything below the threshold routes to manual review with the specific mismatch highlighted for the reviewer, rather than a blanket "needs review" flag. Speed improved without asking compliance to give up their safety net.</p>
+                    </div>
+
+                    <div class="roadmap-box">
+                        <h4>MVP Phase vs Future Roadmap</h4>
+                        <p>The MVP focused on capture validation and plain-language rejections. The roadmap includes extending real-time validation to video-KYC (V-CIP) sessions, where lighting and framing issues currently cause a similar pattern of avoidable failures.</p>
+                    </div>
                 </div>
             </section>
 
@@ -340,9 +366,10 @@
                 <h2>9. Challenges & Solutions</h2>
                 <div class="cs-section-body">
                     <div class="challenge-item">
-                        <h5>Challenge: Complex Gifting Address Handling</h5>
-                        <p><strong>The Problem:</strong> Gifting orders required shipping to multiple addresses, but the original interface made users place separate orders, driving up shipping costs and frustration.</p>
-                        <p><strong>Design Solution:</strong> We created a "Send as Gift" option allowing custom messaging cards and address split workflows in the same transaction loop.</p>
+                        <h5>Challenge: High digital signature rejection rate</h5>
+                        <p><strong>The Problem:</strong> Over 15% of KYC applications were rejected because users signed with clumsy finger swipes on mobile, producing illegible squiggles that compliance couldn't accept.</p>
+                        <p><strong>Design Iteration:</strong> We introduced the type-to-sign fallback alongside an improved draw canvas with pressure-smoothing, and explained both options with a one-line comparison so users could choose confidently.</p>
+                        <p><strong>The Result:</strong> Signature-related rejections fell from 15% to 2.4% within two weeks of launch.</p>
                     </div>
                 </div>
             </section>
@@ -351,22 +378,44 @@
             <section id="impact" class="cs-section">
                 <h2>10. Impact & Results</h2>
                 <div class="cs-section-body">
-                    <p>
-                        Quantified gains measured 60 days post-release:
-                    </p>
+                    <p>The enhanced KYC flow delivered measurable gains within 60 days of launch:</p>
 
                     <div class="impact-metrics-row">
                         <div class="metric-circle">
-                            <span class="m-val">+15-22%</span>
-                            <span class="m-lbl">Conversion Lift</span>
+                            <span class="m-val">+22%</span>
+                            <span class="m-lbl">KYC Completion</span>
                         </div>
                         <div class="metric-circle">
-                            <span class="m-val">+18-22%</span>
-                            <span class="m-lbl">Checkout Completion</span>
+                            <span class="m-val">2.4%</span>
+                            <span class="m-lbl">Rejection Rate (from 15%)</span>
                         </div>
                         <div class="metric-circle">
-                            <span class="m-val">-14-18%</span>
-                            <span class="m-lbl">Cart Abandonment</span>
+                            <span class="m-val">-25%</span>
+                            <span class="m-lbl">Related Support Tickets</span>
+                        </div>
+                    </div>
+
+                    <div class="comparison-block">
+                        <h4>Before vs. After Comparison</h4>
+                        <div class="comparison-grid">
+                            <div class="comp-card before">
+                                <h5>Previous Experience</h5>
+                                <ul>
+                                    <li>No capture guidance before submission</li>
+                                    <li>Generic "verification failed" messaging</li>
+                                    <li>Signature-only, no alternative input</li>
+                                    <li>Multi-day wait to learn of rejection</li>
+                                </ul>
+                            </div>
+                            <div class="comp-card after">
+                                <h5>Redesigned Experience</h5>
+                                <ul>
+                                    <li>Real-time capture validation before submit</li>
+                                    <li>Plain-language, specific rejection reasons</li>
+                                    <li>Type-to-sign fallback alongside draw canvas</li>
+                                    <li>Instant auto-approval for high-confidence scans</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -378,11 +427,10 @@
                 <div class="cs-section-body">
                     <div class="tools-flex">
                         <div class="tool-item-box"><i class="fa-brands fa-figma"></i> Figma</div>
-                        <div class="tool-item-box">Adobe XD</div>
-                        <div class="tool-item-box">Miro</div>
-                        <div class="tool-item-box">Jira</div>
-                        <div class="tool-item-box">Notion</div>
+                        <div class="tool-item-box">FigJam</div>
                         <div class="tool-item-box">Maze</div>
+                        <div class="tool-item-box">Notion</div>
+                        <div class="tool-item-box">Jira</div>
                     </div>
                 </div>
             </section>
@@ -391,19 +439,19 @@
             <section id="gallery" class="cs-section">
                 <h2>12. Design Gallery</h2>
                 <div class="cs-section-body">
-                    <p>Click on any of the screens or wireframes to open a full-resolution interactive lightbox preview.</p>
+                    <p>Click on any of the screens to open a full-resolution interactive lightbox preview.</p>
                     <div class="cs-gallery-grid">
                         <div class="gallery-card">
-                            <img src="assets/kimirica_ecommerce.jpg" alt="Cart Drawer UI Design layout" class="gallery-img main-lightbox-trigger">
+                            <img src="assets/placeholders/ph-mobile.svg" alt="Camera-guided capture screen" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="assets/bigul_userflow.jpg" alt="Checkout User flow details" class="gallery-img main-lightbox-trigger">
+                            <img src="assets/placeholders/ph-flow.svg" alt="KYC validation flow diagram" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="assets/bigul_wireframes.jpg" alt="Wireframe iterations screen layouts" class="gallery-img main-lightbox-trigger">
+                            <img src="assets/placeholders/ph-wireframe.svg" alt="Signature step wireframes" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="assets/bigul_designsystem.jpg" alt="Design system atoms and variables guide" class="gallery-img main-lightbox-trigger">
+                            <img src="assets/placeholders/ph-designsystem.svg" alt="Capture guide component system" class="gallery-img main-lightbox-trigger">
                         </div>
                     </div>
                 </div>
@@ -413,24 +461,22 @@
             <section id="learnings" class="cs-section">
                 <h2>13. Key Learnings</h2>
                 <div class="cs-section-body">
-                    <p>
-                        Checkout optimization taught me lessons that don't show up in a single metric, but shaped how I think about conversion work since.
-                    </p>
+                    <p>Compliance UX has its own rules, and this project taught me to respect them without treating them as an excuse for a bad experience.</p>
                     <div class="pain-points-grid">
                         <div class="pain-card">
                             <span class="pain-num">01</span>
-                            <h5>Trust is a layout decision, not just a copy decision</h5>
-                            <p>Moving shipping cost disclosure earlier in the flow did more for conversion than any headline rewrite. Surprise costs, not slow pages, were the real abandonment driver.</p>
+                            <h5>Prevent errors, don't just explain them</h5>
+                            <p>Every hour spent on rejection-message copywriting was worth less than the real-time capture guide that stopped the bad photo from being submitted in the first place.</p>
                         </div>
                         <div class="pain-card">
                             <span class="pain-num">02</span>
-                            <h5>Guest checkout is a retention tool, not a data loss</h5>
-                            <p>The business worried guest checkout would hurt account creation. Offering an incentive after purchase, not before, converted more guests into accounts than gating ever did.</p>
+                            <h5>Offer alternatives instead of forcing one interaction</h5>
+                            <p>Type-to-sign didn't replace the draw canvas — it sat beside it. Giving users a second valid path removed friction without removing choice.</p>
                         </div>
                         <div class="pain-card">
                             <span class="pain-num">03</span>
-                            <h5>Benchmark ranges, not single numbers</h5>
-                            <p>Reporting outcomes as a believable range (+15-22%, not a flat +40%) built more trust with stakeholders than a single impressive-looking figure that couldn't be reproduced every month.</p>
+                            <h5>Compliance officers are a design resource, not a blocker</h5>
+                            <p>Involving compliance in copy review from day one meant we never had to walk back a "friendly" rewrite that turned out to be legally inaccurate.</p>
                         </div>
                     </div>
                 </div>
@@ -438,20 +484,19 @@
 
             <!-- Next Project Navigation Section -->
             <div class="cs-project-nav" id="navigation">
-                <a href="project_bigul_algo.html" class="nav-prev">
+                <a href="project_bigul_apiconnect.html" class="nav-prev">
                     <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
-                    <span class="nav-project-title">Bigul Algo</span>
+                    <span class="nav-project-title">Bigul API Connect</span>
                 </a>
-                <a href="project_bigul_mutualfund.html" class="nav-next">
+                <a href="project_bigul_algo.html" class="nav-next">
                     <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
-                    <span class="nav-project-title">Bigul Mutual Fund</span>
+                    <span class="nav-project-title">Bigul Algo</span>
                 </a>
             </div>
 
         </main>
     </div>
 
-    <!-- Lightbox Overlay -->
     <div id="lightboxOverlay" class="lightbox-overlay hidden" aria-hidden="true" role="dialog">
         <button id="lightboxClose" class="lightbox-close" aria-label="Close Preview">&times;</button>
         <img id="lightboxImg" src="" alt="Full size preview" class="lightbox-img">
@@ -537,7 +582,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script type="module" src="app.js"></script>
 </body>
 </html>

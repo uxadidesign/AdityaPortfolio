@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigul KYC Enhancement | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on rebuilding Bigul's regulatory KYC onboarding flow with camera-guided capture, video verification, and plain-language rejection handling.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+  <script type="module" crossorigin src="/app.js"></script>
+  <link rel="stylesheet" crossorigin href="/app.css">
+</head>
+<body class="dark-theme">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AN<span class="logo-dot">.</span></a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="work.html" class="nav-link active">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="about.html#resume" class="nav-link">Resume</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#contact" class="btn btn-nav-cta">Let's Connect</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="cs-hero">
+        <div class="container">
+            <div class="cs-back-link">
+                <a href="work.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+            </div>
+
+            <div class="cs-hero-header">
+                <span class="cs-category-tag"><i class="fa-solid fa-id-card"></i> Fintech • Compliance UX • Mobile App</span>
+                <h1 class="cs-title">Bigul KYC Enhancement</h1>
+                <p class="cs-tagline">A focused rebuild of Bigul's mandatory regulatory onboarding — replacing a document-heavy, jargon-filled process with camera-guided capture and plain-language rejection handling.</p>
+            </div>
+
+            <div class="cs-hero-mockup-wrapper">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNzUgNzgwIiB3aWR0aD0iMzc1IiBoZWlnaHQ9Ijc4MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMGYxMjFlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE0MWEyYyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYWNjZW50MSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjN0M5QkZGIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzVCN0NGRiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjM3NSIgaGVpZ2h0PSI3ODAiIHJ4PSIzNiIgZmlsbD0idXJsKCNiZzEpIiBzdHJva2U9IiMyMzJhNDAiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gc3RhdHVzIGJhciAtLT4KICA8cmVjdCB4PSIyNCIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDxyZWN0IHg9IjI5MSIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDwhLS0gaGVhZGVyIC0tPgogIDxyZWN0IHg9IjI0IiB5PSI2NCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmM2Y0ZjYiIG9wYWNpdHk9IjAuODUiLz4KICA8cmVjdCB4PSIyNCIgeT0iOTIiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjOWNhM2FmIi8+CiAgPCEtLSBoZXJvIGNhcmQgLS0+CiAgPHJlY3QgeD0iMjQiIHk9IjEyOCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSIxNDAiIHJ4PSIxOCIgZmlsbD0idXJsKCNhY2NlbnQxKSIgb3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjNUI3Q0ZGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW9wYWNpdHk9IjAuNCIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxNTIiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQiIHJ4PSI0IiBmaWxsPSIjZjNmNGY2IiBvcGFjaXR5PSIwLjgiLz4KICA8cmVjdCB4PSI0OCIgeT0iMTc2IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwIiByeD0iNCIgZmlsbD0iIzljYTNhZiIvPgogIDxyZWN0IHg9IjQ4IiB5PSIyMjgiIHdpZHRoPSIxMTAiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0idXJsKCNhY2NlbnQxKSIvPgogIDwhLS0gbGlzdCBpdGVtcyAtLT4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzMDAiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjMzNiIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSIzMjIiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iMzQwIiB3aWR0aD0iMTEwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjNmI3MjgwIi8+CiAgICA8cmVjdCB4PSIzMDAiIHk9IjMyOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iMC4yNSIvPgogIDwvZz4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzODQiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjQyMCIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI0MDYiIHdpZHRoPSIxODAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iNDI0IiB3aWR0aD0iOTAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICAgIDxyZWN0IHg9IjMwMCIgeT0iNDEyIiB3aWR0aD0iMzYiIGhlaWdodD0iMTYiIHJ4PSI4IiBmaWxsPSIjNUI3Q0ZGIiBvcGFjaXR5PSIwLjI1Ii8+CiAgPC9nPgogIDxnPgogICAgPHJlY3QgeD0iMjQiIHk9IjQ2OCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSI3MiIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICAgIDxjaXJjbGUgY3g9IjU2IiBjeT0iNTA0IiByPSIxNiIgZmlsbD0iIzJhMzM1MCIvPgogICAgPHJlY3QgeD0iODQiIHk9IjQ5MCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxMCIgcng9IjQiIGZpbGw9IiNkMWQ1ZGIiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI1MDgiIHdpZHRoPSIxMzAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICA8L2c+CiAgPCEtLSBjaGFydCAtLT4KICA8cmVjdCB4PSIyNCIgeT0iNTY0IiB3aWR0aD0iMzI3IiBoZWlnaHQ9IjEyMCIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI0NCw2NjAgMTAwLDYzMCAxNTYsNjQ4IDIxMiw2MDAgMjY4LDYxNiAzMjQsNTgwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPCEtLSBib3R0b20gbmF2IC0tPgogIDxyZWN0IHg9IjAiIHk9IjcxNiIgd2lkdGg9IjM3NSIgaGVpZ2h0PSI2NCIgcng9IjAiIGZpbGw9IiMwYjBlMTciLz4KICA8Y2lyY2xlIGN4PSI5NCIgY3k9Ijc0OCIgcj0iMTQiIGZpbGw9IiM1QjdDRkYiLz4KICA8Y2lyY2xlIGN4PSIxODciIGN5PSI3NDgiIHI9IjEwIiBmaWxsPSIjMmEzMzUwIi8+CiAgPGNpcmNsZSBjeD0iMjgwIiBjeT0iNzQ4IiByPSIxMCIgZmlsbD0iIzJhMzM1MCIvPgogIDx0ZXh0IHg9IjE4NyIgeT0iNzEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIxLjUiIGZpbGw9IiM1QjdDRkYiIG9wYWNpdHk9IjAuOCI+TU9CSUxFIFNDUkVFTiBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Bigul KYC Enhancement onboarding flow mockup" class="cs-hero-mockup main-lightbox-trigger">
+            </div>
+
+            <div class="cs-metadata-grid">
+                <div class="meta-item">
+                    <h5>Role</h5>
+                    <p>UI/UX Designer<br><span>(Compliance UX Ownership)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Duration</h5>
+                    <p>Dec 2024 - Feb 2025<br><span>(3 Month Sprint)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Team Size</h5>
+                    <p>6 cross-functional members<br><span>(1 PM, 3 Devs, 1 Compliance Officer, 1 UX)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Key Results</h5>
+                    <p>+22% KYC Completion<br><span>Rejections 15% → 2.4%</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cs-layout-container container">
+        <aside class="cs-sidebar">
+            <div class="cs-toc-wrapper" id="tocWrapper">
+                <h4 class="toc-title">ON THIS PAGE</h4>
+                <ul class="toc-list">
+                    <li><a href="#overview" class="toc-link active">1. Overview & Context</a></li>
+                    <li><a href="#role" class="toc-link">2. My Role & Collaboration</a></li>
+                    <li><a href="#research" class="toc-link">3. Research & Discovery</a></li>
+                    <li><a href="#problem" class="toc-link">4. Problem Definition</a></li>
+                    <li><a href="#process" class="toc-link">5. Design Process</a></li>
+                    <li><a href="#visual" class="toc-link">6. Visual Design System</a></li>
+                    <li><a href="#hifi" class="toc-link">7. High-Fidelity Walkthrough</a></li>
+                    <li><a href="#strategy" class="toc-link">8. Product Strategy</a></li>
+                    <li><a href="#challenges" class="toc-link">9. Challenges & Solutions</a></li>
+                    <li><a href="#impact" class="toc-link">10. Business Impact</a></li>
+                    <li><a href="#tools" class="toc-link">11. Tools & Tech</a></li>
+                    <li><a href="#gallery" class="toc-link">12. Design Gallery</a></li>
+                    <li><a href="#learnings" class="toc-link">13. Key Learnings</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="cs-content">
+
+            <!-- 1. Overview & Context -->
+            <section id="overview" class="cs-section">
+                <h2>1. Project Overview</h2>
+                <div class="cs-section-body">
+                    <h3>Background & Business Context</h3>
+                    <p>
+                        Every Indian brokerage is bound by SEBI's KYC regulations — PAN verification, address proof, bank account linking, a signature, and increasingly, video-based in-person verification (V-CIP). None of these steps are negotiable. What's negotiable is how much friction, confusion, and anxiety a user experiences while completing them.
+                    </p>
+                    <p>
+                        Within the broader Bigul Trading App redesign, KYC consistently surfaced as the single biggest drop-off point — worth pulling out as its own dedicated initiative rather than a line item inside a larger release, precisely because compliance requirements meant we couldn't simply remove steps to fix it.
+                    </p>
+
+                    <div class="goal-box">
+                        <h4>Goals & Objectives:</h4>
+                        <ul>
+                            <li><strong>Reduce document-related abandonment</strong> by making capture foolproof on the first attempt.</li>
+                            <li><strong>Cut manual rejection rates</strong> caused by illegible signatures and blurry uploads.</li>
+                            <li><strong>Replace compliance jargon</strong> with plain-language explanations at every step.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Target Audience</h3>
+                    <p>KYC drop-off wasn't evenly distributed — it concentrated in one segment:</p>
+                    <div class="audience-grid">
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-seedling"></i></span>
+                            <h5>First-Time Investors (68%)</h5>
+                            <p>Users opening their first-ever demat account, unfamiliar with terms like "DIS," "In-Person Verification," or why a bank statement was even required.</p>
+                        </div>
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-rotate"></i></span>
+                            <h5>Re-attempting Users (32%)</h5>
+                            <p>Users who had failed KYC once already and were re-entering the flow frustrated, often unsure exactly what had gone wrong the first time.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. My Role & Collaboration -->
+            <section id="role" class="cs-section">
+                <h2>2. My Role & Collaboration</h2>
+                <div class="cs-section-body">
+                    <p>
+                        I led UX for the compliance flow end-to-end, working unusually closely with our in-house compliance officer since every screen change had regulatory implications.
+                    </p>
+                    <ul class="collab-list">
+                        <li><strong>Compliance Officer:</strong> Reviewing every microcopy change against SEBI guidelines to make sure "plain language" never drifted into legally inaccurate territory.</li>
+                        <li><strong>Backend & OCR Vendor:</strong> Defining the confidence thresholds at which auto-extracted PAN and address data would be trusted versus flagged for manual review.</li>
+                        <li><strong>Customer Support Lead:</strong> Mining six months of rejection-related support transcripts to identify the exact phrases causing the most confusion.</li>
+                        <li><strong>Product Manager:</strong> Balancing the desire to add steps for clarity against a hard internal ceiling on total onboarding time.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 3. Research & Discovery -->
+            <section id="research" class="cs-section">
+                <h2>3. Research & Discovery</h2>
+                <div class="cs-section-body">
+                    <p>
+                        I combined support-ticket analysis with moderated usability sessions where participants completed KYC on their own phones while thinking aloud — this surfaced friction that clickstream data alone couldn't explain.
+                    </p>
+
+                    <h3>Rejection Reason Breakdown (Pre-Redesign)</h3>
+                    <table class="research-table">
+                        <thead>
+                            <tr>
+                                <th>Rejection Cause</th>
+                                <th>Share of Rejections</th>
+                                <th>Root Cause</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Illegible signature</td>
+                                <td>41% (Poor)</td>
+                                <td>Finger-drawn signatures on small screens</td>
+                            </tr>
+                            <tr>
+                                <td>Blurry document photo</td>
+                                <td>33% (Poor)</td>
+                                <td>No capture guidance or auto-retry prompt</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong>Mismatched name/address</strong></td>
+                                <td><strong>26% (Moderate)</strong></td>
+                                <td>Manual entry typos, no OCR cross-check</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>User Persona & Key Pain Points</h3>
+                    <p>
+                        Meet <strong>Ananya</strong>, a 24-year-old first-jobber opening her first demat account with her first salary bonus. She represents our largest KYC segment:
+                    </p>
+                    <div class="pain-points-grid">
+                        <div class="pain-card">
+                            <span class="pain-num">01</span>
+                            <h5>No Capture Guidance</h5>
+                            <p>Ananya photographed her PAN card at an angle with glare on it. The app accepted the blurry image without warning, only rejecting it two days later.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">02</span>
+                            <h5>Opaque Rejection Reasons</h5>
+                            <p>Her rejection notice read "Document verification failed" with no indication of what specifically was wrong or how to fix it.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">03</span>
+                            <h5>Fear of Repeating the Mistake</h5>
+                            <p>Without knowing what failed, Ananya hesitated to re-upload anything, worried she'd waste another multi-day review cycle.</p>
+                        </div>
+                    </div>
+
+                    <div class="strategy-tip">
+                        <h5><i class="fa-solid fa-brain"></i> Product Thinking Insight:</h5>
+                        <p>The real fix wasn't a better rejection message after the fact — it was preventing the bad capture from ever entering the pipeline. Real-time validation at the point of capture would eliminate most rejections before they happened.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Problem Definition -->
+            <section id="problem" class="cs-section">
+                <h2>4. Problem Definition</h2>
+                <div class="cs-section-body">
+                    <h3>The Challenges & Constraints</h3>
+                    <p>
+                        We could not skip or shorten any regulatory step, and OCR confidence thresholds had to stay conservative enough to satisfy the compliance team, who were understandably wary of automating away a manual review step entirely.
+                    </p>
+
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <span class="kpi-metric">+22%</span>
+                            <span class="kpi-lbl">Target KYC completion</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">&lt; 3%</span>
+                            <span class="kpi-lbl">Rejection rate goal</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">&lt; 6 mins</span>
+                            <span class="kpi-lbl">Average completion time</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Design Process -->
+            <section id="process" class="cs-section">
+                <h2>5. Design Process</h2>
+                <div class="cs-section-body">
+                    <p>
+                        I mapped the entire regulatory journey and identified exactly where real-time validation could intercept an error before submission, rather than after.
+                    </p>
+
+                    <div class="process-img-wrapper">
+                        <img src="/ph-flow.svg" alt="Bigul KYC Enhancement document capture and validation flow" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 1. Capture-to-verification flow showing where real-time validation was inserted ahead of submission.</span>
+                    </div>
+
+                    <h3>From Low-Fidelity Wireframes to Iterations</h3>
+                    <p>
+                        Early wireframes combined document capture and digital signature on one scrollable screen. Usability sessions showed users skimming past the signature box entirely, assuming it was decorative next to the document preview.
+                    </p>
+
+                    <div class="process-img-wrapper">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYyMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjIwIj4KICA8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MjAiIGZpbGw9IiMwZjEyMWUiLz4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRiNTU2OCIgc3Ryb2tlLXdpZHRoPSIxLjUiPgogICAgPCEtLSB0aHJlZSBsb3ctZmkgcGhvbmUgZnJhbWVzIC0tPgogICAgPHJlY3QgeD0iNjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiM1QjdDRkYiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSI5MiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNiIgcng9IjMiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIxMjAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI4OCIgeT0iMTUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjkwIiByeD0iNiIvPgogICAgPGxpbmUgeDE9Ijg4IiB5MT0iMTUwIiB4Mj0iMjUyIiB5Mj0iMjQwIi8+CiAgICA8bGluZSB4MT0iMjUyIiB5MT0iMTUwIiB4Mj0iODgiIHkyPSIyNDAiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIyNTYiIHdpZHRoPSIxNjQiIGhlaWdodD0iMzAiIHJ4PSIxNSIvPgogICAgPHJlY3QgeD0iODgiIHk9IjMwMCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI1MCIgcng9IjYiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIzNjQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNTAiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSI4OCIgeT0iNDI4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjUwIiByeD0iNiIvPgoKICAgIDxyZWN0IHg9IjM0MCIgeT0iNjAiIHdpZHRoPSIyMjAiIGhlaWdodD0iNDgwIiByeD0iMTgiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLW9wYWNpdHk9IjAuNiIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSI5MiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjE2IiByeD0iMyIvPgogICAgPGNpcmNsZSBjeD0iNTAwIiBjeT0iMTAwIiByPSIxMCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIxMzAiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTIwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIyNjQiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjQ1MiIgeT0iMjY0IiB3aWR0aD0iNzYiIGhlaWdodD0iNzYiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSIzNjgiIHk9IjM1MiIgd2lkdGg9Ijc2IiBoZWlnaHQ9Ijc2IiByeD0iNiIvPgogICAgPHJlY3QgeD0iNDUyIiB5PSIzNTIiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjM2OCIgeT0iNDUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjM0IiByeD0iMTciLz4KCiAgICA8cmVjdCB4PSI2MjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iOTIiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTYiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjEyMiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNTAiIHJ4PSI2Ii8+CiAgICA8cGF0aCBkPSJNNjQ4IDE5NyBsMzAgLTM0IGwyNiAyMCBsNDAgLTQ2IGw2OCA2MCIgLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMjg4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjEyIiByeD0iMyIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSIzMTAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjM0MCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI0MCIgcng9IjgiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMzkyIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjQwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSI0NDQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNDAiIHJ4PSI4Ii8+CiAgPC9nPgogIDwhLS0gYW5ub3RhdGlvbiBjYWxsb3V0cyAtLT4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM2YjcyODAiPgogICAgPGNpcmNsZSBjeD0iNjAiIGN5PSI1NjAiIHI9IjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCN0NGRiIvPgogICAgPHRleHQgeD0iNjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVCN0NGRiIgZm9udC1zaXplPSIxMCI+QTwvdGV4dD4KICAgIDx0ZXh0IHg9IjgwIiB5PSI1NjQiPlN0ZXAtYnktc3RlcCB3aXphcmQ8L3RleHQ+CgogICAgPGNpcmNsZSBjeD0iMzQwIiBjeT0iNTYwIiByPSI5IiBmaWxsPSJub25lIiBzdHJva2U9IiM5Y2EzYWYiLz4KICAgIDx0ZXh0IHg9IjM0MCIgeT0iNTY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOWNhM2FmIiBmb250LXNpemU9IjEwIj5CPC90ZXh0PgogICAgPHRleHQgeD0iMzYwIiB5PSI1NjQiPkdyaWQtYmFzZWQgc2VsZWN0aW9uPC90ZXh0PgoKICAgIDxjaXJjbGUgY3g9IjYyMCIgY3k9IjU2MCIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTBiOTgxIi8+CiAgICA8dGV4dCB4PSI2MjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzEwYjk4MSIgZm9udC1zaXplPSIxMCI+QzwvdGV4dD4KICAgIDx0ZXh0IHg9IjY0MCIgeT0iNTY0Ij5TdW1tYXJ5ICsgY29uZmlybWF0aW9uPC90ZXh0PgogIDwvZz4KICA8dGV4dCB4PSIxMDUwIiB5PSIzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgbGV0dGVyLXNwYWNpbmc9IjEuNSIgZmlsbD0iIzVCN0NGRiIgb3BhY2l0eT0iMC43IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCAxMDUwIDMwMCkiPldJUkVGUkFNRSBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Bigul KYC Enhancement capture step wireframe iterations" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 2. Wireframe iteration separating capture and signature into distinct, sequential steps.</span>
+                    </div>
+
+                    <div class="rationale-box">
+                        <h5>Design Rationale:</h5>
+                        <p><strong>One task per screen:</strong> Splitting capture and signature into two dedicated screens, each with its own real-time validation, meant a slightly longer flow but a much clearer mental model of "one thing to get right at a time."</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Visual Design System -->
+            <section id="visual" class="cs-section">
+                <h2>6. Visual Design System</h2>
+                <div class="cs-section-body">
+                    <p>
+                        This flow reused Bigul's <strong>Apex</strong> design system, extended with capture-specific components: a live framing guide overlay, inline validation states, and a plain-language error library reviewed by compliance.
+                    </p>
+
+                    <div class="process-img-wrapper">
+                        <img src="/ph-designsystem.svg" alt="Bigul KYC Enhancement capture guide and validation component patterns" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 3. Capture guide overlay states and the plain-language error message library.</span>
+                    </div>
+
+                    <h3>Design Tokens Overview</h3>
+                    <div class="tokens-grid">
+                        <div class="token-card">
+                            <h6>Capture Guide Overlay</h6>
+                            <p>A live corner-bracket frame that turns green only when glare, blur, and cropping checks all pass — before the shutter is even pressed.</p>
+                        </div>
+                        <div class="token-card">
+                            <h6>Plain-Language Errors</h6>
+                            <p>Every rejection reason was rewritten in one sentence a non-finance user could act on immediately, reviewed line-by-line with compliance.</p>
+                        </div>
+                        <div class="token-card">
+                            <h6>Progress Transparency</h6>
+                            <p>A persistent step tracker so users always know exactly how many regulatory steps remain and roughly how long each takes.</p>
+                        </div>
+                    </div>
+
+                    <div class="accessibility-checklist">
+                        <h4>WCAG 2.1 Accessibility Considerations:</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Alternative Input:</strong> A type-to-sign fallback exists for users who cannot complete a smooth finger-drawn signature.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Screen Reader Support:</strong> Capture guide states announce pass/fail conditions audibly, not just through the visual green/red frame.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. High-Fidelity Walkthrough -->
+            <section id="hifi" class="cs-section">
+                <h2>7. High-Fidelity Walkthrough</h2>
+                <div class="cs-section-body">
+                    <div class="hifi-feature">
+                        <h4>Camera-Guided Document Capture</h4>
+                        <p>
+                            Instead of accepting any photo a user submitted, the camera view now overlays a framing guide that checks focus, glare, and cropping in real time before allowing capture.
+                        </p>
+                        <p>
+                            <strong>The Solution:</strong> A traffic-light border around the live camera preview — red until all quality checks pass, green with a haptic tap the instant the frame is submission-ready.
+                        </p>
+                    </div>
+
+                    <div class="hifi-feature">
+                        <h4>Type-to-Sign Fallback</h4>
+                        <p>
+                            Finger-drawn signatures on a small screen were the single largest cause of manual rejection. Forcing everyone through a better drawing tool wouldn't fully solve it.
+                        </p>
+                        <p>
+                            <strong>The Solution:</strong> A stylized type-to-sign component that renders an official-looking script signature, offered as an equally valid, clearly explained alternative alongside the draw option.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Product Strategy -->
+            <section id="strategy" class="cs-section">
+                <h2>8. Product Strategy & Trade-offs</h2>
+                <div class="cs-section-body">
+                    <p>Regulatory UX means constantly negotiating between what compliance requires and what users can realistically tolerate.</p>
+
+                    <div class="tradeoff-card">
+                        <h5>Automation Trust vs. Manual Review</h5>
+                        <p><strong>The Conflict:</strong> Fully automating document approval would speed things up, but compliance wasn't ready to remove human review entirely for edge cases.</p>
+                        <p><strong>The Strategy:</strong> High-confidence OCR matches auto-approve instantly; anything below the threshold routes to manual review with the specific mismatch highlighted for the reviewer, rather than a blanket "needs review" flag. Speed improved without asking compliance to give up their safety net.</p>
+                    </div>
+
+                    <div class="roadmap-box">
+                        <h4>MVP Phase vs Future Roadmap</h4>
+                        <p>The MVP focused on capture validation and plain-language rejections. The roadmap includes extending real-time validation to video-KYC (V-CIP) sessions, where lighting and framing issues currently cause a similar pattern of avoidable failures.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Challenges & Solutions -->
+            <section id="challenges" class="cs-section">
+                <h2>9. Challenges & Solutions</h2>
+                <div class="cs-section-body">
+                    <div class="challenge-item">
+                        <h5>Challenge: High digital signature rejection rate</h5>
+                        <p><strong>The Problem:</strong> Over 15% of KYC applications were rejected because users signed with clumsy finger swipes on mobile, producing illegible squiggles that compliance couldn't accept.</p>
+                        <p><strong>Design Iteration:</strong> We introduced the type-to-sign fallback alongside an improved draw canvas with pressure-smoothing, and explained both options with a one-line comparison so users could choose confidently.</p>
+                        <p><strong>The Result:</strong> Signature-related rejections fell from 15% to 2.4% within two weeks of launch.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. Business Impact -->
+            <section id="impact" class="cs-section">
+                <h2>10. Impact & Results</h2>
+                <div class="cs-section-body">
+                    <p>The enhanced KYC flow delivered measurable gains within 60 days of launch:</p>
+
+                    <div class="impact-metrics-row">
+                        <div class="metric-circle">
+                            <span class="m-val">+22%</span>
+                            <span class="m-lbl">KYC Completion</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">2.4%</span>
+                            <span class="m-lbl">Rejection Rate (from 15%)</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">-25%</span>
+                            <span class="m-lbl">Related Support Tickets</span>
+                        </div>
+                    </div>
+
+                    <div class="comparison-block">
+                        <h4>Before vs. After Comparison</h4>
+                        <div class="comparison-grid">
+                            <div class="comp-card before">
+                                <h5>Previous Experience</h5>
+                                <ul>
+                                    <li>No capture guidance before submission</li>
+                                    <li>Generic "verification failed" messaging</li>
+                                    <li>Signature-only, no alternative input</li>
+                                    <li>Multi-day wait to learn of rejection</li>
+                                </ul>
+                            </div>
+                            <div class="comp-card after">
+                                <h5>Redesigned Experience</h5>
+                                <ul>
+                                    <li>Real-time capture validation before submit</li>
+                                    <li>Plain-language, specific rejection reasons</li>
+                                    <li>Type-to-sign fallback alongside draw canvas</li>
+                                    <li>Instant auto-approval for high-confidence scans</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. Tools & Tech -->
+            <section id="tools" class="cs-section">
+                <h2>11. Tools & Tech</h2>
+                <div class="cs-section-body">
+                    <div class="tools-flex">
+                        <div class="tool-item-box"><i class="fa-brands fa-figma"></i> Figma</div>
+                        <div class="tool-item-box">FigJam</div>
+                        <div class="tool-item-box">Maze</div>
+                        <div class="tool-item-box">Notion</div>
+                        <div class="tool-item-box">Jira</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. Design Gallery -->
+            <section id="gallery" class="cs-section">
+                <h2>12. Design Gallery</h2>
+                <div class="cs-section-body">
+                    <p>Click on any of the screens to open a full-resolution interactive lightbox preview.</p>
+                    <div class="cs-gallery-grid">
+                        <div class="gallery-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNzUgNzgwIiB3aWR0aD0iMzc1IiBoZWlnaHQ9Ijc4MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMGYxMjFlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE0MWEyYyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYWNjZW50MSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjN0M5QkZGIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzVCN0NGRiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjM3NSIgaGVpZ2h0PSI3ODAiIHJ4PSIzNiIgZmlsbD0idXJsKCNiZzEpIiBzdHJva2U9IiMyMzJhNDAiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gc3RhdHVzIGJhciAtLT4KICA8cmVjdCB4PSIyNCIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDxyZWN0IHg9IjI5MSIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDwhLS0gaGVhZGVyIC0tPgogIDxyZWN0IHg9IjI0IiB5PSI2NCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmM2Y0ZjYiIG9wYWNpdHk9IjAuODUiLz4KICA8cmVjdCB4PSIyNCIgeT0iOTIiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjOWNhM2FmIi8+CiAgPCEtLSBoZXJvIGNhcmQgLS0+CiAgPHJlY3QgeD0iMjQiIHk9IjEyOCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSIxNDAiIHJ4PSIxOCIgZmlsbD0idXJsKCNhY2NlbnQxKSIgb3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjNUI3Q0ZGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW9wYWNpdHk9IjAuNCIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxNTIiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQiIHJ4PSI0IiBmaWxsPSIjZjNmNGY2IiBvcGFjaXR5PSIwLjgiLz4KICA8cmVjdCB4PSI0OCIgeT0iMTc2IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwIiByeD0iNCIgZmlsbD0iIzljYTNhZiIvPgogIDxyZWN0IHg9IjQ4IiB5PSIyMjgiIHdpZHRoPSIxMTAiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0idXJsKCNhY2NlbnQxKSIvPgogIDwhLS0gbGlzdCBpdGVtcyAtLT4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzMDAiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjMzNiIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSIzMjIiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iMzQwIiB3aWR0aD0iMTEwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjNmI3MjgwIi8+CiAgICA8cmVjdCB4PSIzMDAiIHk9IjMyOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iMC4yNSIvPgogIDwvZz4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzODQiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjQyMCIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI0MDYiIHdpZHRoPSIxODAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iNDI0IiB3aWR0aD0iOTAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICAgIDxyZWN0IHg9IjMwMCIgeT0iNDEyIiB3aWR0aD0iMzYiIGhlaWdodD0iMTYiIHJ4PSI4IiBmaWxsPSIjNUI3Q0ZGIiBvcGFjaXR5PSIwLjI1Ii8+CiAgPC9nPgogIDxnPgogICAgPHJlY3QgeD0iMjQiIHk9IjQ2OCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSI3MiIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICAgIDxjaXJjbGUgY3g9IjU2IiBjeT0iNTA0IiByPSIxNiIgZmlsbD0iIzJhMzM1MCIvPgogICAgPHJlY3QgeD0iODQiIHk9IjQ5MCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxMCIgcng9IjQiIGZpbGw9IiNkMWQ1ZGIiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI1MDgiIHdpZHRoPSIxMzAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICA8L2c+CiAgPCEtLSBjaGFydCAtLT4KICA8cmVjdCB4PSIyNCIgeT0iNTY0IiB3aWR0aD0iMzI3IiBoZWlnaHQ9IjEyMCIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI0NCw2NjAgMTAwLDYzMCAxNTYsNjQ4IDIxMiw2MDAgMjY4LDYxNiAzMjQsNTgwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPCEtLSBib3R0b20gbmF2IC0tPgogIDxyZWN0IHg9IjAiIHk9IjcxNiIgd2lkdGg9IjM3NSIgaGVpZ2h0PSI2NCIgcng9IjAiIGZpbGw9IiMwYjBlMTciLz4KICA8Y2lyY2xlIGN4PSI5NCIgY3k9Ijc0OCIgcj0iMTQiIGZpbGw9IiM1QjdDRkYiLz4KICA8Y2lyY2xlIGN4PSIxODciIGN5PSI3NDgiIHI9IjEwIiBmaWxsPSIjMmEzMzUwIi8+CiAgPGNpcmNsZSBjeD0iMjgwIiBjeT0iNzQ4IiByPSIxMCIgZmlsbD0iIzJhMzM1MCIvPgogIDx0ZXh0IHg9IjE4NyIgeT0iNzEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIxLjUiIGZpbGw9IiM1QjdDRkYiIG9wYWNpdHk9IjAuOCI+TU9CSUxFIFNDUkVFTiBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Camera-guided capture screen" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="/ph-flow.svg" alt="KYC validation flow diagram" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYyMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjIwIj4KICA8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MjAiIGZpbGw9IiMwZjEyMWUiLz4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRiNTU2OCIgc3Ryb2tlLXdpZHRoPSIxLjUiPgogICAgPCEtLSB0aHJlZSBsb3ctZmkgcGhvbmUgZnJhbWVzIC0tPgogICAgPHJlY3QgeD0iNjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiM1QjdDRkYiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSI5MiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNiIgcng9IjMiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIxMjAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI4OCIgeT0iMTUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjkwIiByeD0iNiIvPgogICAgPGxpbmUgeDE9Ijg4IiB5MT0iMTUwIiB4Mj0iMjUyIiB5Mj0iMjQwIi8+CiAgICA8bGluZSB4MT0iMjUyIiB5MT0iMTUwIiB4Mj0iODgiIHkyPSIyNDAiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIyNTYiIHdpZHRoPSIxNjQiIGhlaWdodD0iMzAiIHJ4PSIxNSIvPgogICAgPHJlY3QgeD0iODgiIHk9IjMwMCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI1MCIgcng9IjYiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIzNjQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNTAiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSI4OCIgeT0iNDI4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjUwIiByeD0iNiIvPgoKICAgIDxyZWN0IHg9IjM0MCIgeT0iNjAiIHdpZHRoPSIyMjAiIGhlaWdodD0iNDgwIiByeD0iMTgiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLW9wYWNpdHk9IjAuNiIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSI5MiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjE2IiByeD0iMyIvPgogICAgPGNpcmNsZSBjeD0iNTAwIiBjeT0iMTAwIiByPSIxMCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIxMzAiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTIwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIyNjQiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjQ1MiIgeT0iMjY0IiB3aWR0aD0iNzYiIGhlaWdodD0iNzYiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSIzNjgiIHk9IjM1MiIgd2lkdGg9Ijc2IiBoZWlnaHQ9Ijc2IiByeD0iNiIvPgogICAgPHJlY3QgeD0iNDUyIiB5PSIzNTIiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjM2OCIgeT0iNDUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjM0IiByeD0iMTciLz4KCiAgICA8cmVjdCB4PSI2MjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iOTIiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTYiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjEyMiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNTAiIHJ4PSI2Ii8+CiAgICA8cGF0aCBkPSJNNjQ4IDE5NyBsMzAgLTM0IGwyNiAyMCBsNDAgLTQ2IGw2OCA2MCIgLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMjg4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjEyIiByeD0iMyIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSIzMTAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjM0MCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI0MCIgcng9IjgiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMzkyIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjQwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSI0NDQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNDAiIHJ4PSI4Ii8+CiAgPC9nPgogIDwhLS0gYW5ub3RhdGlvbiBjYWxsb3V0cyAtLT4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM2YjcyODAiPgogICAgPGNpcmNsZSBjeD0iNjAiIGN5PSI1NjAiIHI9IjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCN0NGRiIvPgogICAgPHRleHQgeD0iNjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVCN0NGRiIgZm9udC1zaXplPSIxMCI+QTwvdGV4dD4KICAgIDx0ZXh0IHg9IjgwIiB5PSI1NjQiPlN0ZXAtYnktc3RlcCB3aXphcmQ8L3RleHQ+CgogICAgPGNpcmNsZSBjeD0iMzQwIiBjeT0iNTYwIiByPSI5IiBmaWxsPSJub25lIiBzdHJva2U9IiM5Y2EzYWYiLz4KICAgIDx0ZXh0IHg9IjM0MCIgeT0iNTY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOWNhM2FmIiBmb250LXNpemU9IjEwIj5CPC90ZXh0PgogICAgPHRleHQgeD0iMzYwIiB5PSI1NjQiPkdyaWQtYmFzZWQgc2VsZWN0aW9uPC90ZXh0PgoKICAgIDxjaXJjbGUgY3g9IjYyMCIgY3k9IjU2MCIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTBiOTgxIi8+CiAgICA8dGV4dCB4PSI2MjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzEwYjk4MSIgZm9udC1zaXplPSIxMCI+QzwvdGV4dD4KICAgIDx0ZXh0IHg9IjY0MCIgeT0iNTY0Ij5TdW1tYXJ5ICsgY29uZmlybWF0aW9uPC90ZXh0PgogIDwvZz4KICA8dGV4dCB4PSIxMDUwIiB5PSIzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgbGV0dGVyLXNwYWNpbmc9IjEuNSIgZmlsbD0iIzVCN0NGRiIgb3BhY2l0eT0iMC43IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCAxMDUwIDMwMCkiPldJUkVGUkFNRSBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Signature step wireframes" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="/ph-designsystem.svg" alt="Capture guide component system" class="gallery-img main-lightbox-trigger">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 13. Key Learnings -->
+            <section id="learnings" class="cs-section">
+                <h2>13. Key Learnings</h2>
+                <div class="cs-section-body">
+                    <p>Compliance UX has its own rules, and this project taught me to respect them without treating them as an excuse for a bad experience.</p>
+                    <div class="pain-points-grid">
+                        <div class="pain-card">
+                            <span class="pain-num">01</span>
+                            <h5>Prevent errors, don't just explain them</h5>
+                            <p>Every hour spent on rejection-message copywriting was worth less than the real-time capture guide that stopped the bad photo from being submitted in the first place.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">02</span>
+                            <h5>Offer alternatives instead of forcing one interaction</h5>
+                            <p>Type-to-sign didn't replace the draw canvas — it sat beside it. Giving users a second valid path removed friction without removing choice.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">03</span>
+                            <h5>Compliance officers are a design resource, not a blocker</h5>
+                            <p>Involving compliance in copy review from day one meant we never had to walk back a "friendly" rewrite that turned out to be legally inaccurate.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Project Navigation Section -->
+            <div class="cs-project-nav" id="navigation">
+                <a href="project_bigul_apiconnect.html" class="nav-prev">
+                    <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
+                    <span class="nav-project-title">Bigul API Connect</span>
+                </a>
+                <a href="project_bigul_algo.html" class="nav-next">
+                    <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="nav-project-title">Bigul Algo</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="lightboxOverlay" class="lightbox-overlay hidden" aria-hidden="true" role="dialog">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Preview">&times;</button>
+        <img id="lightboxImg" src="" alt="Full size preview" class="lightbox-img">
+    </div>
+
+        <!-- Footer -->
+    <footer class="footer-premium" id="siteFooter">
+        <div class="footer-bg" aria-hidden="true">
+            <div class="footer-aurora"></div>
+            <div class="footer-blob footer-blob-a"></div>
+            <div class="footer-blob footer-blob-b"></div>
+            <div class="footer-noise"></div>
+            <div class="footer-particles" id="footerParticles"></div>
+            <div class="footer-spotlight" id="footerSpotlight"></div>
+        </div>
+
+        <div class="container footer-inner">
+            <div class="footer-grid">
+                <!-- Column 1: Personal Brand -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="footer-logo">Aditya<span class="logo-dot">.</span></a>
+                    <p class="footer-tagline">Product Designer crafting intuitive digital products that solve complex problems and create measurable business impact.</p>
+                    <p class="footer-focus"><span>Fintech</span><span class="dot-sep" aria-hidden="true">•</span><span>SaaS</span><span class="dot-sep" aria-hidden="true">•</span><span>E-commerce</span></p>
+
+                    <div class="footer-availability">
+                        <span class="availability-dot"><span class="availability-ping"></span></span>
+                        Available for Product Design Opportunities
+                    </div>
+
+                    <div class="footer-cta-row">
+                        <a href="assets/Aditya_Nandane_Resume.pdf" download class="btn-footer btn-footer-primary magnetic">
+                            <span>Download Resume</span>
+                            <i class="fa-solid fa-arrow-down-to-line btn-footer-icon"></i>
+                        </a>
+                        <a href="index.html#contact" class="btn-footer btn-footer-secondary magnetic">
+                            <span>Let's Talk</span>
+                            <i class="fa-solid fa-arrow-right btn-footer-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <nav class="footer-col footer-col-nav" aria-label="Footer">
+                    <h4 class="footer-col-title">Navigate</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="about.html" class="footer-nav-link"><i class="fa-solid fa-user footer-nav-icon"></i><span>About</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="work.html" class="footer-nav-link"><i class="fa-solid fa-diagram-project footer-nav-icon"></i><span>Projects</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="work.html" class="footer-nav-link"><i class="fa-solid fa-book-open footer-nav-icon"></i><span>Case Studies</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="about.html#resume" class="footer-nav-link"><i class="fa-solid fa-briefcase footer-nav-icon"></i><span>Experience</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="assets/Aditya_Nandane_Resume.pdf" download class="footer-nav-link"><i class="fa-solid fa-file-pdf footer-nav-icon"></i><span>Resume</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="index.html#contact" class="footer-nav-link"><i class="fa-solid fa-envelope footer-nav-icon"></i><span>Contact</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                    </ul>
+                </nav>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-col footer-col-connect">
+                    <h4 class="footer-connect-title">Let's Build Something Meaningful</h4>
+                    <p class="footer-connect-desc">I'm always open to discussing product design, fintech, startups, or exciting product opportunities.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-icon magnetic" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:nandaneas1595@gmail.com" class="footer-social-icon magnetic" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider" aria-hidden="true"></div>
+
+            <div class="footer-backtotop-row">
+                <button id="backToTop" class="back-to-top-pill" aria-label="Back to top of page">
+                    <i class="fa-solid fa-arrow-up back-to-top-arrow" aria-hidden="true"></i>
+                    <span>Back to Top</span>
+                </button>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p class="footer-bottom-item footer-copyright">&copy; <span id="currentYear">2026</span> Aditya Nandane</p>
+                <p class="footer-bottom-item footer-crafted">Crafted with curiosity, precision, and purpose.</p>
+                <p class="footer-bottom-item footer-builtwith">Designed in Figma • Built with Code</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

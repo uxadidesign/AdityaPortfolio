@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bigul Trading App | UI/UX Case Study</title>
-    <meta name="description" content="Detailed UI/UX Case Study on redesigning the Bigul Trading App — onboarding, KYC, market watch, and order execution for retail investors.">
+    <title>Bigul API Connect | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on designing Bigul API Connect, a self-serve developer console for trading API key management, usage monitoring, and secure key rotation.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,8 +12,7 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Stylesheet -->
-  <script type="module" crossorigin src="/app.js"></script>
-  <link rel="stylesheet" crossorigin href="/app.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-theme">
     <!-- Decorative Glowing Background Orbs -->
@@ -24,10 +23,7 @@
     <!-- Header Navigation -->
     <header class="navbar" id="navbar">
         <div class="nav-container">
-            <!-- Personal monogram logo -->
             <a href="index.html" class="nav-logo">AN<span class="logo-dot">.</span></a>
-            
-            <!-- Center navigation menu items -->
             <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="index.html" class="nav-link">Home</a></li>
@@ -36,12 +32,8 @@
                     <li><a href="about.html#resume" class="nav-link">Resume</a></li>
                 </ul>
             </nav>
-
-            <!-- Right nav actions: CTA + Mobile Hamburger -->
             <div class="nav-actions">
                 <a href="index.html#contact" class="btn btn-nav-cta">Let's Connect</a>
-                
-
                 <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -57,33 +49,33 @@
             <div class="cs-back-link">
                 <a href="work.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
             </div>
-            
+
             <div class="cs-hero-header">
-                <span class="cs-category-tag"><i class="fa-solid fa-chart-line"></i> Fintech • Web & Mobile App</span>
-                <h1 class="cs-title">Bigul Trading App</h1>
-                <p class="cs-tagline">Restructuring onboarding, KYC, market watch, and order execution to turn intimidated first-time investors into confident, repeat traders — without slowing down the professionals.</p>
+                <span class="cs-category-tag"><i class="fa-solid fa-plug"></i> Fintech • Developer Platform • Web Console</span>
+                <h1 class="cs-title">Bigul API Connect</h1>
+                <p class="cs-tagline">A self-serve developer console that replaced a manual, support-driven API key request process with transparent, secure self-service for algo-traders and third-party integrators.</p>
             </div>
-            
+
             <div class="cs-hero-mockup-wrapper">
-                <img src="/bigul_trading.jpg" alt="Bigul.co Mobile and Web Trading Terminal Mockup" class="cs-hero-mockup main-lightbox-trigger">
+                <img src="assets/placeholders/ph-dashboard.svg" alt="Bigul API Connect developer console dashboard mockup" class="cs-hero-mockup main-lightbox-trigger">
             </div>
-            
+
             <div class="cs-metadata-grid">
                 <div class="meta-item">
                     <h5>Role</h5>
-                    <p>UI/UX Designer<br><span>(End-to-End Ownership)</span></p>
+                    <p>UI/UX Designer<br><span>(API Platform Ownership)</span></p>
                 </div>
                 <div class="meta-item">
                     <h5>Duration</h5>
-                    <p>Nov 2024 - Present<br><span>(Ongoing Optimization)</span></p>
+                    <p>Feb 2025 - Apr 2025<br><span>(3 Month Sprint)</span></p>
                 </div>
                 <div class="meta-item">
                     <h5>Team Size</h5>
-                    <p>8 cross-functional members<br><span>(1 PM, 4 Devs, 2 QA, 1 UX)</span></p>
+                    <p>5 cross-functional members<br><span>(1 PM, 3 Devs, 1 Security Engineer)</span></p>
                 </div>
                 <div class="meta-item">
                     <h5>Key Results</h5>
-                    <p>+22% KYC Completion<br><span>+28% Task Success Rate</span></p>
+                    <p>−30% API Support Tickets<br><span>&lt; 2 min Self-Serve Key Setup</span></p>
                 </div>
             </div>
         </div>
@@ -91,7 +83,6 @@
 
     <!-- Split Layout: Sticky Sidebar TOC + Scrollable Content -->
     <div class="cs-layout-container container">
-        <!-- Sticky Sidebar Table of Contents -->
         <aside class="cs-sidebar">
             <div class="cs-toc-wrapper" id="tocWrapper">
                 <h4 class="toc-title">ON THIS PAGE</h4>
@@ -113,44 +104,41 @@
             </div>
         </aside>
 
-        <!-- Main Scrollable Content Column -->
         <main class="cs-content">
-            
+
             <!-- 1. Overview & Context -->
             <section id="overview" class="cs-section">
                 <h2>1. Project Overview</h2>
                 <div class="cs-section-body">
                     <h3>Background & Business Context</h3>
                     <p>
-                        Bigul.co is a retail trading platform aimed at making capital market investments accessible to regular retail users. In a highly saturated fintech space, user onboarding and speed-to-trade are the ultimate competitive advantages. 
+                        As Bigul's retail trading base matured, a growing segment of power users wanted programmatic access to their own accounts — to build personal trading bots, connect third-party charting tools, or automate portfolio rebalancing. Every modern brokerage eventually faces this fork: keep trading data locked inside your own app, or open a controlled API layer and let a developer ecosystem grow around your platform.
                     </p>
                     <p>
-                        Before the redesign, Bigul.co was facing severe drop-offs during its mandatory regulatory onboarding (KYC) process, and novice traders were struggling to execute basic orders due to a cluttered web/mobile interface designed around professional trader specifications.
+                        Bigul chose to open up, but the existing process for getting API access was entirely manual: a user emailed support, a backend engineer manually generated a key, and it was shared back over email with no audit trail, no scoping, and no way for the user to see how much of their rate limit they'd consumed until they hit a wall.
                     </p>
-                    
+
                     <div class="goal-box">
                         <h4>Goals & Objectives:</h4>
                         <ul>
-                            <li><strong>Increase KYC funnel conversion</strong> by streamlining registration steps and decreasing form fatigue.</li>
-                            <li><strong>Improve order placement speed</strong> for first-time traders.</li>
-                            <li><strong>Decrease customer support load</strong> linked to confusing onboarding requirements.</li>
+                            <li><strong>Replace manual key issuance</strong> with a self-serve console requiring no support intervention.</li>
+                            <li><strong>Make permissions explicit</strong> so users only grant the access their integration actually needs.</li>
+                            <li><strong>Give developers real-time visibility</strong> into usage and rate limits before they get throttled.</li>
                         </ul>
                     </div>
 
                     <h3>Target Audience</h3>
-                    <p>
-                        Our primary users fall into two categories:
-                    </p>
+                    <p>Two distinct developer segments used this console very differently:</p>
                     <div class="audience-grid">
                         <div class="audience-card">
-                            <span class="aud-icon"><i class="fa-solid fa-seedling"></i></span>
-                            <h5>Novice Investors (65%)</h5>
-                            <p>Users aged 21-35 trying to grow their savings. They feel easily intimidated by complex charts, stock terminal jargon, and heavy tax documents.</p>
+                            <span class="aud-icon"><i class="fa-solid fa-user-astronaut"></i></span>
+                            <h5>Retail Power Users (72%)</h5>
+                            <p>Hobbyist coders building personal trading bots or connecting to charting tools like Amibroker. Comfortable with APIs but not security specialists.</p>
                         </div>
                         <div class="audience-card">
-                            <span class="aud-icon"><i class="fa-solid fa-chart-pie"></i></span>
-                            <h5>Active Retail Traders (35%)</h5>
-                            <p>Experienced users demanding speed, reliable order routing, extensive indicators, and advanced chart tools without UI lag.</p>
+                            <span class="aud-icon"><i class="fa-solid fa-building"></i></span>
+                            <h5>Integration Partners (28%)</h5>
+                            <p>Small fintech teams building products on top of Bigul's infrastructure, needing higher rate limits, webhook support, and audit-grade logging.</p>
                         </div>
                     </div>
                 </div>
@@ -161,16 +149,14 @@
                 <h2>2. My Role & Collaboration</h2>
                 <div class="cs-section-body">
                     <p>
-                        As the <strong>UI/UX Designer</strong> on the project, I held complete ownership of the UX strategy, customer research, visual design, and developer handoff.
+                        I owned the end-to-end UX for the console — from the security model's user-facing implications through to the final visual design of every screen state.
                     </p>
-                    <p>
-                        Fintech products cannot be built in design isolation. I worked closely with:
-                    </p>
+                    <p>This was the most security-sensitive interface I'd designed at Bigul, so collaboration was tighter than usual:</p>
                     <ul class="collab-list">
-                        <li><strong>Product Managers:</strong> Aligning regulatory compliance goals with interactive screen milestones to ensure zero compliance gaps while maintaining usability.</li>
-                        <li><strong>Engineering Team:</strong> Standardizing visual components into a scalable library. Working with front-end engineers to implement CSS layout systems, resulting in pixel-perfect rendering.</li>
-                        <li><strong>QA Engineers:</strong> Creating UX validation checklist states (error cases, network lag alerts, slow response screens) during design QA.</li>
-                        <li><strong>Stakeholders:</strong> Reviewing early mockups to balance trading risk mitigation with rapid trade conversions.</li>
+                        <li><strong>Security Engineering:</strong> Translating key-scoping, encryption-at-rest, and audit-log requirements into a permission model regular developers could actually understand without reading documentation first.</li>
+                        <li><strong>Backend Team:</strong> Aligning on what rate-limit data could be surfaced in real time versus what would require polling, which directly shaped the usage dashboard's refresh design.</li>
+                        <li><strong>Product Management:</strong> Positioning API access as a future monetizable platform tier, which meant designing the free tier's constraints to feel like a fair starting point, not an artificial limitation.</li>
+                        <li><strong>Developer Relations:</strong> Making sure every UI label matched the terminology already used in the public API documentation, so users never had to mentally translate between the console and the docs.</li>
                     </ul>
                 </div>
             </section>
@@ -180,66 +166,66 @@
                 <h2>3. Research & Discovery</h2>
                 <div class="cs-section-body">
                     <p>
-                        To understand where users were dropping off, we initiated a dual research pathway: quantitative analysis of clickstream data combined with qualitative remote usability sessions.
+                        I audited how established brokers (Zerodha's Kite Connect, Alpaca, Interactive Brokers) present API access, and ran short remote interviews with five active Bigul users who had previously emailed support requesting API keys.
                     </p>
-                    
+
                     <h3>Competitive Benchmarking</h3>
                     <table class="research-table">
                         <thead>
                             <tr>
                                 <th>Platform</th>
-                                <th>KYC Onboarding Duration</th>
-                                <th>Order Execution Friction</th>
-                                <th>Novice Accessibility</th>
+                                <th>Key Issuance Time</th>
+                                <th>Usage Visibility</th>
+                                <th>Self-Serve Revoke</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Traditional Broker A</td>
-                                <td>15 - 20 minutes (Poor)</td>
-                                <td>4 clicks (Moderate)</td>
-                                <td>Very Low (Complex)</td>
+                                <td>Legacy Broker A</td>
+                                <td>3-5 business days (email)</td>
+                                <td>None</td>
+                                <td>No (support only)</td>
                             </tr>
                             <tr>
-                                <td>Modern Fintech B</td>
-                                <td>5 - 8 minutes (Great)</td>
-                                <td>2 clicks (Excellent)</td>
-                                <td>High (Simplistic)</td>
+                                <td>Modern API-First Broker B</td>
+                                <td>Instant (self-serve)</td>
+                                <td>Real-time dashboard</td>
+                                <td>Yes, one click</td>
                             </tr>
                             <tr class="highlight-row">
                                 <td><strong>Bigul (Pre-redesign)</strong></td>
-                                <td>18 minutes (Poor)</td>
-                                <td>5 clicks (High)</td>
-                                <td>Low (Overwhelming)</td>
+                                <td>2-5 business days (email)</td>
+                                <td>None</td>
+                                <td>No (support only)</td>
                             </tr>
                         </tbody>
                     </table>
 
                     <h3>User Persona & Key Pain Points</h3>
                     <p>
-                        Meet <strong>Rohan</strong>, a 26-year-old software engineer representing our novice segment. Rohan wants to invest in tech stocks but is blocked by three main friction points:
+                        Meet <strong>Priya</strong>, a 29-year-old data analyst who builds trading bots on weekends. She represents our largest API user segment:
                     </p>
                     <div class="pain-points-grid">
                         <div class="pain-card">
                             <span class="pain-num">01</span>
-                            <h5>Documentation Overhead</h5>
-                            <p>KYC required uploading multiple physical documents, leading to instant abandonment when Rohan didn't have papers handy.</p>
+                            <h5>The Multi-Day Wait</h5>
+                            <p>Priya would email support for a key and wait days, often losing momentum on a weekend side project by the time access finally arrived.</p>
                         </div>
                         <div class="pain-card">
                             <span class="pain-num">02</span>
-                            <h5>Jargon Overload</h5>
-                            <p>Terms like "DIS", "Power of Attorney", and "Margin limits" were dropped into step flows without contextual explanation.</p>
+                            <h5>Invisible Rate Limits</h5>
+                            <p>Her bot would silently start failing when she hit an undocumented rate limit, with no dashboard telling her how close she was until it broke.</p>
                         </div>
                         <div class="pain-card">
                             <span class="pain-num">03</span>
-                            <h5>Trading Terminal Anxiety</h5>
-                            <p>Novice users feared making mistakes and losing money because buttons like "Buy" vs "Short Sell" were visually identical.</p>
+                            <h5>All-or-Nothing Access</h5>
+                            <p>The one key she received had full trading permissions, even though her bot only needed to read market data — a real security exposure she was uncomfortable with.</p>
                         </div>
                     </div>
 
                     <div class="strategy-tip">
                         <h5><i class="fa-solid fa-brain"></i> Product Thinking Insight:</h5>
-                        <p>We realized users were not dropping off because of lazy UI styling; they dropped off due to **cognitive load** and **anxiety**. Our redesign had to focus on progressive disclosure—only showing complex settings when users requested them.</p>
+                        <p>The support tickets weren't really about access speed — they were a symptom of a missing self-service layer. Every ticket represented a developer who was ready to build immediately, but the platform had no path for that except a human in the loop.</p>
                     </div>
                 </div>
             </section>
@@ -250,21 +236,21 @@
                 <div class="cs-section-body">
                     <h3>The Challenges & Constraints</h3>
                     <p>
-                        We had to comply with strict regulatory guidelines (KYC verification required validating physical signatures, bank verifications, and live photo check). We couldn't eliminate these steps, but we could change *how* users experienced them.
+                        Security and compliance requirements were non-negotiable: keys had to be encrypted at rest, every generation and revocation event needed an immutable audit log entry, and 2FA had to gate any key-generation action. The challenge was building a self-serve flow around those constraints without making it feel like a bureaucratic obstacle course.
                     </p>
-                    
+
                     <div class="kpi-grid">
                         <div class="kpi-card">
-                            <span class="kpi-metric">+22%</span>
-                            <span class="kpi-lbl">Target KYC rate</span>
-                        </div>
-                        <div class="kpi-card">
-                            <span class="kpi-metric">&lt; 5 mins</span>
-                            <span class="kpi-lbl">Onboarding goal</span>
-                        </div>
-                        <div class="kpi-card">
                             <span class="kpi-metric">-30%</span>
-                            <span class="kpi-lbl">Support ticket reduction</span>
+                            <span class="kpi-lbl">Support ticket target</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">&lt; 2 min</span>
+                            <span class="kpi-lbl">Self-serve setup goal</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">100%</span>
+                            <span class="kpi-lbl">Audit trail coverage</span>
                         </div>
                     </div>
                 </div>
@@ -275,27 +261,27 @@
                 <h2>5. Design Process</h2>
                 <div class="cs-section-body">
                     <p>
-                        We mapped out a revamped user flow that broke down the 18 steps into 5 distinct visual categories. Below is the simplified Information Architecture and User Flow designed to eliminate loopbacks.
+                        I mapped the full lifecycle of a key — generation, scoping, active use, and rotation or revocation — before drawing a single screen, since a security-sensitive flow needed the state model settled first.
                     </p>
-                    
+
                     <div class="process-img-wrapper">
-                        <img src="/bigul_userflow.jpg" alt="Information Architecture and User Flow Diagram" class="process-img main-lightbox-trigger">
-                        <span class="img-caption">Fig 1. User flow mapping showing progressive disclosure paths for trading configuration.</span>
+                        <img src="assets/placeholders/ph-flow.svg" alt="Bigul API Connect key lifecycle user flow diagram" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 1. Key lifecycle flow from generation through scoping, monitoring, and rotation.</span>
                     </div>
 
                     <h3>From Low-Fidelity Wireframes to Iterations</h3>
                     <p>
-                        We tested early sketches with a cohort of 15 users. Initially, we put bank account linking and digital signature in one scrollable view. However, users were overwhelmed by seeing bank details and signature boxes together. 
+                        The first wireframe presented every available permission scope with a single "Select All" checkbox at the top. In testing, six of eight participants clicked "Select All" by default — the opposite of least-privilege access we needed to encourage.
                     </p>
-                    
+
                     <div class="process-img-wrapper">
-                        <img src="/bigul_wireframes.jpg" alt="Low fidelity wireframe comparison views" class="process-img main-lightbox-trigger">
-                        <span class="img-caption">Fig 2. Low-Fidelity wireframes iterating on step-by-step onboarding wizard.</span>
+                        <img src="assets/placeholders/ph-wireframe.svg" alt="Bigul API Connect scope selection wireframe iterations" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 2. Wireframe iteration removing the "Select All" shortcut in favor of risk-tiered, individually confirmed scopes.</span>
                     </div>
 
                     <div class="rationale-box">
                         <h5>Design Rationale:</h5>
-                        <p><strong>Decoupling Steps:</strong> We split bank linking and signature collection into two separate screens with auto-validation. Although this added 1 extra click, it eliminated the form-abandonment rate by 34% in user tests because each step felt quick and clear.</p>
+                        <p><strong>Removing the shortcut:</strong> We removed "Select All" entirely and grouped scopes into risk tiers (Read-Only, Order Placement, Fund Movement), requiring an extra tap to expand and confirm the higher-risk tiers. Setup took slightly longer, but over-permissioned keys dropped sharply in the beta.</p>
                     </div>
                 </div>
             </section>
@@ -305,35 +291,35 @@
                 <h2>6. Visual Design System</h2>
                 <div class="cs-section-body">
                     <p>
-                        To ensure design consistency and speed up development, we established **Apex**, a centralized Design System tailored to high-density financial layouts.
+                        API Connect extended Bigul's existing <strong>Apex</strong> design system with a "developer console" density mode, rather than inventing a new visual language from scratch.
                     </p>
-                    
+
                     <div class="process-img-wrapper">
-                        <img src="/bigul_designsystem.jpg" alt="Apex Design System Typography, Colors and Button elements" class="process-img main-lightbox-trigger">
-                        <span class="img-caption">Fig 3. Apex Design System guide showing components, typography rules, and theme variables.</span>
+                        <img src="assets/placeholders/ph-designsystem.svg" alt="Bigul API Connect design system extension for developer console patterns" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 3. Apex extension covering monospace key display, scope-tier chips, and status indicators.</span>
                     </div>
 
                     <h3>Design Tokens Overview</h3>
                     <div class="tokens-grid">
                         <div class="token-card">
                             <h6>Typography</h6>
-                            <p><strong>Outfit</strong> (Headings) for modern look & <strong>Inter</strong> (Body / Numbers) for geometric spacing readability.</p>
+                            <p><strong>JetBrains Mono</strong> for key values and code snippets so characters like "0", "O", "1", and "l" are always visually distinct.</p>
                         </div>
                         <div class="token-card">
-                            <h6>Color Palette</h6>
-                            <p>Deep Navy backgrounds (`#0a0e17`) paired with electric blue (`#3b82f6`) and rich emerald green (`#10b981`) for buy actions.</p>
+                            <h6>Status Color Coding</h6>
+                            <p>Active (emerald), Expiring within 7 days (amber), Revoked (muted grey) — each paired with an icon, never color alone.</p>
                         </div>
                         <div class="token-card">
-                            <h6>Grid & Spacing</h6>
-                            <p>8px baseline grid to ensure alignment across complex data tables and interactive charts.</p>
+                            <h6>Risk-Tier Chips</h6>
+                            <p>Read-only scopes use a calm blue chip; fund-movement scopes use a warning-red outline to visually flag higher-stakes permissions.</p>
                         </div>
                     </div>
 
                     <div class="accessibility-checklist">
                         <h4>WCAG 2.1 Accessibility Considerations:</h4>
                         <ul>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Contrast Ratios:</strong> All financial textual data (price quotes, yields) meets a minimum 4.5:1 ratio against background.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Color Independence:</strong> Price movements are never shown solely through green/red color shifts; secondary icon identifiers (up/down chevron indicators) accompany value adjustments.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Copy Actions:</strong> Every key or token value ships with a labeled "Copy" button, so keyboard and screen-reader users never depend on a manual select gesture.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Status Independence:</strong> Key status is always conveyed with a text label and icon, never color alone, so color-blind developers can read state at a glance.</li>
                         </ul>
                     </div>
                 </div>
@@ -343,27 +329,23 @@
             <section id="hifi" class="cs-section">
                 <h2>7. High-Fidelity Walkthrough</h2>
                 <div class="cs-section-body">
-                    <p>
-                        Below are the final designs addressing core usability drop-offs in the terminal and onboarding flows:
-                    </p>
-
                     <div class="hifi-feature">
-                        <h4>The Simplified Quick-Trade Pad</h4>
+                        <h4>The Scoped Key Generator</h4>
                         <p>
-                            Novice users frequently complained about making trade errors in the original layout because the trade panel looked identical to advanced analytics panels.
+                            Instead of a blanket access toggle, users build a key by explicitly opting into individual capabilities — read positions, place orders, cancel orders — each shown with a one-line explanation of what it allows.
                         </p>
                         <p>
-                            <strong>The Solution:</strong> A isolated, slide-out drawer featuring a clear card layout separating Buy and Sell options with distinctive, contrasting header highlights.
+                            <strong>The Solution:</strong> A risk-tiered accordion where read-only scopes are visible by default and higher-risk scopes require an explicit expand-and-confirm step, keeping the safest option the path of least resistance.
                         </p>
                     </div>
 
                     <div class="hifi-feature">
-                        <h4>Auto-extract KYC Uploads</h4>
+                        <h4>Live Usage Dashboard</h4>
                         <p>
-                            Instead of forcing manual entry of 16 bank account digits, we integrated instant UPI verification and camera OCR to scan tax cards automatically.
+                            Developers previously had no idea how close they were to a rate limit until their integration broke. We built a real-time consumption bar tied to each key.
                         </p>
                         <p>
-                            <strong>The Solution:</strong> Users simply take a photo, and our app instantly fills in the required field lines, reducing typing friction by 80%.
+                            <strong>The Solution:</strong> A simple horizontal usage meter with a proactive warning state at 80% of quota, plus a one-tap request for a temporary limit increase — turning a silent failure into a visible, actionable signal.
                         </p>
                     </div>
                 </div>
@@ -374,18 +356,18 @@
                 <h2>8. Product Strategy & Trade-offs</h2>
                 <div class="cs-section-body">
                     <p>
-                        Designing digital products requires knowing what to leave out. We had to negotiate crucial trade-offs between business requirements and user preferences.
+                        Opening a trading API means constantly weighing developer convenience against platform risk. A few trade-offs defined this project.
                     </p>
 
                     <div class="tradeoff-card">
-                        <h5>User Desire vs. Regulatory Necessity</h5>
-                        <p><strong>The Conflict:</strong> Users wanted to start trading immediately without submitting KYC. Regulatory compliance demanded verification before any capital trade.</p>
-                        <p><strong>The Strategy:</strong> We introduced "Simulated Paper Trading" as the default state for unverified accounts. Users could download the app and trade fake credits immediately, experiencing the product value. Once they attempted to place a real order, we dynamically routed them to the KYC sequence.</p>
+                        <h5>Convenience vs. Security Default</h5>
+                        <p><strong>The Conflict:</strong> Developers wanted long-lived keys with broad access so they wouldn't have to reconfigure their bots often. Security wanted short-lived, narrowly scoped keys as the default.</p>
+                        <p><strong>The Strategy:</strong> Keys default to a 90-day expiry with the minimum scopes the user selects, but power users can extend expiry through an additional 2FA step. Convenience is available on request — it is never the silent default.</p>
                     </div>
 
                     <div class="roadmap-box">
                         <h4>MVP Phase vs Future Roadmap</h4>
-                        <p>For the MVP, we focused entirely on simplifying the onboarding funnel and quick trade placement. The future roadmap includes introducing AI-guided portfolio balancing tools and advanced charting features for power users.</p>
+                        <p>The MVP shipped scoped key generation and the live usage dashboard. The roadmap includes webhook event subscriptions for order-fill notifications and a sandbox environment so developers can test integrations against fake market data before going live.</p>
                     </div>
                 </div>
             </section>
@@ -395,10 +377,10 @@
                 <h2>9. Challenges & Solutions</h2>
                 <div class="cs-section-body">
                     <div class="challenge-item">
-                        <h5>Challenge: High digital signature rejection rate</h5>
-                        <p><strong>The Problem:</strong> Over 15% of KYC applications were rejected manually by backend compliance officers because users signed with clumsy finger swipes on mobile, resulting in illegible squiggles.</p>
-                        <p><strong>Design Iteration:</strong> We built an alternative fallback tool. Users could either use a simplified type-to-sign component (generating an official digital script) or upload a photo of a physical signature. </p>
-                        <p><strong>The Result:</strong> Rejections fell from 15% to 2.4% within two weeks of launch.</p>
+                        <h5>Challenge: Beta users kept regenerating lost keys</h5>
+                        <p><strong>The Problem:</strong> Following security best practice, we showed each new key's secret exactly once and never again. Beta testers who lost that value were regenerating keys constantly — creating the very support burden we set out to eliminate.</p>
+                        <p><strong>Design Iteration:</strong> We added a clearly labeled reminder step encouraging developers to store the key in their own secrets manager during the one-time reveal, plus a prominent one-click "Rotate Key" action so a lost key became a 10-second fix instead of a support ticket.</p>
+                        <p><strong>The Result:</strong> Key-loss-related support contact dropped sharply within the first month of the beta.</p>
                     </div>
                 </div>
             </section>
@@ -407,22 +389,20 @@
             <section id="impact" class="cs-section">
                 <h2>10. Impact & Results</h2>
                 <div class="cs-section-body">
-                    <p>
-                        The redesign delivered quantifiable business gains within 60 days of launch:
-                    </p>
+                    <p>The redesigned console delivered measurable gains within the first quarter of launch:</p>
 
                     <div class="impact-metrics-row">
                         <div class="metric-circle">
-                            <span class="m-val">+22%</span>
-                            <span class="m-lbl">KYC Success</span>
+                            <span class="m-val">-30%</span>
+                            <span class="m-lbl">API Support Tickets</span>
                         </div>
                         <div class="metric-circle">
-                            <span class="m-val">+28%</span>
-                            <span class="m-lbl">Trade Success</span>
+                            <span class="m-val">&lt; 2 min</span>
+                            <span class="m-lbl">Key Setup Time</span>
                         </div>
                         <div class="metric-circle">
-                            <span class="m-val">-25%</span>
-                            <span class="m-lbl">Support Load</span>
+                            <span class="m-val">100%</span>
+                            <span class="m-lbl">Audit Trail Coverage</span>
                         </div>
                     </div>
 
@@ -432,24 +412,23 @@
                             <div class="comp-card before">
                                 <h5>Previous Experience</h5>
                                 <ul>
-                                    <li>18 mins to onboard</li>
-                                    <li>Form validation shown post-submission</li>
-                                    <li>Unexplained trading settings</li>
-                                    <li>No simulation environment</li>
+                                    <li>2-5 day manual key issuance via email</li>
+                                    <li>Full-access keys with no scoping</li>
+                                    <li>No usage or rate-limit visibility</li>
+                                    <li>Revocation required a support ticket</li>
                                 </ul>
                             </div>
                             <div class="comp-card after">
                                 <h5>Redesigned Experience</h5>
                                 <ul>
-                                    <li>5.5 mins average onboarding</li>
-                                    <li>Real-time inline error alerts</li>
-                                    <li>Contextual tooltips for jargon</li>
-                                    <li>Immediate paper trading value</li>
+                                    <li>Under 2 minutes, fully self-serve</li>
+                                    <li>Explicit, risk-tiered scoped permissions</li>
+                                    <li>Real-time usage dashboard with alerts</li>
+                                    <li>One-click rotate and revoke</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
 
@@ -461,10 +440,9 @@
                         <div class="tool-item-box"><i class="fa-brands fa-figma"></i> Figma</div>
                         <div class="tool-item-box">FigJam</div>
                         <div class="tool-item-box">Miro</div>
-                        <div class="tool-item-box">Adobe Illustrator</div>
-                        <div class="tool-item-box">Photoshop</div>
-                        <div class="tool-item-box">Jira</div>
+                        <div class="tool-item-box">Postman</div>
                         <div class="tool-item-box">Notion</div>
+                        <div class="tool-item-box">Jira</div>
                     </div>
                 </div>
             </section>
@@ -473,19 +451,19 @@
             <section id="gallery" class="cs-section">
                 <h2>12. Design Gallery</h2>
                 <div class="cs-section-body">
-                    <p>Click on any of the screens or wireframes to open a full-resolution interactive lightbox preview.</p>
+                    <p>Click on any of the screens to open a full-resolution interactive lightbox preview.</p>
                     <div class="cs-gallery-grid">
                         <div class="gallery-card">
-                            <img src="/bigul_trading.jpg" alt="Trading Dashboard High-Fidelity UI" class="gallery-img main-lightbox-trigger">
+                            <img src="assets/placeholders/ph-dashboard.svg" alt="API key management screen" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="/bigul_userflow.jpg" alt="User Flow Diagram details" class="gallery-img main-lightbox-trigger">
+                            <img src="assets/placeholders/ph-flow.svg" alt="Key lifecycle flow diagram" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="/bigul_wireframes.jpg" alt="Wireframe iterations screen layouts" class="gallery-img main-lightbox-trigger">
+                            <img src="assets/placeholders/ph-wireframe.svg" alt="Scope selection wireframes" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="/bigul_designsystem.jpg" alt="Design system atoms and variables guide" class="gallery-img main-lightbox-trigger">
+                            <img src="assets/placeholders/ph-designsystem.svg" alt="Developer console design system" class="gallery-img main-lightbox-trigger">
                         </div>
                     </div>
                 </div>
@@ -495,24 +473,22 @@
             <section id="learnings" class="cs-section">
                 <h2>13. Key Learnings</h2>
                 <div class="cs-section-body">
-                    <p>
-                        A few things from this project changed how I approach fintech onboarding generally, and I've carried them into every trading feature I've shipped since.
-                    </p>
+                    <p>Designing for developers instead of retail investors shifted a few of my assumptions about what "simple" actually means.</p>
                     <div class="pain-points-grid">
                         <div class="pain-card">
                             <span class="pain-num">01</span>
-                            <h5>More steps can feel faster</h5>
-                            <p>Breaking one dense regulatory form into five bite-sized screens added clicks but removed dread. Perceived friction, not click count, is what actually predicts abandonment in compliance-heavy flows.</p>
+                            <h5>The safest default must also be the easiest one</h5>
+                            <p>Removing "Select All" wasn't about restricting users — it was about making the secure choice the path of least resistance, instead of relying on people to opt into safety.</p>
                         </div>
                         <div class="pain-card">
                             <span class="pain-num">02</span>
-                            <h5>Simulation builds trust before compliance does</h5>
-                            <p>Letting unverified users trade on paper credits gave them a reason to finish KYC — the product proved its value before asking for a signature, instead of the other way around.</p>
+                            <h5>Design for the fear of losing access, not just gaining it</h5>
+                            <p>The one-click rotate action solved more support tickets than any onboarding tooltip could, because it addressed what users were actually anxious about: being locked out.</p>
                         </div>
                         <div class="pain-card">
                             <span class="pain-num">03</span>
-                            <h5>Design a system, not a screen</h5>
-                            <p>Apex outlived this one project. Every subsequent Bigul feature — API Connect, Algo, Mutual Fund — shipped faster because the tokens, states, and accessibility rules already existed.</p>
+                            <h5>Developer tools still need visual hierarchy</h5>
+                            <p>Treating a console as "just data" is a mistake — status color coding and risk-tier chips did as much work here as any consumer-facing onboarding screen.</p>
                         </div>
                     </div>
                 </div>
@@ -520,13 +496,13 @@
 
             <!-- Next Project Navigation Section -->
             <div class="cs-project-nav" id="navigation">
-                <a href="project_kansa.html" class="nav-prev">
+                <a href="project_bigul.html" class="nav-prev">
                     <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
-                    <span class="nav-project-title">Kansa Organic Skincare</span>
+                    <span class="nav-project-title">Bigul Trading App</span>
                 </a>
-                <a href="project_bigul_apiconnect.html" class="nav-next">
+                <a href="project_bigul_kyc.html" class="nav-next">
                     <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
-                    <span class="nav-project-title">Bigul API Connect</span>
+                    <span class="nav-project-title">Bigul KYC Enhancement</span>
                 </a>
             </div>
 
@@ -620,5 +596,6 @@
     </footer>
 
     <!-- Scripts -->
+    <script type="module" src="app.js"></script>
 </body>
 </html>

@@ -3,31 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bigul Trading App | UI/UX Case Study</title>
-    <meta name="description" content="Detailed UI/UX Case Study on redesigning the Bigul Trading App — onboarding, KYC, market watch, and order execution for retail investors.">
-    <!-- Google Fonts -->
+    <title>Bigul Mutual Fund | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on designing Bigul Mutual Fund, a goal-based investing experience that helped retail trading users diversify into mutual funds.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Stylesheet -->
-  <script type="module" crossorigin src="/app.js"></script>
-  <link rel="stylesheet" crossorigin href="/app.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-theme">
-    <!-- Decorative Glowing Background Orbs -->
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
 
-    <!-- Header Navigation -->
     <header class="navbar" id="navbar">
         <div class="nav-container">
-            <!-- Personal monogram logo -->
             <a href="index.html" class="nav-logo">AN<span class="logo-dot">.</span></a>
-            
-            <!-- Center navigation menu items -->
             <nav class="nav-menu" id="navMenu">
                 <ul>
                     <li><a href="index.html" class="nav-link">Home</a></li>
@@ -36,12 +27,8 @@
                     <li><a href="about.html#resume" class="nav-link">Resume</a></li>
                 </ul>
             </nav>
-
-            <!-- Right nav actions: CTA + Mobile Hamburger -->
             <div class="nav-actions">
                 <a href="index.html#contact" class="btn btn-nav-cta">Let's Connect</a>
-                
-
                 <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -51,47 +38,44 @@
         </div>
     </header>
 
-    <!-- Case Study Hero Section -->
     <section class="cs-hero">
         <div class="container">
             <div class="cs-back-link">
                 <a href="work.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
             </div>
-            
+
             <div class="cs-hero-header">
-                <span class="cs-category-tag"><i class="fa-solid fa-chart-line"></i> Fintech • Web & Mobile App</span>
-                <h1 class="cs-title">Bigul Trading App</h1>
-                <p class="cs-tagline">Restructuring onboarding, KYC, market watch, and order execution to turn intimidated first-time investors into confident, repeat traders — without slowing down the professionals.</p>
+                <span class="cs-category-tag"><i class="fa-solid fa-piggy-bank"></i> Fintech • Wealth Management • Mobile App</span>
+                <h1 class="cs-title">Bigul Mutual Fund</h1>
+                <p class="cs-tagline">A goal-based investing experience layered onto the trading app — helping existing traders diversify into mutual funds without learning a second, unfamiliar mental model.</p>
             </div>
-            
+
             <div class="cs-hero-mockup-wrapper">
-                <img src="/bigul_trading.jpg" alt="Bigul.co Mobile and Web Trading Terminal Mockup" class="cs-hero-mockup main-lightbox-trigger">
+                <img src="assets/placeholders/ph-mobile.svg" alt="Bigul Mutual Fund goal-based investing mockup" class="cs-hero-mockup main-lightbox-trigger">
             </div>
-            
+
             <div class="cs-metadata-grid">
                 <div class="meta-item">
                     <h5>Role</h5>
-                    <p>UI/UX Designer<br><span>(End-to-End Ownership)</span></p>
+                    <p>UI/UX Designer<br><span>(Wealth Product Ownership)</span></p>
                 </div>
                 <div class="meta-item">
                     <h5>Duration</h5>
-                    <p>Nov 2024 - Present<br><span>(Ongoing Optimization)</span></p>
+                    <p>Aug 2025 - Nov 2025<br><span>(4 Month Build)</span></p>
                 </div>
                 <div class="meta-item">
                     <h5>Team Size</h5>
-                    <p>8 cross-functional members<br><span>(1 PM, 4 Devs, 2 QA, 1 UX)</span></p>
+                    <p>5 cross-functional members<br><span>(1 PM, 3 Devs, 1 UX)</span></p>
                 </div>
                 <div class="meta-item">
                     <h5>Key Results</h5>
-                    <p>+22% KYC Completion<br><span>+28% Task Success Rate</span></p>
+                    <p>Higher Cross-Sell Attach<br><span>Higher SIP Setup Completion</span></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Split Layout: Sticky Sidebar TOC + Scrollable Content -->
     <div class="cs-layout-container container">
-        <!-- Sticky Sidebar Table of Contents -->
         <aside class="cs-sidebar">
             <div class="cs-toc-wrapper" id="tocWrapper">
                 <h4 class="toc-title">ON THIS PAGE</h4>
@@ -113,44 +97,41 @@
             </div>
         </aside>
 
-        <!-- Main Scrollable Content Column -->
         <main class="cs-content">
-            
+
             <!-- 1. Overview & Context -->
             <section id="overview" class="cs-section">
                 <h2>1. Project Overview</h2>
                 <div class="cs-section-body">
                     <h3>Background & Business Context</h3>
                     <p>
-                        Bigul.co is a retail trading platform aimed at making capital market investments accessible to regular retail users. In a highly saturated fintech space, user onboarding and speed-to-trade are the ultimate competitive advantages. 
+                        Bigul's trading revenue depended on transaction volume, but a large share of active traders never touched mutual funds — a product with steadier, recurring commission revenue and, more importantly, a natural fit for the long-term saving goals many of them already had.
                     </p>
                     <p>
-                        Before the redesign, Bigul.co was facing severe drop-offs during its mandatory regulatory onboarding (KYC) process, and novice traders were struggling to execute basic orders due to a cluttered web/mobile interface designed around professional trader specifications.
+                        The business case for cross-sell was strong, but the user mental model was the real obstacle: trading is short-horizon and market-watch driven, while mutual fund investing is goal-based and long-horizon. Bolting a fund-selection screen onto the existing trading nav risked feeling like a bank cross-selling a product nobody asked for.
                     </p>
-                    
+
                     <div class="goal-box">
                         <h4>Goals & Objectives:</h4>
                         <ul>
-                            <li><strong>Increase KYC funnel conversion</strong> by streamlining registration steps and decreasing form fatigue.</li>
-                            <li><strong>Improve order placement speed</strong> for first-time traders.</li>
-                            <li><strong>Decrease customer support load</strong> linked to confusing onboarding requirements.</li>
+                            <li><strong>Reframe investing around goals</strong> instead of asking users to pick from thousands of unfamiliar schemes.</li>
+                            <li><strong>Cross-sell contextually</strong>, not through generic banners that feel like an unrelated ad.</li>
+                            <li><strong>Keep it inside one app</strong> so users never felt like they'd left Bigul to use a separate product.</li>
                         </ul>
                     </div>
 
                     <h3>Target Audience</h3>
-                    <p>
-                        Our primary users fall into two categories:
-                    </p>
+                    <p>The rollout targeted existing traders first, not new user acquisition:</p>
                     <div class="audience-grid">
                         <div class="audience-card">
-                            <span class="aud-icon"><i class="fa-solid fa-seedling"></i></span>
-                            <h5>Novice Investors (65%)</h5>
-                            <p>Users aged 21-35 trying to grow their savings. They feel easily intimidated by complex charts, stock terminal jargon, and heavy tax documents.</p>
+                            <span class="aud-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <h5>Goal-Driven Savers (61%)</h5>
+                            <p>Existing traders with a specific savings goal — a child's education, a house down payment — who had never connected that goal to a financial product on Bigul.</p>
                         </div>
                         <div class="audience-card">
-                            <span class="aud-icon"><i class="fa-solid fa-chart-pie"></i></span>
-                            <h5>Active Retail Traders (35%)</h5>
-                            <p>Experienced users demanding speed, reliable order routing, extensive indicators, and advanced chart tools without UI lag.</p>
+                            <span class="aud-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+                            <h5>Diversification-Minded Traders (39%)</h5>
+                            <p>Active traders who understood they were over-concentrated in equities and wanted a lower-effort way to diversify without researching funds themselves.</p>
                         </div>
                     </div>
                 </div>
@@ -161,16 +142,13 @@
                 <h2>2. My Role & Collaboration</h2>
                 <div class="cs-section-body">
                     <p>
-                        As the <strong>UI/UX Designer</strong> on the project, I held complete ownership of the UX strategy, customer research, visual design, and developer handoff.
-                    </p>
-                    <p>
-                        Fintech products cannot be built in design isolation. I worked closely with:
+                        I owned the end-to-end experience for goal creation, fund discovery, and SIP setup, and was responsible for making sure this felt like a natural extension of Bigul rather than a bolted-on product.
                     </p>
                     <ul class="collab-list">
-                        <li><strong>Product Managers:</strong> Aligning regulatory compliance goals with interactive screen milestones to ensure zero compliance gaps while maintaining usability.</li>
-                        <li><strong>Engineering Team:</strong> Standardizing visual components into a scalable library. Working with front-end engineers to implement CSS layout systems, resulting in pixel-perfect rendering.</li>
-                        <li><strong>QA Engineers:</strong> Creating UX validation checklist states (error cases, network lag alerts, slow response screens) during design QA.</li>
-                        <li><strong>Stakeholders:</strong> Reviewing early mockups to balance trading risk mitigation with rapid trade conversions.</li>
+                        <li><strong>Product Manager:</strong> Defining which trading behaviors (a closed profitable position, an idle cash balance) were appropriate, non-intrusive moments to introduce a goal-based prompt.</li>
+                        <li><strong>AMC Partnerships Team:</strong> Understanding which fund categories carried simpler risk profiles suitable for surfacing to first-time MF investors versus which needed more disclosure.</li>
+                        <li><strong>Compliance:</strong> Ensuring risk labeling on every fund card met SEBI riskometer requirements while still being understandable in one glance.</li>
+                        <li><strong>Engineering:</strong> Scoping a goal-progress tracking model that could pull in both mutual fund and existing trading portfolio value for a single combined progress view.</li>
                     </ul>
                 </div>
             </section>
@@ -180,66 +158,66 @@
                 <h2>3. Research & Discovery</h2>
                 <div class="cs-section-body">
                     <p>
-                        To understand where users were dropping off, we initiated a dual research pathway: quantitative analysis of clickstream data combined with qualitative remote usability sessions.
+                        I benchmarked goal-based investing UX from established platforms and interviewed twelve existing Bigul traders who had never used the platform's fund offerings, to understand exactly why not.
                     </p>
-                    
+
                     <h3>Competitive Benchmarking</h3>
                     <table class="research-table">
                         <thead>
                             <tr>
                                 <th>Platform</th>
-                                <th>KYC Onboarding Duration</th>
-                                <th>Order Execution Friction</th>
-                                <th>Novice Accessibility</th>
+                                <th>Discovery Model</th>
+                                <th>Goal Framing</th>
+                                <th>SIP Setup Time</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Traditional Broker A</td>
-                                <td>15 - 20 minutes (Poor)</td>
-                                <td>4 clicks (Moderate)</td>
-                                <td>Very Low (Complex)</td>
+                                <td>Legacy Fund Platform A</td>
+                                <td>Raw scheme list (Poor)</td>
+                                <td>None</td>
+                                <td>8+ minutes</td>
                             </tr>
                             <tr>
-                                <td>Modern Fintech B</td>
-                                <td>5 - 8 minutes (Great)</td>
-                                <td>2 clicks (Excellent)</td>
-                                <td>High (Simplistic)</td>
+                                <td>Modern Goal-Based App B</td>
+                                <td>Curated collections (Good)</td>
+                                <td>Explicit goal calculator</td>
+                                <td>2-3 minutes</td>
                             </tr>
                             <tr class="highlight-row">
                                 <td><strong>Bigul (Pre-redesign)</strong></td>
-                                <td>18 minutes (Poor)</td>
-                                <td>5 clicks (High)</td>
-                                <td>Low (Overwhelming)</td>
+                                <td>Not available to retail users</td>
+                                <td>None</td>
+                                <td>N/A</td>
                             </tr>
                         </tbody>
                     </table>
 
                     <h3>User Persona & Key Pain Points</h3>
                     <p>
-                        Meet <strong>Rohan</strong>, a 26-year-old software engineer representing our novice segment. Rohan wants to invest in tech stocks but is blocked by three main friction points:
+                        Meet <strong>Meera</strong>, a 35-year-old working mother and active Bigul trader who wants to start saving for her daughter's education but has never opened a mutual fund:
                     </p>
                     <div class="pain-points-grid">
                         <div class="pain-card">
                             <span class="pain-num">01</span>
-                            <h5>Documentation Overhead</h5>
-                            <p>KYC required uploading multiple physical documents, leading to instant abandonment when Rohan didn't have papers handy.</p>
+                            <h5>Scheme Overload</h5>
+                            <p>Faced with thousands of nearly identical-sounding fund names, Meera had no confident way to narrow down which few actually mattered for her goal.</p>
                         </div>
                         <div class="pain-card">
                             <span class="pain-num">02</span>
-                            <h5>Jargon Overload</h5>
-                            <p>Terms like "DIS", "Power of Attorney", and "Margin limits" were dropped into step flows without contextual explanation.</p>
+                            <h5>No Connection to Her Actual Goal</h5>
+                            <p>Every fund page showed 5-year returns and star ratings, but nothing connected those numbers back to "will this get my daughter through college."</p>
                         </div>
                         <div class="pain-card">
                             <span class="pain-num">03</span>
-                            <h5>Trading Terminal Anxiety</h5>
-                            <p>Novice users feared making mistakes and losing money because buttons like "Buy" vs "Short Sell" were visually identical.</p>
+                            <h5>Fear of a Second, Unfamiliar App</h5>
+                            <p>Meera assumed mutual fund investing would mean downloading and learning an entirely separate app, which she'd been putting off for over a year.</p>
                         </div>
                     </div>
 
                     <div class="strategy-tip">
                         <h5><i class="fa-solid fa-brain"></i> Product Thinking Insight:</h5>
-                        <p>We realized users were not dropping off because of lazy UI styling; they dropped off due to **cognitive load** and **anxiety**. Our redesign had to focus on progressive disclosure—only showing complex settings when users requested them.</p>
+                        <p>Users like Meera didn't need more fund data — they needed less of it, organized around a question they already knew the answer to: what am I saving for, and by when. Fund selection should be the output of answering that question, not a separate research task.</p>
                     </div>
                 </div>
             </section>
@@ -250,21 +228,21 @@
                 <div class="cs-section-body">
                     <h3>The Challenges & Constraints</h3>
                     <p>
-                        We had to comply with strict regulatory guidelines (KYC verification required validating physical signatures, bank verifications, and live photo check). We couldn't eliminate these steps, but we could change *how* users experienced them.
+                        Every fund recommendation had to remain compliant and could not be framed as personalized financial advice unless it came from a licensed advisor flow — a hard legal boundary that shaped how "curated" our collections could appear.
                     </p>
-                    
+
                     <div class="kpi-grid">
                         <div class="kpi-card">
-                            <span class="kpi-metric">+22%</span>
-                            <span class="kpi-lbl">Target KYC rate</span>
+                            <span class="kpi-metric">3</span>
+                            <span class="kpi-lbl">Max funds shown per goal by default</span>
                         </div>
                         <div class="kpi-card">
-                            <span class="kpi-metric">&lt; 5 mins</span>
-                            <span class="kpi-lbl">Onboarding goal</span>
+                            <span class="kpi-metric">&lt; 3 min</span>
+                            <span class="kpi-lbl">SIP setup time goal</span>
                         </div>
                         <div class="kpi-card">
-                            <span class="kpi-metric">-30%</span>
-                            <span class="kpi-lbl">Support ticket reduction</span>
+                            <span class="kpi-metric">1</span>
+                            <span class="kpi-lbl">Single combined portfolio view</span>
                         </div>
                     </div>
                 </div>
@@ -275,27 +253,27 @@
                 <h2>5. Design Process</h2>
                 <div class="cs-section-body">
                     <p>
-                        We mapped out a revamped user flow that broke down the 18 steps into 5 distinct visual categories. Below is the simplified Information Architecture and User Flow designed to eliminate loopbacks.
+                        I mapped the journey from "I have a savings goal" to "my SIP is running" as a single continuous path, deliberately avoiding a separate fund-research detour in the middle.
                     </p>
-                    
+
                     <div class="process-img-wrapper">
-                        <img src="/bigul_userflow.jpg" alt="Information Architecture and User Flow Diagram" class="process-img main-lightbox-trigger">
-                        <span class="img-caption">Fig 1. User flow mapping showing progressive disclosure paths for trading configuration.</span>
+                        <img src="assets/placeholders/ph-flow.svg" alt="Bigul Mutual Fund goal-to-SIP user flow diagram" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 1. Goal-to-SIP flow showing the calculator, curated collection, and setup wizard in sequence.</span>
                     </div>
 
                     <h3>From Low-Fidelity Wireframes to Iterations</h3>
                     <p>
-                        We tested early sketches with a cohort of 15 users. Initially, we put bank account linking and digital signature in one scrollable view. However, users were overwhelmed by seeing bank details and signature boxes together. 
+                        The first version of the "curated collection" concept still displayed 15-20 funds per goal category, which testers described as "not really curated." We cut this down aggressively and moved the rest behind a deliberate second tap.
                     </p>
-                    
+
                     <div class="process-img-wrapper">
-                        <img src="/bigul_wireframes.jpg" alt="Low fidelity wireframe comparison views" class="process-img main-lightbox-trigger">
-                        <span class="img-caption">Fig 2. Low-Fidelity wireframes iterating on step-by-step onboarding wizard.</span>
+                        <img src="assets/placeholders/ph-wireframe.svg" alt="Bigul Mutual Fund collection screen wireframe iterations" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 2. Wireframe iteration reducing the default fund list from 15-20 options to a top-3 recommendation.</span>
                     </div>
 
                     <div class="rationale-box">
                         <h5>Design Rationale:</h5>
-                        <p><strong>Decoupling Steps:</strong> We split bank linking and signature collection into two separate screens with auto-validation. Although this added 1 extra click, it eliminated the form-abandonment rate by 34% in user tests because each step felt quick and clear.</p>
+                        <p><strong>Fewer defaults, not fewer options:</strong> Showing only the top 3 funds per goal type by default, with a clearly labeled "See all 18 options" expansion, kept the decision from feeling paralyzing while still respecting users who wanted to dig deeper.</p>
                     </div>
                 </div>
             </section>
@@ -305,35 +283,35 @@
                 <h2>6. Visual Design System</h2>
                 <div class="cs-section-body">
                     <p>
-                        To ensure design consistency and speed up development, we established **Apex**, a centralized Design System tailored to high-density financial layouts.
+                        Mutual Fund extended <strong>Apex</strong> with a "Goals" visual pattern — progress rings, plain-language risk labels, and fund cards designed to answer "does this fit my goal" before "what's the star rating."
                     </p>
-                    
+
                     <div class="process-img-wrapper">
-                        <img src="/bigul_designsystem.jpg" alt="Apex Design System Typography, Colors and Button elements" class="process-img main-lightbox-trigger">
-                        <span class="img-caption">Fig 3. Apex Design System guide showing components, typography rules, and theme variables.</span>
+                        <img src="assets/placeholders/ph-designsystem.svg" alt="Bigul Mutual Fund goal progress and fund card design system" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 3. Goal progress rings, plain-language risk labels, and the curated fund card component.</span>
                     </div>
 
                     <h3>Design Tokens Overview</h3>
                     <div class="tokens-grid">
                         <div class="token-card">
-                            <h6>Typography</h6>
-                            <p><strong>Outfit</strong> (Headings) for modern look & <strong>Inter</strong> (Body / Numbers) for geometric spacing readability.</p>
+                            <h6>Goal Progress Rings</h6>
+                            <p>A circular progress indicator combining SIP contributions and existing trading portfolio value against a single target amount and date.</p>
                         </div>
                         <div class="token-card">
-                            <h6>Color Palette</h6>
-                            <p>Deep Navy backgrounds (`#0a0e17`) paired with electric blue (`#3b82f6`) and rich emerald green (`#10b981`) for buy actions.</p>
+                            <h6>Plain-Language Risk Labels</h6>
+                            <p>SEBI riskometer categories translated into one-line explanations ("Moderate risk — value can dip 10-15% in a bad year") alongside the required official label.</p>
                         </div>
                         <div class="token-card">
-                            <h6>Grid & Spacing</h6>
-                            <p>8px baseline grid to ensure alignment across complex data tables and interactive charts.</p>
+                            <h6>Curated Fund Cards</h6>
+                            <p>Each card leads with "Why this fits your goal" rather than leading with historical return percentage, which moved to secondary position.</p>
                         </div>
                     </div>
 
                     <div class="accessibility-checklist">
                         <h4>WCAG 2.1 Accessibility Considerations:</h4>
                         <ul>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Contrast Ratios:</strong> All financial textual data (price quotes, yields) meets a minimum 4.5:1 ratio against background.</li>
-                            <li><i class="fa-solid fa-circle-check"></i> <strong>Color Independence:</strong> Price movements are never shown solely through green/red color shifts; secondary icon identifiers (up/down chevron indicators) accompany value adjustments.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Progress Ring Alternatives:</strong> Every goal progress ring is paired with an explicit text readout ("62% of ₹5,00,000 goal") for screen readers.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Risk Labels:</strong> Risk level is always communicated in text, never through color alone, meeting the same standard used across the rest of Apex.</li>
                         </ul>
                     </div>
                 </div>
@@ -343,27 +321,23 @@
             <section id="hifi" class="cs-section">
                 <h2>7. High-Fidelity Walkthrough</h2>
                 <div class="cs-section-body">
-                    <p>
-                        Below are the final designs addressing core usability drop-offs in the terminal and onboarding flows:
-                    </p>
-
                     <div class="hifi-feature">
-                        <h4>The Simplified Quick-Trade Pad</h4>
+                        <h4>The Goal Calculator</h4>
                         <p>
-                            Novice users frequently complained about making trade errors in the original layout because the trade panel looked identical to advanced analytics panels.
+                            Instead of starting with "which fund do you want," the flow starts with "what are you saving for, how much, and by when" — three simple inputs that quietly determine everything shown afterward.
                         </p>
                         <p>
-                            <strong>The Solution:</strong> A isolated, slide-out drawer featuring a clear card layout separating Buy and Sell options with distinctive, contrasting header highlights.
+                            <strong>The Solution:</strong> A conversational three-field calculator ("I want to save ₹___ for ___ by ___") that instantly generates a monthly SIP estimate and a matching curated fund collection.
                         </p>
                     </div>
 
                     <div class="hifi-feature">
-                        <h4>Auto-extract KYC Uploads</h4>
+                        <h4>Contextual Cross-Sell Prompts</h4>
                         <p>
-                            Instead of forcing manual entry of 16 bank account digits, we integrated instant UPI verification and camera OCR to scan tax cards automatically.
+                            Rather than a generic in-app banner, mutual fund prompts appear at specific, relevant moments — after a user closes a profitable trade, or when cash sits idle in their account for more than a few days.
                         </p>
                         <p>
-                            <strong>The Solution:</strong> Users simply take a photo, and our app instantly fills in the required field lines, reducing typing friction by 80%.
+                            <strong>The Solution:</strong> A dismissible, contextual card ("You just closed a ₹12,000 gain — put some of it toward a goal?") that ties the suggestion directly to an action the user just took.
                         </p>
                     </div>
                 </div>
@@ -373,19 +347,17 @@
             <section id="strategy" class="cs-section">
                 <h2>8. Product Strategy & Trade-offs</h2>
                 <div class="cs-section-body">
-                    <p>
-                        Designing digital products requires knowing what to leave out. We had to negotiate crucial trade-offs between business requirements and user preferences.
-                    </p>
+                    <p>Cross-sell features live or die on whether they feel helpful or intrusive — this shaped nearly every strategic decision.</p>
 
                     <div class="tradeoff-card">
-                        <h5>User Desire vs. Regulatory Necessity</h5>
-                        <p><strong>The Conflict:</strong> Users wanted to start trading immediately without submitting KYC. Regulatory compliance demanded verification before any capital trade.</p>
-                        <p><strong>The Strategy:</strong> We introduced "Simulated Paper Trading" as the default state for unverified accounts. Users could download the app and trade fake credits immediately, experiencing the product value. Once they attempted to place a real order, we dynamically routed them to the KYC sequence.</p>
+                        <h5>Business Growth Pressure vs. User Trust</h5>
+                        <p><strong>The Conflict:</strong> The business wanted maximum visibility for the new fund offering across the app; overexposing it risked training users to ignore it entirely, or worse, feeling upsold.</p>
+                        <p><strong>The Strategy:</strong> We limited prompts to a small set of contextually justified moments instead of persistent banners, and measured attach rate against prompt fatigue in a controlled rollout before expanding placement.</p>
                     </div>
 
                     <div class="roadmap-box">
                         <h4>MVP Phase vs Future Roadmap</h4>
-                        <p>For the MVP, we focused entirely on simplifying the onboarding funnel and quick trade placement. The future roadmap includes introducing AI-guided portfolio balancing tools and advanced charting features for power users.</p>
+                        <p>The MVP shipped goal creation, curated collections, and SIP setup. The roadmap includes automated goal rebalancing suggestions and a combined net-worth view spanning trading, mutual funds, and linked bank balances.</p>
                     </div>
                 </div>
             </section>
@@ -395,10 +367,10 @@
                 <h2>9. Challenges & Solutions</h2>
                 <div class="cs-section-body">
                     <div class="challenge-item">
-                        <h5>Challenge: High digital signature rejection rate</h5>
-                        <p><strong>The Problem:</strong> Over 15% of KYC applications were rejected manually by backend compliance officers because users signed with clumsy finger swipes on mobile, resulting in illegible squiggles.</p>
-                        <p><strong>Design Iteration:</strong> We built an alternative fallback tool. Users could either use a simplified type-to-sign component (generating an official digital script) or upload a photo of a physical signature. </p>
-                        <p><strong>The Result:</strong> Rejections fell from 15% to 2.4% within two weeks of launch.</p>
+                        <h5>Challenge: High abandonment at the fund-selection step</h5>
+                        <p><strong>The Problem:</strong> Early beta data showed users completing the goal calculator step at a strong rate, then dropping off noticeably once they reached a collection screen still showing 15-20 fund options.</p>
+                        <p><strong>Design Iteration:</strong> We reduced the default view to the top 3 recommended funds per goal type, ranked by category fit rather than raw historical returns, with additional options available one tap away.</p>
+                        <p><strong>The Result:</strong> Fund-selection-to-SIP-setup completion improved noticeably once the default choice set was cut down.</p>
                     </div>
                 </div>
             </section>
@@ -407,22 +379,20 @@
             <section id="impact" class="cs-section">
                 <h2>10. Impact & Results</h2>
                 <div class="cs-section-body">
-                    <p>
-                        The redesign delivered quantifiable business gains within 60 days of launch:
-                    </p>
+                    <p>The goal-based investing experience delivered measurable cross-sell gains within the first quarter of rollout:</p>
 
                     <div class="impact-metrics-row">
                         <div class="metric-circle">
-                            <span class="m-val">+22%</span>
-                            <span class="m-lbl">KYC Success</span>
+                            <span class="m-val">Higher</span>
+                            <span class="m-lbl">Cross-Sell Attach Rate</span>
                         </div>
                         <div class="metric-circle">
-                            <span class="m-val">+28%</span>
-                            <span class="m-lbl">Trade Success</span>
+                            <span class="m-val">Higher</span>
+                            <span class="m-lbl">SIP Setup Completion</span>
                         </div>
                         <div class="metric-circle">
-                            <span class="m-val">-25%</span>
-                            <span class="m-lbl">Support Load</span>
+                            <span class="m-val">Stronger</span>
+                            <span class="m-lbl">Portfolio Diversification</span>
                         </div>
                     </div>
 
@@ -432,24 +402,23 @@
                             <div class="comp-card before">
                                 <h5>Previous Experience</h5>
                                 <ul>
-                                    <li>18 mins to onboard</li>
-                                    <li>Form validation shown post-submission</li>
-                                    <li>Unexplained trading settings</li>
-                                    <li>No simulation environment</li>
+                                    <li>No mutual fund access for retail users</li>
+                                    <li>No connection between goals and products</li>
+                                    <li>Trading-only portfolio view</li>
+                                    <li>No structured cross-sell moments</li>
                                 </ul>
                             </div>
                             <div class="comp-card after">
                                 <h5>Redesigned Experience</h5>
                                 <ul>
-                                    <li>5.5 mins average onboarding</li>
-                                    <li>Real-time inline error alerts</li>
-                                    <li>Contextual tooltips for jargon</li>
-                                    <li>Immediate paper trading value</li>
+                                    <li>Goal calculator drives fund discovery</li>
+                                    <li>Curated, top-3-by-default collections</li>
+                                    <li>Combined trading + fund progress view</li>
+                                    <li>Contextual, action-triggered prompts</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
 
@@ -461,10 +430,9 @@
                         <div class="tool-item-box"><i class="fa-brands fa-figma"></i> Figma</div>
                         <div class="tool-item-box">FigJam</div>
                         <div class="tool-item-box">Miro</div>
-                        <div class="tool-item-box">Adobe Illustrator</div>
-                        <div class="tool-item-box">Photoshop</div>
-                        <div class="tool-item-box">Jira</div>
+                        <div class="tool-item-box"><i class="fa-brands fa-google"></i> Google Analytics</div>
                         <div class="tool-item-box">Notion</div>
+                        <div class="tool-item-box">Jira</div>
                     </div>
                 </div>
             </section>
@@ -473,19 +441,19 @@
             <section id="gallery" class="cs-section">
                 <h2>12. Design Gallery</h2>
                 <div class="cs-section-body">
-                    <p>Click on any of the screens or wireframes to open a full-resolution interactive lightbox preview.</p>
+                    <p>Click on any of the screens to open a full-resolution interactive lightbox preview.</p>
                     <div class="cs-gallery-grid">
                         <div class="gallery-card">
-                            <img src="/bigul_trading.jpg" alt="Trading Dashboard High-Fidelity UI" class="gallery-img main-lightbox-trigger">
+                            <img src="assets/placeholders/ph-mobile.svg" alt="Goal calculator screen" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="/bigul_userflow.jpg" alt="User Flow Diagram details" class="gallery-img main-lightbox-trigger">
+                            <img src="assets/placeholders/ph-flow.svg" alt="Goal-to-SIP flow diagram" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="/bigul_wireframes.jpg" alt="Wireframe iterations screen layouts" class="gallery-img main-lightbox-trigger">
+                            <img src="assets/placeholders/ph-wireframe.svg" alt="Fund collection wireframes" class="gallery-img main-lightbox-trigger">
                         </div>
                         <div class="gallery-card">
-                            <img src="/bigul_designsystem.jpg" alt="Design system atoms and variables guide" class="gallery-img main-lightbox-trigger">
+                            <img src="assets/placeholders/ph-designsystem.svg" alt="Goal progress design system" class="gallery-img main-lightbox-trigger">
                         </div>
                     </div>
                 </div>
@@ -495,24 +463,22 @@
             <section id="learnings" class="cs-section">
                 <h2>13. Key Learnings</h2>
                 <div class="cs-section-body">
-                    <p>
-                        A few things from this project changed how I approach fintech onboarding generally, and I've carried them into every trading feature I've shipped since.
-                    </p>
+                    <p>Designing a cross-sell feature that users actually want taught me to think about timing and framing as much as layout.</p>
                     <div class="pain-points-grid">
                         <div class="pain-card">
                             <span class="pain-num">01</span>
-                            <h5>More steps can feel faster</h5>
-                            <p>Breaking one dense regulatory form into five bite-sized screens added clicks but removed dread. Perceived friction, not click count, is what actually predicts abandonment in compliance-heavy flows.</p>
+                            <h5>Don't build a second app inside the app</h5>
+                            <p>Reusing Bigul's existing navigation and visual language made the fund experience feel like a natural extension, not a bolted-on acquisition from a different product team.</p>
                         </div>
                         <div class="pain-card">
                             <span class="pain-num">02</span>
-                            <h5>Simulation builds trust before compliance does</h5>
-                            <p>Letting unverified users trade on paper credits gave them a reason to finish KYC — the product proved its value before asking for a signature, instead of the other way around.</p>
+                            <h5>Goal framing beats performance framing</h5>
+                            <p>Leading with "does this fit your goal" instead of "here's the 5-year return" made fund selection feel like a decision users were equipped to make themselves.</p>
                         </div>
                         <div class="pain-card">
                             <span class="pain-num">03</span>
-                            <h5>Design a system, not a screen</h5>
-                            <p>Apex outlived this one project. Every subsequent Bigul feature — API Connect, Algo, Mutual Fund — shipped faster because the tokens, states, and accessibility rules already existed.</p>
+                            <h5>Cross-sell timing matters more than placement</h5>
+                            <p>A contextual prompt tied to a just-completed action consistently outperformed a persistent, prominently placed banner — relevance beat visibility.</p>
                         </div>
                     </div>
                 </div>
@@ -520,20 +486,19 @@
 
             <!-- Next Project Navigation Section -->
             <div class="cs-project-nav" id="navigation">
-                <a href="project_kansa.html" class="nav-prev">
+                <a href="project_kimirica.html" class="nav-prev">
                     <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
-                    <span class="nav-project-title">Kansa Organic Skincare</span>
+                    <span class="nav-project-title">Kimirica Website</span>
                 </a>
-                <a href="project_bigul_apiconnect.html" class="nav-next">
+                <a href="project_bigul_support.html" class="nav-next">
                     <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
-                    <span class="nav-project-title">Bigul API Connect</span>
+                    <span class="nav-project-title">Bigul Support Portal</span>
                 </a>
             </div>
 
         </main>
     </div>
 
-    <!-- Lightbox Overlay -->
     <div id="lightboxOverlay" class="lightbox-overlay hidden" aria-hidden="true" role="dialog">
         <button id="lightboxClose" class="lightbox-close" aria-label="Close Preview">&times;</button>
         <img id="lightboxImg" src="" alt="Full size preview" class="lightbox-img">
@@ -619,6 +584,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <script type="module" src="app.js"></script>
 </body>
 </html>

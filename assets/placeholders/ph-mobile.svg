@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 780" width="375" height="780">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f121e"/>
+      <stop offset="100%" stop-color="#141a2c"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7C9BFF"/>
+      <stop offset="100%" stop-color="#5B7CFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="375" height="780" rx="36" fill="url(#bg1)" stroke="#232a40" stroke-width="2"/>
+  <!-- status bar -->
+  <rect x="24" y="28" width="60" height="8" rx="4" fill="#2a3350"/>
+  <rect x="291" y="28" width="60" height="8" rx="4" fill="#2a3350"/>
+  <!-- header -->
+  <rect x="24" y="64" width="180" height="18" rx="4" fill="#f3f4f6" opacity="0.85"/>
+  <rect x="24" y="92" width="120" height="10" rx="4" fill="#9ca3af"/>
+  <!-- hero card -->
+  <rect x="24" y="128" width="327" height="140" rx="18" fill="url(#accent1)" opacity="0.15" stroke="#5B7CFF" stroke-width="1.5" stroke-opacity="0.4"/>
+  <rect x="48" y="152" width="140" height="14" rx="4" fill="#f3f4f6" opacity="0.8"/>
+  <rect x="48" y="176" width="200" height="10" rx="4" fill="#9ca3af"/>
+  <rect x="48" y="228" width="110" height="28" rx="14" fill="url(#accent1)"/>
+  <!-- list items -->
+  <g>
+    <rect x="24" y="300" width="327" height="72" rx="14" fill="#171d30" stroke="#232a40"/>
+    <circle cx="56" cy="336" r="16" fill="#2a3350"/>
+    <rect x="84" y="322" width="160" height="10" rx="4" fill="#d1d5db"/>
+    <rect x="84" y="340" width="110" height="8" rx="4" fill="#6b7280"/>
+    <rect x="300" y="328" width="36" height="16" rx="8" fill="#10b981" opacity="0.25"/>
+  </g>
+  <g>
+    <rect x="24" y="384" width="327" height="72" rx="14" fill="#171d30" stroke="#232a40"/>
+    <circle cx="56" cy="420" r="16" fill="#2a3350"/>
+    <rect x="84" y="406" width="180" height="10" rx="4" fill="#d1d5db"/>
+    <rect x="84" y="424" width="90" height="8" rx="4" fill="#6b7280"/>
+    <rect x="300" y="412" width="36" height="16" rx="8" fill="#5B7CFF" opacity="0.25"/>
+  </g>
+  <g>
+    <rect x="24" y="468" width="327" height="72" rx="14" fill="#171d30" stroke="#232a40"/>
+    <circle cx="56" cy="504" r="16" fill="#2a3350"/>
+    <rect x="84" y="490" width="150" height="10" rx="4" fill="#d1d5db"/>
+    <rect x="84" y="508" width="130" height="8" rx="4" fill="#6b7280"/>
+  </g>
+  <!-- chart -->
+  <rect x="24" y="564" width="327" height="120" rx="14" fill="#171d30" stroke="#232a40"/>
+  <polyline points="44,660 100,630 156,648 212,600 268,616 324,580" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- bottom nav -->
+  <rect x="0" y="716" width="375" height="64" rx="0" fill="#0b0e17"/>
+  <circle cx="94" cy="748" r="14" fill="#5B7CFF"/>
+  <circle cx="187" cy="748" r="10" fill="#2a3350"/>
+  <circle cx="280" cy="748" r="10" fill="#2a3350"/>
+  <text x="187" y="710" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="1.5" fill="#5B7CFF" opacity="0.8">MOBILE SCREEN PREVIEW</text>
+</svg>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bigul Mutual Fund | UI/UX Case Study</title>
+    <meta name="description" content="Detailed UI/UX Case Study on designing Bigul Mutual Fund, a goal-based investing experience that helped retail trading users diversify into mutual funds.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script type="module" crossorigin src="/app.js"></script>
+  <link rel="stylesheet" crossorigin href="/app.css">
+</head>
+<body class="dark-theme">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AN<span class="logo-dot">.</span></a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="work.html" class="nav-link active">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="about.html#resume" class="nav-link">Resume</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#contact" class="btn btn-nav-cta">Let's Connect</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="cs-hero">
+        <div class="container">
+            <div class="cs-back-link">
+                <a href="work.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+            </div>
+
+            <div class="cs-hero-header">
+                <span class="cs-category-tag"><i class="fa-solid fa-piggy-bank"></i> Fintech • Wealth Management • Mobile App</span>
+                <h1 class="cs-title">Bigul Mutual Fund</h1>
+                <p class="cs-tagline">A goal-based investing experience layered onto the trading app — helping existing traders diversify into mutual funds without learning a second, unfamiliar mental model.</p>
+            </div>
+
+            <div class="cs-hero-mockup-wrapper">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNzUgNzgwIiB3aWR0aD0iMzc1IiBoZWlnaHQ9Ijc4MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMGYxMjFlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE0MWEyYyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYWNjZW50MSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjN0M5QkZGIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzVCN0NGRiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjM3NSIgaGVpZ2h0PSI3ODAiIHJ4PSIzNiIgZmlsbD0idXJsKCNiZzEpIiBzdHJva2U9IiMyMzJhNDAiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gc3RhdHVzIGJhciAtLT4KICA8cmVjdCB4PSIyNCIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDxyZWN0IHg9IjI5MSIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDwhLS0gaGVhZGVyIC0tPgogIDxyZWN0IHg9IjI0IiB5PSI2NCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmM2Y0ZjYiIG9wYWNpdHk9IjAuODUiLz4KICA8cmVjdCB4PSIyNCIgeT0iOTIiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjOWNhM2FmIi8+CiAgPCEtLSBoZXJvIGNhcmQgLS0+CiAgPHJlY3QgeD0iMjQiIHk9IjEyOCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSIxNDAiIHJ4PSIxOCIgZmlsbD0idXJsKCNhY2NlbnQxKSIgb3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjNUI3Q0ZGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW9wYWNpdHk9IjAuNCIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxNTIiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQiIHJ4PSI0IiBmaWxsPSIjZjNmNGY2IiBvcGFjaXR5PSIwLjgiLz4KICA8cmVjdCB4PSI0OCIgeT0iMTc2IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwIiByeD0iNCIgZmlsbD0iIzljYTNhZiIvPgogIDxyZWN0IHg9IjQ4IiB5PSIyMjgiIHdpZHRoPSIxMTAiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0idXJsKCNhY2NlbnQxKSIvPgogIDwhLS0gbGlzdCBpdGVtcyAtLT4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzMDAiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjMzNiIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSIzMjIiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iMzQwIiB3aWR0aD0iMTEwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjNmI3MjgwIi8+CiAgICA8cmVjdCB4PSIzMDAiIHk9IjMyOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iMC4yNSIvPgogIDwvZz4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzODQiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjQyMCIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI0MDYiIHdpZHRoPSIxODAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iNDI0IiB3aWR0aD0iOTAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICAgIDxyZWN0IHg9IjMwMCIgeT0iNDEyIiB3aWR0aD0iMzYiIGhlaWdodD0iMTYiIHJ4PSI4IiBmaWxsPSIjNUI3Q0ZGIiBvcGFjaXR5PSIwLjI1Ii8+CiAgPC9nPgogIDxnPgogICAgPHJlY3QgeD0iMjQiIHk9IjQ2OCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSI3MiIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICAgIDxjaXJjbGUgY3g9IjU2IiBjeT0iNTA0IiByPSIxNiIgZmlsbD0iIzJhMzM1MCIvPgogICAgPHJlY3QgeD0iODQiIHk9IjQ5MCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxMCIgcng9IjQiIGZpbGw9IiNkMWQ1ZGIiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI1MDgiIHdpZHRoPSIxMzAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICA8L2c+CiAgPCEtLSBjaGFydCAtLT4KICA8cmVjdCB4PSIyNCIgeT0iNTY0IiB3aWR0aD0iMzI3IiBoZWlnaHQ9IjEyMCIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI0NCw2NjAgMTAwLDYzMCAxNTYsNjQ4IDIxMiw2MDAgMjY4LDYxNiAzMjQsNTgwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPCEtLSBib3R0b20gbmF2IC0tPgogIDxyZWN0IHg9IjAiIHk9IjcxNiIgd2lkdGg9IjM3NSIgaGVpZ2h0PSI2NCIgcng9IjAiIGZpbGw9IiMwYjBlMTciLz4KICA8Y2lyY2xlIGN4PSI5NCIgY3k9Ijc0OCIgcj0iMTQiIGZpbGw9IiM1QjdDRkYiLz4KICA8Y2lyY2xlIGN4PSIxODciIGN5PSI3NDgiIHI9IjEwIiBmaWxsPSIjMmEzMzUwIi8+CiAgPGNpcmNsZSBjeD0iMjgwIiBjeT0iNzQ4IiByPSIxMCIgZmlsbD0iIzJhMzM1MCIvPgogIDx0ZXh0IHg9IjE4NyIgeT0iNzEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIxLjUiIGZpbGw9IiM1QjdDRkYiIG9wYWNpdHk9IjAuOCI+TU9CSUxFIFNDUkVFTiBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Bigul Mutual Fund goal-based investing mockup" class="cs-hero-mockup main-lightbox-trigger">
+            </div>
+
+            <div class="cs-metadata-grid">
+                <div class="meta-item">
+                    <h5>Role</h5>
+                    <p>UI/UX Designer<br><span>(Wealth Product Ownership)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Duration</h5>
+                    <p>Aug 2025 - Nov 2025<br><span>(4 Month Build)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Team Size</h5>
+                    <p>5 cross-functional members<br><span>(1 PM, 3 Devs, 1 UX)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Key Results</h5>
+                    <p>Higher Cross-Sell Attach<br><span>Higher SIP Setup Completion</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cs-layout-container container">
+        <aside class="cs-sidebar">
+            <div class="cs-toc-wrapper" id="tocWrapper">
+                <h4 class="toc-title">ON THIS PAGE</h4>
+                <ul class="toc-list">
+                    <li><a href="#overview" class="toc-link active">1. Overview & Context</a></li>
+                    <li><a href="#role" class="toc-link">2. My Role & Collaboration</a></li>
+                    <li><a href="#research" class="toc-link">3. Research & Discovery</a></li>
+                    <li><a href="#problem" class="toc-link">4. Problem Definition</a></li>
+                    <li><a href="#process" class="toc-link">5. Design Process</a></li>
+                    <li><a href="#visual" class="toc-link">6. Visual Design System</a></li>
+                    <li><a href="#hifi" class="toc-link">7. High-Fidelity Walkthrough</a></li>
+                    <li><a href="#strategy" class="toc-link">8. Product Strategy</a></li>
+                    <li><a href="#challenges" class="toc-link">9. Challenges & Solutions</a></li>
+                    <li><a href="#impact" class="toc-link">10. Business Impact</a></li>
+                    <li><a href="#tools" class="toc-link">11. Tools & Tech</a></li>
+                    <li><a href="#gallery" class="toc-link">12. Design Gallery</a></li>
+                    <li><a href="#learnings" class="toc-link">13. Key Learnings</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="cs-content">
+
+            <!-- 1. Overview & Context -->
+            <section id="overview" class="cs-section">
+                <h2>1. Project Overview</h2>
+                <div class="cs-section-body">
+                    <h3>Background & Business Context</h3>
+                    <p>
+                        Bigul's trading revenue depended on transaction volume, but a large share of active traders never touched mutual funds — a product with steadier, recurring commission revenue and, more importantly, a natural fit for the long-term saving goals many of them already had.
+                    </p>
+                    <p>
+                        The business case for cross-sell was strong, but the user mental model was the real obstacle: trading is short-horizon and market-watch driven, while mutual fund investing is goal-based and long-horizon. Bolting a fund-selection screen onto the existing trading nav risked feeling like a bank cross-selling a product nobody asked for.
+                    </p>
+
+                    <div class="goal-box">
+                        <h4>Goals & Objectives:</h4>
+                        <ul>
+                            <li><strong>Reframe investing around goals</strong> instead of asking users to pick from thousands of unfamiliar schemes.</li>
+                            <li><strong>Cross-sell contextually</strong>, not through generic banners that feel like an unrelated ad.</li>
+                            <li><strong>Keep it inside one app</strong> so users never felt like they'd left Bigul to use a separate product.</li>
+                        </ul>
+                    </div>
+
+                    <h3>Target Audience</h3>
+                    <p>The rollout targeted existing traders first, not new user acquisition:</p>
+                    <div class="audience-grid">
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <h5>Goal-Driven Savers (61%)</h5>
+                            <p>Existing traders with a specific savings goal — a child's education, a house down payment — who had never connected that goal to a financial product on Bigul.</p>
+                        </div>
+                        <div class="audience-card">
+                            <span class="aud-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+                            <h5>Diversification-Minded Traders (39%)</h5>
+                            <p>Active traders who understood they were over-concentrated in equities and wanted a lower-effort way to diversify without researching funds themselves.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. My Role & Collaboration -->
+            <section id="role" class="cs-section">
+                <h2>2. My Role & Collaboration</h2>
+                <div class="cs-section-body">
+                    <p>
+                        I owned the end-to-end experience for goal creation, fund discovery, and SIP setup, and was responsible for making sure this felt like a natural extension of Bigul rather than a bolted-on product.
+                    </p>
+                    <ul class="collab-list">
+                        <li><strong>Product Manager:</strong> Defining which trading behaviors (a closed profitable position, an idle cash balance) were appropriate, non-intrusive moments to introduce a goal-based prompt.</li>
+                        <li><strong>AMC Partnerships Team:</strong> Understanding which fund categories carried simpler risk profiles suitable for surfacing to first-time MF investors versus which needed more disclosure.</li>
+                        <li><strong>Compliance:</strong> Ensuring risk labeling on every fund card met SEBI riskometer requirements while still being understandable in one glance.</li>
+                        <li><strong>Engineering:</strong> Scoping a goal-progress tracking model that could pull in both mutual fund and existing trading portfolio value for a single combined progress view.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 3. Research & Discovery -->
+            <section id="research" class="cs-section">
+                <h2>3. Research & Discovery</h2>
+                <div class="cs-section-body">
+                    <p>
+                        I benchmarked goal-based investing UX from established platforms and interviewed twelve existing Bigul traders who had never used the platform's fund offerings, to understand exactly why not.
+                    </p>
+
+                    <h3>Competitive Benchmarking</h3>
+                    <table class="research-table">
+                        <thead>
+                            <tr>
+                                <th>Platform</th>
+                                <th>Discovery Model</th>
+                                <th>Goal Framing</th>
+                                <th>SIP Setup Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Legacy Fund Platform A</td>
+                                <td>Raw scheme list (Poor)</td>
+                                <td>None</td>
+                                <td>8+ minutes</td>
+                            </tr>
+                            <tr>
+                                <td>Modern Goal-Based App B</td>
+                                <td>Curated collections (Good)</td>
+                                <td>Explicit goal calculator</td>
+                                <td>2-3 minutes</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong>Bigul (Pre-redesign)</strong></td>
+                                <td>Not available to retail users</td>
+                                <td>None</td>
+                                <td>N/A</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>User Persona & Key Pain Points</h3>
+                    <p>
+                        Meet <strong>Meera</strong>, a 35-year-old working mother and active Bigul trader who wants to start saving for her daughter's education but has never opened a mutual fund:
+                    </p>
+                    <div class="pain-points-grid">
+                        <div class="pain-card">
+                            <span class="pain-num">01</span>
+                            <h5>Scheme Overload</h5>
+                            <p>Faced with thousands of nearly identical-sounding fund names, Meera had no confident way to narrow down which few actually mattered for her goal.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">02</span>
+                            <h5>No Connection to Her Actual Goal</h5>
+                            <p>Every fund page showed 5-year returns and star ratings, but nothing connected those numbers back to "will this get my daughter through college."</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">03</span>
+                            <h5>Fear of a Second, Unfamiliar App</h5>
+                            <p>Meera assumed mutual fund investing would mean downloading and learning an entirely separate app, which she'd been putting off for over a year.</p>
+                        </div>
+                    </div>
+
+                    <div class="strategy-tip">
+                        <h5><i class="fa-solid fa-brain"></i> Product Thinking Insight:</h5>
+                        <p>Users like Meera didn't need more fund data — they needed less of it, organized around a question they already knew the answer to: what am I saving for, and by when. Fund selection should be the output of answering that question, not a separate research task.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Problem Definition -->
+            <section id="problem" class="cs-section">
+                <h2>4. Problem Definition</h2>
+                <div class="cs-section-body">
+                    <h3>The Challenges & Constraints</h3>
+                    <p>
+                        Every fund recommendation had to remain compliant and could not be framed as personalized financial advice unless it came from a licensed advisor flow — a hard legal boundary that shaped how "curated" our collections could appear.
+                    </p>
+
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <span class="kpi-metric">3</span>
+                            <span class="kpi-lbl">Max funds shown per goal by default</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">&lt; 3 min</span>
+                            <span class="kpi-lbl">SIP setup time goal</span>
+                        </div>
+                        <div class="kpi-card">
+                            <span class="kpi-metric">1</span>
+                            <span class="kpi-lbl">Single combined portfolio view</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Design Process -->
+            <section id="process" class="cs-section">
+                <h2>5. Design Process</h2>
+                <div class="cs-section-body">
+                    <p>
+                        I mapped the journey from "I have a savings goal" to "my SIP is running" as a single continuous path, deliberately avoiding a separate fund-research detour in the middle.
+                    </p>
+
+                    <div class="process-img-wrapper">
+                        <img src="/ph-flow.svg" alt="Bigul Mutual Fund goal-to-SIP user flow diagram" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 1. Goal-to-SIP flow showing the calculator, curated collection, and setup wizard in sequence.</span>
+                    </div>
+
+                    <h3>From Low-Fidelity Wireframes to Iterations</h3>
+                    <p>
+                        The first version of the "curated collection" concept still displayed 15-20 funds per goal category, which testers described as "not really curated." We cut this down aggressively and moved the rest behind a deliberate second tap.
+                    </p>
+
+                    <div class="process-img-wrapper">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYyMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjIwIj4KICA8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MjAiIGZpbGw9IiMwZjEyMWUiLz4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRiNTU2OCIgc3Ryb2tlLXdpZHRoPSIxLjUiPgogICAgPCEtLSB0aHJlZSBsb3ctZmkgcGhvbmUgZnJhbWVzIC0tPgogICAgPHJlY3QgeD0iNjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiM1QjdDRkYiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSI5MiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNiIgcng9IjMiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIxMjAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI4OCIgeT0iMTUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjkwIiByeD0iNiIvPgogICAgPGxpbmUgeDE9Ijg4IiB5MT0iMTUwIiB4Mj0iMjUyIiB5Mj0iMjQwIi8+CiAgICA8bGluZSB4MT0iMjUyIiB5MT0iMTUwIiB4Mj0iODgiIHkyPSIyNDAiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIyNTYiIHdpZHRoPSIxNjQiIGhlaWdodD0iMzAiIHJ4PSIxNSIvPgogICAgPHJlY3QgeD0iODgiIHk9IjMwMCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI1MCIgcng9IjYiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIzNjQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNTAiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSI4OCIgeT0iNDI4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjUwIiByeD0iNiIvPgoKICAgIDxyZWN0IHg9IjM0MCIgeT0iNjAiIHdpZHRoPSIyMjAiIGhlaWdodD0iNDgwIiByeD0iMTgiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLW9wYWNpdHk9IjAuNiIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSI5MiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjE2IiByeD0iMyIvPgogICAgPGNpcmNsZSBjeD0iNTAwIiBjeT0iMTAwIiByPSIxMCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIxMzAiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTIwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIyNjQiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjQ1MiIgeT0iMjY0IiB3aWR0aD0iNzYiIGhlaWdodD0iNzYiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSIzNjgiIHk9IjM1MiIgd2lkdGg9Ijc2IiBoZWlnaHQ9Ijc2IiByeD0iNiIvPgogICAgPHJlY3QgeD0iNDUyIiB5PSIzNTIiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjM2OCIgeT0iNDUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjM0IiByeD0iMTciLz4KCiAgICA8cmVjdCB4PSI2MjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iOTIiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTYiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjEyMiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNTAiIHJ4PSI2Ii8+CiAgICA8cGF0aCBkPSJNNjQ4IDE5NyBsMzAgLTM0IGwyNiAyMCBsNDAgLTQ2IGw2OCA2MCIgLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMjg4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjEyIiByeD0iMyIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSIzMTAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjM0MCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI0MCIgcng9IjgiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMzkyIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjQwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSI0NDQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNDAiIHJ4PSI4Ii8+CiAgPC9nPgogIDwhLS0gYW5ub3RhdGlvbiBjYWxsb3V0cyAtLT4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM2YjcyODAiPgogICAgPGNpcmNsZSBjeD0iNjAiIGN5PSI1NjAiIHI9IjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCN0NGRiIvPgogICAgPHRleHQgeD0iNjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVCN0NGRiIgZm9udC1zaXplPSIxMCI+QTwvdGV4dD4KICAgIDx0ZXh0IHg9IjgwIiB5PSI1NjQiPlN0ZXAtYnktc3RlcCB3aXphcmQ8L3RleHQ+CgogICAgPGNpcmNsZSBjeD0iMzQwIiBjeT0iNTYwIiByPSI5IiBmaWxsPSJub25lIiBzdHJva2U9IiM5Y2EzYWYiLz4KICAgIDx0ZXh0IHg9IjM0MCIgeT0iNTY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOWNhM2FmIiBmb250LXNpemU9IjEwIj5CPC90ZXh0PgogICAgPHRleHQgeD0iMzYwIiB5PSI1NjQiPkdyaWQtYmFzZWQgc2VsZWN0aW9uPC90ZXh0PgoKICAgIDxjaXJjbGUgY3g9IjYyMCIgY3k9IjU2MCIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTBiOTgxIi8+CiAgICA8dGV4dCB4PSI2MjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzEwYjk4MSIgZm9udC1zaXplPSIxMCI+QzwvdGV4dD4KICAgIDx0ZXh0IHg9IjY0MCIgeT0iNTY0Ij5TdW1tYXJ5ICsgY29uZmlybWF0aW9uPC90ZXh0PgogIDwvZz4KICA8dGV4dCB4PSIxMDUwIiB5PSIzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgbGV0dGVyLXNwYWNpbmc9IjEuNSIgZmlsbD0iIzVCN0NGRiIgb3BhY2l0eT0iMC43IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCAxMDUwIDMwMCkiPldJUkVGUkFNRSBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Bigul Mutual Fund collection screen wireframe iterations" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 2. Wireframe iteration reducing the default fund list from 15-20 options to a top-3 recommendation.</span>
+                    </div>
+
+                    <div class="rationale-box">
+                        <h5>Design Rationale:</h5>
+                        <p><strong>Fewer defaults, not fewer options:</strong> Showing only the top 3 funds per goal type by default, with a clearly labeled "See all 18 options" expansion, kept the decision from feeling paralyzing while still respecting users who wanted to dig deeper.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Visual Design System -->
+            <section id="visual" class="cs-section">
+                <h2>6. Visual Design System</h2>
+                <div class="cs-section-body">
+                    <p>
+                        Mutual Fund extended <strong>Apex</strong> with a "Goals" visual pattern — progress rings, plain-language risk labels, and fund cards designed to answer "does this fit my goal" before "what's the star rating."
+                    </p>
+
+                    <div class="process-img-wrapper">
+                        <img src="/ph-designsystem.svg" alt="Bigul Mutual Fund goal progress and fund card design system" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 3. Goal progress rings, plain-language risk labels, and the curated fund card component.</span>
+                    </div>
+
+                    <h3>Design Tokens Overview</h3>
+                    <div class="tokens-grid">
+                        <div class="token-card">
+                            <h6>Goal Progress Rings</h6>
+                            <p>A circular progress indicator combining SIP contributions and existing trading portfolio value against a single target amount and date.</p>
+                        </div>
+                        <div class="token-card">
+                            <h6>Plain-Language Risk Labels</h6>
+                            <p>SEBI riskometer categories translated into one-line explanations ("Moderate risk — value can dip 10-15% in a bad year") alongside the required official label.</p>
+                        </div>
+                        <div class="token-card">
+                            <h6>Curated Fund Cards</h6>
+                            <p>Each card leads with "Why this fits your goal" rather than leading with historical return percentage, which moved to secondary position.</p>
+                        </div>
+                    </div>
+
+                    <div class="accessibility-checklist">
+                        <h4>WCAG 2.1 Accessibility Considerations:</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Progress Ring Alternatives:</strong> Every goal progress ring is paired with an explicit text readout ("62% of ₹5,00,000 goal") for screen readers.</li>
+                            <li><i class="fa-solid fa-circle-check"></i> <strong>Risk Labels:</strong> Risk level is always communicated in text, never through color alone, meeting the same standard used across the rest of Apex.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. High-Fidelity Walkthrough -->
+            <section id="hifi" class="cs-section">
+                <h2>7. High-Fidelity Walkthrough</h2>
+                <div class="cs-section-body">
+                    <div class="hifi-feature">
+                        <h4>The Goal Calculator</h4>
+                        <p>
+                            Instead of starting with "which fund do you want," the flow starts with "what are you saving for, how much, and by when" — three simple inputs that quietly determine everything shown afterward.
+                        </p>
+                        <p>
+                            <strong>The Solution:</strong> A conversational three-field calculator ("I want to save ₹___ for ___ by ___") that instantly generates a monthly SIP estimate and a matching curated fund collection.
+                        </p>
+                    </div>
+
+                    <div class="hifi-feature">
+                        <h4>Contextual Cross-Sell Prompts</h4>
+                        <p>
+                            Rather than a generic in-app banner, mutual fund prompts appear at specific, relevant moments — after a user closes a profitable trade, or when cash sits idle in their account for more than a few days.
+                        </p>
+                        <p>
+                            <strong>The Solution:</strong> A dismissible, contextual card ("You just closed a ₹12,000 gain — put some of it toward a goal?") that ties the suggestion directly to an action the user just took.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Product Strategy -->
+            <section id="strategy" class="cs-section">
+                <h2>8. Product Strategy & Trade-offs</h2>
+                <div class="cs-section-body">
+                    <p>Cross-sell features live or die on whether they feel helpful or intrusive — this shaped nearly every strategic decision.</p>
+
+                    <div class="tradeoff-card">
+                        <h5>Business Growth Pressure vs. User Trust</h5>
+                        <p><strong>The Conflict:</strong> The business wanted maximum visibility for the new fund offering across the app; overexposing it risked training users to ignore it entirely, or worse, feeling upsold.</p>
+                        <p><strong>The Strategy:</strong> We limited prompts to a small set of contextually justified moments instead of persistent banners, and measured attach rate against prompt fatigue in a controlled rollout before expanding placement.</p>
+                    </div>
+
+                    <div class="roadmap-box">
+                        <h4>MVP Phase vs Future Roadmap</h4>
+                        <p>The MVP shipped goal creation, curated collections, and SIP setup. The roadmap includes automated goal rebalancing suggestions and a combined net-worth view spanning trading, mutual funds, and linked bank balances.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Challenges & Solutions -->
+            <section id="challenges" class="cs-section">
+                <h2>9. Challenges & Solutions</h2>
+                <div class="cs-section-body">
+                    <div class="challenge-item">
+                        <h5>Challenge: High abandonment at the fund-selection step</h5>
+                        <p><strong>The Problem:</strong> Early beta data showed users completing the goal calculator step at a strong rate, then dropping off noticeably once they reached a collection screen still showing 15-20 fund options.</p>
+                        <p><strong>Design Iteration:</strong> We reduced the default view to the top 3 recommended funds per goal type, ranked by category fit rather than raw historical returns, with additional options available one tap away.</p>
+                        <p><strong>The Result:</strong> Fund-selection-to-SIP-setup completion improved noticeably once the default choice set was cut down.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. Business Impact -->
+            <section id="impact" class="cs-section">
+                <h2>10. Impact & Results</h2>
+                <div class="cs-section-body">
+                    <p>The goal-based investing experience delivered measurable cross-sell gains within the first quarter of rollout:</p>
+
+                    <div class="impact-metrics-row">
+                        <div class="metric-circle">
+                            <span class="m-val">Higher</span>
+                            <span class="m-lbl">Cross-Sell Attach Rate</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">Higher</span>
+                            <span class="m-lbl">SIP Setup Completion</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">Stronger</span>
+                            <span class="m-lbl">Portfolio Diversification</span>
+                        </div>
+                    </div>
+
+                    <div class="comparison-block">
+                        <h4>Before vs. After Comparison</h4>
+                        <div class="comparison-grid">
+                            <div class="comp-card before">
+                                <h5>Previous Experience</h5>
+                                <ul>
+                                    <li>No mutual fund access for retail users</li>
+                                    <li>No connection between goals and products</li>
+                                    <li>Trading-only portfolio view</li>
+                                    <li>No structured cross-sell moments</li>
+                                </ul>
+                            </div>
+                            <div class="comp-card after">
+                                <h5>Redesigned Experience</h5>
+                                <ul>
+                                    <li>Goal calculator drives fund discovery</li>
+                                    <li>Curated, top-3-by-default collections</li>
+                                    <li>Combined trading + fund progress view</li>
+                                    <li>Contextual, action-triggered prompts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. Tools & Tech -->
+            <section id="tools" class="cs-section">
+                <h2>11. Tools & Tech</h2>
+                <div class="cs-section-body">
+                    <div class="tools-flex">
+                        <div class="tool-item-box"><i class="fa-brands fa-figma"></i> Figma</div>
+                        <div class="tool-item-box">FigJam</div>
+                        <div class="tool-item-box">Miro</div>
+                        <div class="tool-item-box"><i class="fa-brands fa-google"></i> Google Analytics</div>
+                        <div class="tool-item-box">Notion</div>
+                        <div class="tool-item-box">Jira</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 12. Design Gallery -->
+            <section id="gallery" class="cs-section">
+                <h2>12. Design Gallery</h2>
+                <div class="cs-section-body">
+                    <p>Click on any of the screens to open a full-resolution interactive lightbox preview.</p>
+                    <div class="cs-gallery-grid">
+                        <div class="gallery-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNzUgNzgwIiB3aWR0aD0iMzc1IiBoZWlnaHQ9Ijc4MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMGYxMjFlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE0MWEyYyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYWNjZW50MSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjN0M5QkZGIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzVCN0NGRiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjM3NSIgaGVpZ2h0PSI3ODAiIHJ4PSIzNiIgZmlsbD0idXJsKCNiZzEpIiBzdHJva2U9IiMyMzJhNDAiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gc3RhdHVzIGJhciAtLT4KICA8cmVjdCB4PSIyNCIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDxyZWN0IHg9IjI5MSIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDwhLS0gaGVhZGVyIC0tPgogIDxyZWN0IHg9IjI0IiB5PSI2NCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmM2Y0ZjYiIG9wYWNpdHk9IjAuODUiLz4KICA8cmVjdCB4PSIyNCIgeT0iOTIiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjOWNhM2FmIi8+CiAgPCEtLSBoZXJvIGNhcmQgLS0+CiAgPHJlY3QgeD0iMjQiIHk9IjEyOCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSIxNDAiIHJ4PSIxOCIgZmlsbD0idXJsKCNhY2NlbnQxKSIgb3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjNUI3Q0ZGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW9wYWNpdHk9IjAuNCIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxNTIiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQiIHJ4PSI0IiBmaWxsPSIjZjNmNGY2IiBvcGFjaXR5PSIwLjgiLz4KICA8cmVjdCB4PSI0OCIgeT0iMTc2IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwIiByeD0iNCIgZmlsbD0iIzljYTNhZiIvPgogIDxyZWN0IHg9IjQ4IiB5PSIyMjgiIHdpZHRoPSIxMTAiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0idXJsKCNhY2NlbnQxKSIvPgogIDwhLS0gbGlzdCBpdGVtcyAtLT4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzMDAiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjMzNiIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSIzMjIiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iMzQwIiB3aWR0aD0iMTEwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjNmI3MjgwIi8+CiAgICA8cmVjdCB4PSIzMDAiIHk9IjMyOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iMC4yNSIvPgogIDwvZz4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzODQiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjQyMCIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI0MDYiIHdpZHRoPSIxODAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iNDI0IiB3aWR0aD0iOTAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICAgIDxyZWN0IHg9IjMwMCIgeT0iNDEyIiB3aWR0aD0iMzYiIGhlaWdodD0iMTYiIHJ4PSI4IiBmaWxsPSIjNUI3Q0ZGIiBvcGFjaXR5PSIwLjI1Ii8+CiAgPC9nPgogIDxnPgogICAgPHJlY3QgeD0iMjQiIHk9IjQ2OCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSI3MiIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICAgIDxjaXJjbGUgY3g9IjU2IiBjeT0iNTA0IiByPSIxNiIgZmlsbD0iIzJhMzM1MCIvPgogICAgPHJlY3QgeD0iODQiIHk9IjQ5MCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxMCIgcng9IjQiIGZpbGw9IiNkMWQ1ZGIiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI1MDgiIHdpZHRoPSIxMzAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICA8L2c+CiAgPCEtLSBjaGFydCAtLT4KICA8cmVjdCB4PSIyNCIgeT0iNTY0IiB3aWR0aD0iMzI3IiBoZWlnaHQ9IjEyMCIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI0NCw2NjAgMTAwLDYzMCAxNTYsNjQ4IDIxMiw2MDAgMjY4LDYxNiAzMjQsNTgwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPCEtLSBib3R0b20gbmF2IC0tPgogIDxyZWN0IHg9IjAiIHk9IjcxNiIgd2lkdGg9IjM3NSIgaGVpZ2h0PSI2NCIgcng9IjAiIGZpbGw9IiMwYjBlMTciLz4KICA8Y2lyY2xlIGN4PSI5NCIgY3k9Ijc0OCIgcj0iMTQiIGZpbGw9IiM1QjdDRkYiLz4KICA8Y2lyY2xlIGN4PSIxODciIGN5PSI3NDgiIHI9IjEwIiBmaWxsPSIjMmEzMzUwIi8+CiAgPGNpcmNsZSBjeD0iMjgwIiBjeT0iNzQ4IiByPSIxMCIgZmlsbD0iIzJhMzM1MCIvPgogIDx0ZXh0IHg9IjE4NyIgeT0iNzEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIxLjUiIGZpbGw9IiM1QjdDRkYiIG9wYWNpdHk9IjAuOCI+TU9CSUxFIFNDUkVFTiBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Goal calculator screen" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="/ph-flow.svg" alt="Goal-to-SIP flow diagram" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYyMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjIwIj4KICA8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MjAiIGZpbGw9IiMwZjEyMWUiLz4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRiNTU2OCIgc3Ryb2tlLXdpZHRoPSIxLjUiPgogICAgPCEtLSB0aHJlZSBsb3ctZmkgcGhvbmUgZnJhbWVzIC0tPgogICAgPHJlY3QgeD0iNjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiM1QjdDRkYiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSI5MiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNiIgcng9IjMiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIxMjAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI4OCIgeT0iMTUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjkwIiByeD0iNiIvPgogICAgPGxpbmUgeDE9Ijg4IiB5MT0iMTUwIiB4Mj0iMjUyIiB5Mj0iMjQwIi8+CiAgICA8bGluZSB4MT0iMjUyIiB5MT0iMTUwIiB4Mj0iODgiIHkyPSIyNDAiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIyNTYiIHdpZHRoPSIxNjQiIGhlaWdodD0iMzAiIHJ4PSIxNSIvPgogICAgPHJlY3QgeD0iODgiIHk9IjMwMCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI1MCIgcng9IjYiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIzNjQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNTAiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSI4OCIgeT0iNDI4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjUwIiByeD0iNiIvPgoKICAgIDxyZWN0IHg9IjM0MCIgeT0iNjAiIHdpZHRoPSIyMjAiIGhlaWdodD0iNDgwIiByeD0iMTgiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLW9wYWNpdHk9IjAuNiIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSI5MiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjE2IiByeD0iMyIvPgogICAgPGNpcmNsZSBjeD0iNTAwIiBjeT0iMTAwIiByPSIxMCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIxMzAiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTIwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIyNjQiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjQ1MiIgeT0iMjY0IiB3aWR0aD0iNzYiIGhlaWdodD0iNzYiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSIzNjgiIHk9IjM1MiIgd2lkdGg9Ijc2IiBoZWlnaHQ9Ijc2IiByeD0iNiIvPgogICAgPHJlY3QgeD0iNDUyIiB5PSIzNTIiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjM2OCIgeT0iNDUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjM0IiByeD0iMTciLz4KCiAgICA8cmVjdCB4PSI2MjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iOTIiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTYiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjEyMiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNTAiIHJ4PSI2Ii8+CiAgICA8cGF0aCBkPSJNNjQ4IDE5NyBsMzAgLTM0IGwyNiAyMCBsNDAgLTQ2IGw2OCA2MCIgLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMjg4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjEyIiByeD0iMyIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSIzMTAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjM0MCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI0MCIgcng9IjgiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMzkyIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjQwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSI0NDQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNDAiIHJ4PSI4Ii8+CiAgPC9nPgogIDwhLS0gYW5ub3RhdGlvbiBjYWxsb3V0cyAtLT4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM2YjcyODAiPgogICAgPGNpcmNsZSBjeD0iNjAiIGN5PSI1NjAiIHI9IjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCN0NGRiIvPgogICAgPHRleHQgeD0iNjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVCN0NGRiIgZm9udC1zaXplPSIxMCI+QTwvdGV4dD4KICAgIDx0ZXh0IHg9IjgwIiB5PSI1NjQiPlN0ZXAtYnktc3RlcCB3aXphcmQ8L3RleHQ+CgogICAgPGNpcmNsZSBjeD0iMzQwIiBjeT0iNTYwIiByPSI5IiBmaWxsPSJub25lIiBzdHJva2U9IiM5Y2EzYWYiLz4KICAgIDx0ZXh0IHg9IjM0MCIgeT0iNTY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOWNhM2FmIiBmb250LXNpemU9IjEwIj5CPC90ZXh0PgogICAgPHRleHQgeD0iMzYwIiB5PSI1NjQiPkdyaWQtYmFzZWQgc2VsZWN0aW9uPC90ZXh0PgoKICAgIDxjaXJjbGUgY3g9IjYyMCIgY3k9IjU2MCIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTBiOTgxIi8+CiAgICA8dGV4dCB4PSI2MjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzEwYjk4MSIgZm9udC1zaXplPSIxMCI+QzwvdGV4dD4KICAgIDx0ZXh0IHg9IjY0MCIgeT0iNTY0Ij5TdW1tYXJ5ICsgY29uZmlybWF0aW9uPC90ZXh0PgogIDwvZz4KICA8dGV4dCB4PSIxMDUwIiB5PSIzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgbGV0dGVyLXNwYWNpbmc9IjEuNSIgZmlsbD0iIzVCN0NGRiIgb3BhY2l0eT0iMC43IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCAxMDUwIDMwMCkiPldJUkVGUkFNRSBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Fund collection wireframes" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="/ph-designsystem.svg" alt="Goal progress design system" class="gallery-img main-lightbox-trigger">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 13. Key Learnings -->
+            <section id="learnings" class="cs-section">
+                <h2>13. Key Learnings</h2>
+                <div class="cs-section-body">
+                    <p>Designing a cross-sell feature that users actually want taught me to think about timing and framing as much as layout.</p>
+                    <div class="pain-points-grid">
+                        <div class="pain-card">
+                            <span class="pain-num">01</span>
+                            <h5>Don't build a second app inside the app</h5>
+                            <p>Reusing Bigul's existing navigation and visual language made the fund experience feel like a natural extension, not a bolted-on acquisition from a different product team.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">02</span>
+                            <h5>Goal framing beats performance framing</h5>
+                            <p>Leading with "does this fit your goal" instead of "here's the 5-year return" made fund selection feel like a decision users were equipped to make themselves.</p>
+                        </div>
+                        <div class="pain-card">
+                            <span class="pain-num">03</span>
+                            <h5>Cross-sell timing matters more than placement</h5>
+                            <p>A contextual prompt tied to a just-completed action consistently outperformed a persistent, prominently placed banner — relevance beat visibility.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Project Navigation Section -->
+            <div class="cs-project-nav" id="navigation">
+                <a href="project_kimirica.html" class="nav-prev">
+                    <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
+                    <span class="nav-project-title">Kimirica Website</span>
+                </a>
+                <a href="project_bigul_support.html" class="nav-next">
+                    <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="nav-project-title">Bigul Support Portal</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="lightboxOverlay" class="lightbox-overlay hidden" aria-hidden="true" role="dialog">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Preview">&times;</button>
+        <img id="lightboxImg" src="" alt="Full size preview" class="lightbox-img">
+    </div>
+
+        <!-- Footer -->
+    <footer class="footer-premium" id="siteFooter">
+        <div class="footer-bg" aria-hidden="true">
+            <div class="footer-aurora"></div>
+            <div class="footer-blob footer-blob-a"></div>
+            <div class="footer-blob footer-blob-b"></div>
+            <div class="footer-noise"></div>
+            <div class="footer-particles" id="footerParticles"></div>
+            <div class="footer-spotlight" id="footerSpotlight"></div>
+        </div>
+
+        <div class="container footer-inner">
+            <div class="footer-grid">
+                <!-- Column 1: Personal Brand -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="footer-logo">Aditya<span class="logo-dot">.</span></a>
+                    <p class="footer-tagline">Product Designer crafting intuitive digital products that solve complex problems and create measurable business impact.</p>
+                    <p class="footer-focus"><span>Fintech</span><span class="dot-sep" aria-hidden="true">•</span><span>SaaS</span><span class="dot-sep" aria-hidden="true">•</span><span>E-commerce</span></p>
+
+                    <div class="footer-availability">
+                        <span class="availability-dot"><span class="availability-ping"></span></span>
+                        Available for Product Design Opportunities
+                    </div>
+
+                    <div class="footer-cta-row">
+                        <a href="assets/Aditya_Nandane_Resume.pdf" download class="btn-footer btn-footer-primary magnetic">
+                            <span>Download Resume</span>
+                            <i class="fa-solid fa-arrow-down-to-line btn-footer-icon"></i>
+                        </a>
+                        <a href="index.html#contact" class="btn-footer btn-footer-secondary magnetic">
+                            <span>Let's Talk</span>
+                            <i class="fa-solid fa-arrow-right btn-footer-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <nav class="footer-col footer-col-nav" aria-label="Footer">
+                    <h4 class="footer-col-title">Navigate</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="about.html" class="footer-nav-link"><i class="fa-solid fa-user footer-nav-icon"></i><span>About</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="work.html" class="footer-nav-link"><i class="fa-solid fa-diagram-project footer-nav-icon"></i><span>Projects</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="work.html" class="footer-nav-link"><i class="fa-solid fa-book-open footer-nav-icon"></i><span>Case Studies</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="about.html#resume" class="footer-nav-link"><i class="fa-solid fa-briefcase footer-nav-icon"></i><span>Experience</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="assets/Aditya_Nandane_Resume.pdf" download class="footer-nav-link"><i class="fa-solid fa-file-pdf footer-nav-icon"></i><span>Resume</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="index.html#contact" class="footer-nav-link"><i class="fa-solid fa-envelope footer-nav-icon"></i><span>Contact</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                    </ul>
+                </nav>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-col footer-col-connect">
+                    <h4 class="footer-connect-title">Let's Build Something Meaningful</h4>
+                    <p class="footer-connect-desc">I'm always open to discussing product design, fintech, startups, or exciting product opportunities.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-icon magnetic" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:nandaneas1595@gmail.com" class="footer-social-icon magnetic" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider" aria-hidden="true"></div>
+
+            <div class="footer-backtotop-row">
+                <button id="backToTop" class="back-to-top-pill" aria-label="Back to top of page">
+                    <i class="fa-solid fa-arrow-up back-to-top-arrow" aria-hidden="true"></i>
+                    <span>Back to Top</span>
+                </button>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p class="footer-bottom-item footer-copyright">&copy; <span id="currentYear">2026</span> Aditya Nandane</p>
+                <p class="footer-bottom-item footer-crafted">Crafted with curiosity, precision, and purpose.</p>
+                <p class="footer-bottom-item footer-builtwith">Designed in Figma • Built with Code</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

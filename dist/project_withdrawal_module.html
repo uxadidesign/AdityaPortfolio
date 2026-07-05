@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdrawal Module | UI/UX Case Study</title>
+    <meta name="description" content="Case study on redesigning Bigul's fund withdrawal flow with real-time status tracking and transparent SLA messaging to build trust in the most sensitive moment of a trading app.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script type="module" crossorigin src="/app.js"></script>
+  <link rel="stylesheet" crossorigin href="/app.css">
+</head>
+<body class="dark-theme">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">AN<span class="logo-dot">.</span></a>
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="work.html" class="nav-link active">Work</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="about.html#resume" class="nav-link">Resume</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#contact" class="btn btn-nav-cta">Let's Connect</a>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="cs-hero">
+        <div class="container">
+            <div class="cs-back-link">
+                <a href="work.html"><i class="fa-solid fa-arrow-left"></i> Back to Projects</a>
+            </div>
+
+            <div class="cs-hero-header">
+                <span class="cs-category-tag"><i class="fa-solid fa-money-bill-transfer"></i> Fintech • Trust & Transactions • Mobile App</span>
+                <h1 class="cs-title">Withdrawal Module</h1>
+                <p class="cs-tagline">A rebuild of Bigul's fund-withdrawal flow — the single most trust-sensitive moment in a trading app — replacing a silent black box with real-time status tracking.</p>
+            </div>
+
+            <div class="cs-hero-mockup-wrapper">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNzUgNzgwIiB3aWR0aD0iMzc1IiBoZWlnaHQ9Ijc4MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMGYxMjFlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE0MWEyYyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYWNjZW50MSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjN0M5QkZGIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzVCN0NGRiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjM3NSIgaGVpZ2h0PSI3ODAiIHJ4PSIzNiIgZmlsbD0idXJsKCNiZzEpIiBzdHJva2U9IiMyMzJhNDAiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gc3RhdHVzIGJhciAtLT4KICA8cmVjdCB4PSIyNCIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDxyZWN0IHg9IjI5MSIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDwhLS0gaGVhZGVyIC0tPgogIDxyZWN0IHg9IjI0IiB5PSI2NCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmM2Y0ZjYiIG9wYWNpdHk9IjAuODUiLz4KICA8cmVjdCB4PSIyNCIgeT0iOTIiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjOWNhM2FmIi8+CiAgPCEtLSBoZXJvIGNhcmQgLS0+CiAgPHJlY3QgeD0iMjQiIHk9IjEyOCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSIxNDAiIHJ4PSIxOCIgZmlsbD0idXJsKCNhY2NlbnQxKSIgb3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjNUI3Q0ZGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW9wYWNpdHk9IjAuNCIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxNTIiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQiIHJ4PSI0IiBmaWxsPSIjZjNmNGY2IiBvcGFjaXR5PSIwLjgiLz4KICA8cmVjdCB4PSI0OCIgeT0iMTc2IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwIiByeD0iNCIgZmlsbD0iIzljYTNhZiIvPgogIDxyZWN0IHg9IjQ4IiB5PSIyMjgiIHdpZHRoPSIxMTAiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0idXJsKCNhY2NlbnQxKSIvPgogIDwhLS0gbGlzdCBpdGVtcyAtLT4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzMDAiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjMzNiIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSIzMjIiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iMzQwIiB3aWR0aD0iMTEwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjNmI3MjgwIi8+CiAgICA8cmVjdCB4PSIzMDAiIHk9IjMyOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iMC4yNSIvPgogIDwvZz4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzODQiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjQyMCIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI0MDYiIHdpZHRoPSIxODAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iNDI0IiB3aWR0aD0iOTAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICAgIDxyZWN0IHg9IjMwMCIgeT0iNDEyIiB3aWR0aD0iMzYiIGhlaWdodD0iMTYiIHJ4PSI4IiBmaWxsPSIjNUI3Q0ZGIiBvcGFjaXR5PSIwLjI1Ii8+CiAgPC9nPgogIDxnPgogICAgPHJlY3QgeD0iMjQiIHk9IjQ2OCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSI3MiIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICAgIDxjaXJjbGUgY3g9IjU2IiBjeT0iNTA0IiByPSIxNiIgZmlsbD0iIzJhMzM1MCIvPgogICAgPHJlY3QgeD0iODQiIHk9IjQ5MCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxMCIgcng9IjQiIGZpbGw9IiNkMWQ1ZGIiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI1MDgiIHdpZHRoPSIxMzAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICA8L2c+CiAgPCEtLSBjaGFydCAtLT4KICA8cmVjdCB4PSIyNCIgeT0iNTY0IiB3aWR0aD0iMzI3IiBoZWlnaHQ9IjEyMCIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI0NCw2NjAgMTAwLDYzMCAxNTYsNjQ4IDIxMiw2MDAgMjY4LDYxNiAzMjQsNTgwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPCEtLSBib3R0b20gbmF2IC0tPgogIDxyZWN0IHg9IjAiIHk9IjcxNiIgd2lkdGg9IjM3NSIgaGVpZ2h0PSI2NCIgcng9IjAiIGZpbGw9IiMwYjBlMTciLz4KICA8Y2lyY2xlIGN4PSI5NCIgY3k9Ijc0OCIgcj0iMTQiIGZpbGw9IiM1QjdDRkYiLz4KICA8Y2lyY2xlIGN4PSIxODciIGN5PSI3NDgiIHI9IjEwIiBmaWxsPSIjMmEzMzUwIi8+CiAgPGNpcmNsZSBjeD0iMjgwIiBjeT0iNzQ4IiByPSIxMCIgZmlsbD0iIzJhMzM1MCIvPgogIDx0ZXh0IHg9IjE4NyIgeT0iNzEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIxLjUiIGZpbGw9IiM1QjdDRkYiIG9wYWNpdHk9IjAuOCI+TU9CSUxFIFNDUkVFTiBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Bigul Withdrawal Module status tracking mockup" class="cs-hero-mockup main-lightbox-trigger">
+            </div>
+
+            <div class="cs-metadata-grid">
+                <div class="meta-item">
+                    <h5>Role</h5>
+                    <p>UI/UX Designer<br><span>(Transaction Trust Ownership)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Duration</h5>
+                    <p>Jun 2025 - Jul 2025<br><span>(5 Week Sprint)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Team Size</h5>
+                    <p>4 cross-functional members<br><span>(1 PM, 2 Devs, 1 UX)</span></p>
+                </div>
+                <div class="meta-item">
+                    <h5>Key Results</h5>
+                    <p>−24% Withdrawal Tickets<br><span>Higher Trust Ratings</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cs-layout-container container">
+        <aside class="cs-sidebar">
+            <div class="cs-toc-wrapper" id="tocWrapper">
+                <h4 class="toc-title">ON THIS PAGE</h4>
+                <ul class="toc-list">
+                    <li><a href="#overview" class="toc-link active">1. Overview</a></li>
+                    <li><a href="#problem" class="toc-link">2. Problem</a></li>
+                    <li><a href="#solution" class="toc-link">3. Solution</a></li>
+                    <li><a href="#role" class="toc-link">4. My Role</a></li>
+                    <li><a href="#features" class="toc-link">5. Key Features</a></li>
+                    <li><a href="#impact" class="toc-link">6. Business Impact</a></li>
+                    <li><a href="#gallery" class="toc-link">7. Gallery</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="cs-content">
+
+            <!-- 1. Overview -->
+            <section id="overview" class="cs-section">
+                <h2>1. Overview</h2>
+                <div class="cs-section-body">
+                    <p>
+                        Nothing tests a trading platform's trustworthiness quite like a user asking for their money back. The Withdrawal Module rebuild focused entirely on that single moment — turning a silent, multi-day black box into a transparent, trackable process users could actually follow.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 2. Problem -->
+            <section id="problem" class="cs-section">
+                <h2>2. Problem</h2>
+                <div class="cs-section-body">
+                    <p>
+                        Once a withdrawal request was submitted, the app showed nothing further until the money arrived — no indication of which stage it was in, no clear expectation for how long banking rails would take, and no distinction between "still processing normally" and "something went wrong."
+                    </p>
+                    <p>
+                        This silence was disproportionately anxiety-inducing for larger withdrawal amounts, and it was the single largest driver of repeat support contact — users would submit one request, then message support two or three times asking for an update on the exact same transaction.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. Solution -->
+            <section id="solution" class="cs-section">
+                <h2>3. Solution</h2>
+                <div class="cs-section-body">
+                    <p>
+                        I redesigned the flow around a visible, real-time status tracker with four clear stages, paired with an upfront, honest SLA estimate set at the moment of submission rather than a vague "we'll process it soon."
+                    </p>
+                    <div class="process-img-wrapper">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNzUgNzgwIiB3aWR0aD0iMzc1IiBoZWlnaHQ9Ijc4MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMGYxMjFlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE0MWEyYyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYWNjZW50MSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjN0M5QkZGIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzVCN0NGRiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjM3NSIgaGVpZ2h0PSI3ODAiIHJ4PSIzNiIgZmlsbD0idXJsKCNiZzEpIiBzdHJva2U9IiMyMzJhNDAiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gc3RhdHVzIGJhciAtLT4KICA8cmVjdCB4PSIyNCIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDxyZWN0IHg9IjI5MSIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDwhLS0gaGVhZGVyIC0tPgogIDxyZWN0IHg9IjI0IiB5PSI2NCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmM2Y0ZjYiIG9wYWNpdHk9IjAuODUiLz4KICA8cmVjdCB4PSIyNCIgeT0iOTIiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjOWNhM2FmIi8+CiAgPCEtLSBoZXJvIGNhcmQgLS0+CiAgPHJlY3QgeD0iMjQiIHk9IjEyOCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSIxNDAiIHJ4PSIxOCIgZmlsbD0idXJsKCNhY2NlbnQxKSIgb3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjNUI3Q0ZGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW9wYWNpdHk9IjAuNCIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxNTIiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQiIHJ4PSI0IiBmaWxsPSIjZjNmNGY2IiBvcGFjaXR5PSIwLjgiLz4KICA8cmVjdCB4PSI0OCIgeT0iMTc2IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwIiByeD0iNCIgZmlsbD0iIzljYTNhZiIvPgogIDxyZWN0IHg9IjQ4IiB5PSIyMjgiIHdpZHRoPSIxMTAiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0idXJsKCNhY2NlbnQxKSIvPgogIDwhLS0gbGlzdCBpdGVtcyAtLT4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzMDAiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjMzNiIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSIzMjIiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iMzQwIiB3aWR0aD0iMTEwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjNmI3MjgwIi8+CiAgICA8cmVjdCB4PSIzMDAiIHk9IjMyOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iMC4yNSIvPgogIDwvZz4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzODQiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjQyMCIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI0MDYiIHdpZHRoPSIxODAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iNDI0IiB3aWR0aD0iOTAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICAgIDxyZWN0IHg9IjMwMCIgeT0iNDEyIiB3aWR0aD0iMzYiIGhlaWdodD0iMTYiIHJ4PSI4IiBmaWxsPSIjNUI3Q0ZGIiBvcGFjaXR5PSIwLjI1Ii8+CiAgPC9nPgogIDxnPgogICAgPHJlY3QgeD0iMjQiIHk9IjQ2OCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSI3MiIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICAgIDxjaXJjbGUgY3g9IjU2IiBjeT0iNTA0IiByPSIxNiIgZmlsbD0iIzJhMzM1MCIvPgogICAgPHJlY3QgeD0iODQiIHk9IjQ5MCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxMCIgcng9IjQiIGZpbGw9IiNkMWQ1ZGIiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI1MDgiIHdpZHRoPSIxMzAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICA8L2c+CiAgPCEtLSBjaGFydCAtLT4KICA8cmVjdCB4PSIyNCIgeT0iNTY0IiB3aWR0aD0iMzI3IiBoZWlnaHQ9IjEyMCIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI0NCw2NjAgMTAwLDYzMCAxNTYsNjQ4IDIxMiw2MDAgMjY4LDYxNiAzMjQsNTgwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPCEtLSBib3R0b20gbmF2IC0tPgogIDxyZWN0IHg9IjAiIHk9IjcxNiIgd2lkdGg9IjM3NSIgaGVpZ2h0PSI2NCIgcng9IjAiIGZpbGw9IiMwYjBlMTciLz4KICA8Y2lyY2xlIGN4PSI5NCIgY3k9Ijc0OCIgcj0iMTQiIGZpbGw9IiM1QjdDRkYiLz4KICA8Y2lyY2xlIGN4PSIxODciIGN5PSI3NDgiIHI9IjEwIiBmaWxsPSIjMmEzMzUwIi8+CiAgPGNpcmNsZSBjeD0iMjgwIiBjeT0iNzQ4IiByPSIxMCIgZmlsbD0iIzJhMzM1MCIvPgogIDx0ZXh0IHg9IjE4NyIgeT0iNzEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIxLjUiIGZpbGw9IiM1QjdDRkYiIG9wYWNpdHk9IjAuOCI+TU9CSUxFIFNDUkVFTiBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Withdrawal status tracker screen" class="process-img main-lightbox-trigger">
+                        <span class="img-caption">Fig 1. Real-time withdrawal status tracker replacing the previous silent confirmation screen.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. My Role -->
+            <section id="role" class="cs-section">
+                <h2>4. My Role</h2>
+                <div class="cs-section-body">
+                    <p>
+                        I owned the withdrawal flow redesign end-to-end, working with the Payments/Banking Ops team to understand exactly which processing stages were technically knowable in real time, and with Support to identify the specific uncertainty moments driving repeat contact.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 5. Key Features -->
+            <section id="features" class="cs-section">
+                <h2>5. Key Features</h2>
+                <div class="cs-section-body">
+                    <div class="hifi-feature">
+                        <h4>Four-Stage Status Tracker</h4>
+                        <p>Requested → Processing → Bank Transfer Initiated → Completed, each with a timestamp, replacing the previous single "Submitted" confirmation with no further updates.</p>
+                    </div>
+                    <div class="hifi-feature">
+                        <h4>Upfront SLA Transparency</h4>
+                        <p>A realistic estimate ("Typically 1-2 business days, may take longer around bank holidays") shown at submission, not buried in a help article users had to go looking for.</p>
+                    </div>
+                    <div class="hifi-feature">
+                        <h4>Saved & Verified Bank Accounts</h4>
+                        <p>A quick-withdraw shortcut to previously verified accounts, removing repeated manual entry while keeping a clear audit trail of which account funds were sent to.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. Business Impact -->
+            <section id="impact" class="cs-section">
+                <h2>6. Business Impact</h2>
+                <div class="cs-section-body">
+                    <div class="impact-metrics-row">
+                        <div class="metric-circle">
+                            <span class="m-val">-24%</span>
+                            <span class="m-lbl">Withdrawal Tickets</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">Higher</span>
+                            <span class="m-lbl">Post-Withdrawal Trust Rating</span>
+                        </div>
+                        <div class="metric-circle">
+                            <span class="m-val">Fewer</span>
+                            <span class="m-lbl">Repeat Follow-Ups Per Ticket</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Gallery -->
+            <section id="gallery" class="cs-section">
+                <h2>7. Gallery</h2>
+                <div class="cs-section-body">
+                    <p>Click on any of the screens to open a full-resolution interactive lightbox preview.</p>
+                    <div class="cs-gallery-grid">
+                        <div class="gallery-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNzUgNzgwIiB3aWR0aD0iMzc1IiBoZWlnaHQ9Ijc4MCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMGYxMjFlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE0MWEyYyIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYWNjZW50MSIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjAiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjN0M5QkZGIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzVCN0NGRiIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjM3NSIgaGVpZ2h0PSI3ODAiIHJ4PSIzNiIgZmlsbD0idXJsKCNiZzEpIiBzdHJva2U9IiMyMzJhNDAiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gc3RhdHVzIGJhciAtLT4KICA8cmVjdCB4PSIyNCIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDxyZWN0IHg9IjI5MSIgeT0iMjgiIHdpZHRoPSI2MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzJhMzM1MCIvPgogIDwhLS0gaGVhZGVyIC0tPgogIDxyZWN0IHg9IjI0IiB5PSI2NCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxOCIgcng9IjQiIGZpbGw9IiNmM2Y0ZjYiIG9wYWNpdHk9IjAuODUiLz4KICA8cmVjdCB4PSIyNCIgeT0iOTIiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjOWNhM2FmIi8+CiAgPCEtLSBoZXJvIGNhcmQgLS0+CiAgPHJlY3QgeD0iMjQiIHk9IjEyOCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSIxNDAiIHJ4PSIxOCIgZmlsbD0idXJsKCNhY2NlbnQxKSIgb3BhY2l0eT0iMC4xNSIgc3Ryb2tlPSIjNUI3Q0ZGIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW9wYWNpdHk9IjAuNCIvPgogIDxyZWN0IHg9IjQ4IiB5PSIxNTIiIHdpZHRoPSIxNDAiIGhlaWdodD0iMTQiIHJ4PSI0IiBmaWxsPSIjZjNmNGY2IiBvcGFjaXR5PSIwLjgiLz4KICA8cmVjdCB4PSI0OCIgeT0iMTc2IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwIiByeD0iNCIgZmlsbD0iIzljYTNhZiIvPgogIDxyZWN0IHg9IjQ4IiB5PSIyMjgiIHdpZHRoPSIxMTAiIGhlaWdodD0iMjgiIHJ4PSIxNCIgZmlsbD0idXJsKCNhY2NlbnQxKSIvPgogIDwhLS0gbGlzdCBpdGVtcyAtLT4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzMDAiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjMzNiIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSIzMjIiIHdpZHRoPSIxNjAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iMzQwIiB3aWR0aD0iMTEwIiBoZWlnaHQ9IjgiIHJ4PSI0IiBmaWxsPSIjNmI3MjgwIi8+CiAgICA8cmVjdCB4PSIzMDAiIHk9IjMyOCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0iIzEwYjk4MSIgb3BhY2l0eT0iMC4yNSIvPgogIDwvZz4KICA8Zz4KICAgIDxyZWN0IHg9IjI0IiB5PSIzODQiIHdpZHRoPSIzMjciIGhlaWdodD0iNzIiIHJ4PSIxNCIgZmlsbD0iIzE3MWQzMCIgc3Ryb2tlPSIjMjMyYTQwIi8+CiAgICA8Y2lyY2xlIGN4PSI1NiIgY3k9IjQyMCIgcj0iMTYiIGZpbGw9IiMyYTMzNTAiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI0MDYiIHdpZHRoPSIxODAiIGhlaWdodD0iMTAiIHJ4PSI0IiBmaWxsPSIjZDFkNWRiIi8+CiAgICA8cmVjdCB4PSI4NCIgeT0iNDI0IiB3aWR0aD0iOTAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICAgIDxyZWN0IHg9IjMwMCIgeT0iNDEyIiB3aWR0aD0iMzYiIGhlaWdodD0iMTYiIHJ4PSI4IiBmaWxsPSIjNUI3Q0ZGIiBvcGFjaXR5PSIwLjI1Ii8+CiAgPC9nPgogIDxnPgogICAgPHJlY3QgeD0iMjQiIHk9IjQ2OCIgd2lkdGg9IjMyNyIgaGVpZ2h0PSI3MiIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICAgIDxjaXJjbGUgY3g9IjU2IiBjeT0iNTA0IiByPSIxNiIgZmlsbD0iIzJhMzM1MCIvPgogICAgPHJlY3QgeD0iODQiIHk9IjQ5MCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIxMCIgcng9IjQiIGZpbGw9IiNkMWQ1ZGIiLz4KICAgIDxyZWN0IHg9Ijg0IiB5PSI1MDgiIHdpZHRoPSIxMzAiIGhlaWdodD0iOCIgcng9IjQiIGZpbGw9IiM2YjcyODAiLz4KICA8L2c+CiAgPCEtLSBjaGFydCAtLT4KICA8cmVjdCB4PSIyNCIgeT0iNTY0IiB3aWR0aD0iMzI3IiBoZWlnaHQ9IjEyMCIgcng9IjE0IiBmaWxsPSIjMTcxZDMwIiBzdHJva2U9IiMyMzJhNDAiLz4KICA8cG9seWxpbmUgcG9pbnRzPSI0NCw2NjAgMTAwLDYzMCAxNTYsNjQ4IDIxMiw2MDAgMjY4LDYxNiAzMjQsNTgwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS13aWR0aD0iMyIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CiAgPCEtLSBib3R0b20gbmF2IC0tPgogIDxyZWN0IHg9IjAiIHk9IjcxNiIgd2lkdGg9IjM3NSIgaGVpZ2h0PSI2NCIgcng9IjAiIGZpbGw9IiMwYjBlMTciLz4KICA8Y2lyY2xlIGN4PSI5NCIgY3k9Ijc0OCIgcj0iMTQiIGZpbGw9IiM1QjdDRkYiLz4KICA8Y2lyY2xlIGN4PSIxODciIGN5PSI3NDgiIHI9IjEwIiBmaWxsPSIjMmEzMzUwIi8+CiAgPGNpcmNsZSBjeD0iMjgwIiBjeT0iNzQ4IiByPSIxMCIgZmlsbD0iIzJhMzM1MCIvPgogIDx0ZXh0IHg9IjE4NyIgeT0iNzEwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTMiIGxldHRlci1zcGFjaW5nPSIxLjUiIGZpbGw9IiM1QjdDRkYiIG9wYWNpdHk9IjAuOCI+TU9CSUxFIFNDUkVFTiBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Withdrawal request screen" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="/ph-flow.svg" alt="Withdrawal status flow diagram" class="gallery-img main-lightbox-trigger">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYyMCIgd2lkdGg9IjEyMDAiIGhlaWdodD0iNjIwIj4KICA8cmVjdCB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MjAiIGZpbGw9IiMwZjEyMWUiLz4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzRiNTU2OCIgc3Ryb2tlLXdpZHRoPSIxLjUiPgogICAgPCEtLSB0aHJlZSBsb3ctZmkgcGhvbmUgZnJhbWVzIC0tPgogICAgPHJlY3QgeD0iNjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiM1QjdDRkYiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSI5MiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNiIgcng9IjMiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIxMjAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI4OCIgeT0iMTUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjkwIiByeD0iNiIvPgogICAgPGxpbmUgeDE9Ijg4IiB5MT0iMTUwIiB4Mj0iMjUyIiB5Mj0iMjQwIi8+CiAgICA8bGluZSB4MT0iMjUyIiB5MT0iMTUwIiB4Mj0iODgiIHkyPSIyNDAiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIyNTYiIHdpZHRoPSIxNjQiIGhlaWdodD0iMzAiIHJ4PSIxNSIvPgogICAgPHJlY3QgeD0iODgiIHk9IjMwMCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI1MCIgcng9IjYiLz4KICAgIDxyZWN0IHg9Ijg4IiB5PSIzNjQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNTAiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSI4OCIgeT0iNDI4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjUwIiByeD0iNiIvPgoKICAgIDxyZWN0IHg9IjM0MCIgeT0iNjAiIHdpZHRoPSIyMjAiIGhlaWdodD0iNDgwIiByeD0iMTgiIHN0cm9rZT0iIzljYTNhZiIgc3Ryb2tlLW9wYWNpdHk9IjAuNiIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSI5MiIgd2lkdGg9IjgwIiBoZWlnaHQ9IjE2IiByeD0iMyIvPgogICAgPGNpcmNsZSBjeD0iNTAwIiBjeT0iMTAwIiByPSIxMCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIxMzAiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTIwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iMzY4IiB5PSIyNjQiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjQ1MiIgeT0iMjY0IiB3aWR0aD0iNzYiIGhlaWdodD0iNzYiIHJ4PSI2Ii8+CiAgICA8cmVjdCB4PSIzNjgiIHk9IjM1MiIgd2lkdGg9Ijc2IiBoZWlnaHQ9Ijc2IiByeD0iNiIvPgogICAgPHJlY3QgeD0iNDUyIiB5PSIzNTIiIHdpZHRoPSI3NiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjM2OCIgeT0iNDUwIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjM0IiByeD0iMTciLz4KCiAgICA8cmVjdCB4PSI2MjAiIHk9IjYwIiB3aWR0aD0iMjIwIiBoZWlnaHQ9IjQ4MCIgcng9IjE4IiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS1vcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iOTIiIHdpZHRoPSIxNjQiIGhlaWdodD0iMTYiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjEyMiIgd2lkdGg9IjE2NCIgaGVpZ2h0PSIxNTAiIHJ4PSI2Ii8+CiAgICA8cGF0aCBkPSJNNjQ4IDE5NyBsMzAgLTM0IGwyNiAyMCBsNDAgLTQ2IGw2OCA2MCIgLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMjg4IiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjEyIiByeD0iMyIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSIzMTAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTAiIHJ4PSIzIi8+CiAgICA8cmVjdCB4PSI2NDgiIHk9IjM0MCIgd2lkdGg9IjE2NCIgaGVpZ2h0PSI0MCIgcng9IjgiLz4KICAgIDxyZWN0IHg9IjY0OCIgeT0iMzkyIiB3aWR0aD0iMTY0IiBoZWlnaHQ9IjQwIiByeD0iOCIvPgogICAgPHJlY3QgeD0iNjQ4IiB5PSI0NDQiIHdpZHRoPSIxNjQiIGhlaWdodD0iNDAiIHJ4PSI4Ii8+CiAgPC9nPgogIDwhLS0gYW5ub3RhdGlvbiBjYWxsb3V0cyAtLT4KICA8ZyBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM2YjcyODAiPgogICAgPGNpcmNsZSBjeD0iNjAiIGN5PSI1NjAiIHI9IjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzVCN0NGRiIvPgogICAgPHRleHQgeD0iNjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzVCN0NGRiIgZm9udC1zaXplPSIxMCI+QTwvdGV4dD4KICAgIDx0ZXh0IHg9IjgwIiB5PSI1NjQiPlN0ZXAtYnktc3RlcCB3aXphcmQ8L3RleHQ+CgogICAgPGNpcmNsZSBjeD0iMzQwIiBjeT0iNTYwIiByPSI5IiBmaWxsPSJub25lIiBzdHJva2U9IiM5Y2EzYWYiLz4KICAgIDx0ZXh0IHg9IjM0MCIgeT0iNTY0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOWNhM2FmIiBmb250LXNpemU9IjEwIj5CPC90ZXh0PgogICAgPHRleHQgeD0iMzYwIiB5PSI1NjQiPkdyaWQtYmFzZWQgc2VsZWN0aW9uPC90ZXh0PgoKICAgIDxjaXJjbGUgY3g9IjYyMCIgY3k9IjU2MCIgcj0iOSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTBiOTgxIi8+CiAgICA8dGV4dCB4PSI2MjAiIHk9IjU2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzEwYjk4MSIgZm9udC1zaXplPSIxMCI+QzwvdGV4dD4KICAgIDx0ZXh0IHg9IjY0MCIgeT0iNTY0Ij5TdW1tYXJ5ICsgY29uZmlybWF0aW9uPC90ZXh0PgogIDwvZz4KICA8dGV4dCB4PSIxMDUwIiB5PSIzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgbGV0dGVyLXNwYWNpbmc9IjEuNSIgZmlsbD0iIzVCN0NGRiIgb3BhY2l0eT0iMC43IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCAxMDUwIDMwMCkiPldJUkVGUkFNRSBQUkVWSUVXPC90ZXh0Pgo8L3N2Zz4K" alt="Saved bank account wireframes" class="gallery-img main-lightbox-trigger">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Next Project Navigation Section -->
+            <div class="cs-project-nav" id="navigation">
+                <a href="project_bigul_support.html" class="nav-prev">
+                    <span class="nav-lbl"><i class="fa-solid fa-arrow-left"></i> Previous Project</span>
+                    <span class="nav-project-title">Bigul Support Portal</span>
+                </a>
+                <a href="project_kimirica_mobile.html" class="nav-next">
+                    <span class="nav-lbl">Next Project <i class="fa-solid fa-arrow-right"></i></span>
+                    <span class="nav-project-title">Kimirica Mobile App</span>
+                </a>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="lightboxOverlay" class="lightbox-overlay hidden" aria-hidden="true" role="dialog">
+        <button id="lightboxClose" class="lightbox-close" aria-label="Close Preview">&times;</button>
+        <img id="lightboxImg" src="" alt="Full size preview" class="lightbox-img">
+    </div>
+
+        <!-- Footer -->
+    <footer class="footer-premium" id="siteFooter">
+        <div class="footer-bg" aria-hidden="true">
+            <div class="footer-aurora"></div>
+            <div class="footer-blob footer-blob-a"></div>
+            <div class="footer-blob footer-blob-b"></div>
+            <div class="footer-noise"></div>
+            <div class="footer-particles" id="footerParticles"></div>
+            <div class="footer-spotlight" id="footerSpotlight"></div>
+        </div>
+
+        <div class="container footer-inner">
+            <div class="footer-grid">
+                <!-- Column 1: Personal Brand -->
+                <div class="footer-col footer-col-brand">
+                    <a href="index.html" class="footer-logo">Aditya<span class="logo-dot">.</span></a>
+                    <p class="footer-tagline">Product Designer crafting intuitive digital products that solve complex problems and create measurable business impact.</p>
+                    <p class="footer-focus"><span>Fintech</span><span class="dot-sep" aria-hidden="true">•</span><span>SaaS</span><span class="dot-sep" aria-hidden="true">•</span><span>E-commerce</span></p>
+
+                    <div class="footer-availability">
+                        <span class="availability-dot"><span class="availability-ping"></span></span>
+                        Available for Product Design Opportunities
+                    </div>
+
+                    <div class="footer-cta-row">
+                        <a href="assets/Aditya_Nandane_Resume.pdf" download class="btn-footer btn-footer-primary magnetic">
+                            <span>Download Resume</span>
+                            <i class="fa-solid fa-arrow-down-to-line btn-footer-icon"></i>
+                        </a>
+                        <a href="index.html#contact" class="btn-footer btn-footer-secondary magnetic">
+                            <span>Let's Talk</span>
+                            <i class="fa-solid fa-arrow-right btn-footer-icon"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Navigation -->
+                <nav class="footer-col footer-col-nav" aria-label="Footer">
+                    <h4 class="footer-col-title">Navigate</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="about.html" class="footer-nav-link"><i class="fa-solid fa-user footer-nav-icon"></i><span>About</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="work.html" class="footer-nav-link"><i class="fa-solid fa-diagram-project footer-nav-icon"></i><span>Projects</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="work.html" class="footer-nav-link"><i class="fa-solid fa-book-open footer-nav-icon"></i><span>Case Studies</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="about.html#resume" class="footer-nav-link"><i class="fa-solid fa-briefcase footer-nav-icon"></i><span>Experience</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="assets/Aditya_Nandane_Resume.pdf" download class="footer-nav-link"><i class="fa-solid fa-file-pdf footer-nav-icon"></i><span>Resume</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                        <li><a href="index.html#contact" class="footer-nav-link"><i class="fa-solid fa-envelope footer-nav-icon"></i><span>Contact</span><i class="fa-solid fa-arrow-right footer-nav-arrow" aria-hidden="true"></i></a></li>
+                    </ul>
+                </nav>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-col footer-col-connect">
+                    <h4 class="footer-connect-title">Let's Build Something Meaningful</h4>
+                    <p class="footer-connect-desc">I'm always open to discussing product design, fintech, startups, or exciting product opportunities.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social-icon magnetic" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+                        <a href="#" class="footer-social-icon magnetic" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:nandaneas1595@gmail.com" class="footer-social-icon magnetic" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider" aria-hidden="true"></div>
+
+            <div class="footer-backtotop-row">
+                <button id="backToTop" class="back-to-top-pill" aria-label="Back to top of page">
+                    <i class="fa-solid fa-arrow-up back-to-top-arrow" aria-hidden="true"></i>
+                    <span>Back to Top</span>
+                </button>
+            </div>
+
+            <div class="footer-bottom-bar">
+                <p class="footer-bottom-item footer-copyright">&copy; <span id="currentYear">2026</span> Aditya Nandane</p>
+                <p class="footer-bottom-item footer-crafted">Crafted with curiosity, precision, and purpose.</p>
+                <p class="footer-bottom-item footer-builtwith">Designed in Figma • Built with Code</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
