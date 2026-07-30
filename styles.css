@@ -1115,6 +1115,130 @@ h5, h6 {
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
+/* --- Featured Work: Sticky Overlapping Card Stack (homepage "Featured Work" section only) ---
+   work.html keeps the original .work-grid/.work-card layout untouched; this is a separate,
+   dark-theme variant reusing the inner .work-img-container/.work-details/.cs-card-* pieces. */
+.featured-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    position: relative;
+}
+
+.stack-card {
+    position: sticky;
+    display: flex;
+    flex-direction: row-reverse; /* image is 1st in markup -> sits right; text is 2nd -> sits left */
+    align-items: stretch;
+    /* Fixed (not min-) height: with the image side's aspect-ratio unset, an unbounded height let
+       the row grow to whatever the placeholder graphic's intrinsic size was, stretching the text
+       side and leaving it stranded in a wall of empty space. A definite height means object-fit:
+       cover on the image crops correctly and the text panel sizes predictably every time. */
+    height: 520px;
+    /* Must be fully opaque (not --bg-surface's translucent rgba) - these cards stack directly on
+       top of one another, and any transparency lets the card underneath bleed/ghost through. */
+    background-color: #141a2c;
+    border: 1px solid var(--bg-surface-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.55), 0 10px 24px -6px rgba(0, 0, 0, 0.35);
+    transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+/* Guard hover behind a hover-capable/pointer:fine check so a tap on touchscreens doesn't leave
+   the card visually "stuck" in its hover state until the user taps elsewhere. */
+@media (hover: hover) and (pointer: fine) {
+    .stack-card:hover {
+        border-color: var(--accent-primary);
+        box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--accent-glow), 0 20px 40px -10px var(--accent-glow);
+    }
+}
+
+/* Stagger the sticky offset + layering per card: each earlier card stays pinned a little
+   higher than the next, so a sliver of it peeks out above the card currently on top - the
+   "deck of cards" scroll effect. z-index climbs with scroll order so later cards cover earlier ones. */
+.featured-stack .stack-card:nth-child(1) { top: 96px;  z-index: 1; }
+.featured-stack .stack-card:nth-child(2) { top: 120px; z-index: 2; }
+.featured-stack .stack-card:nth-child(3) { top: 144px; z-index: 3; }
+.featured-stack .stack-card:nth-child(4) { top: 168px; z-index: 4; }
+.featured-stack .stack-card:nth-child(5) { top: 192px; z-index: 5; }
+.featured-stack .stack-card:nth-child(6) { top: 216px; z-index: 6; }
+
+.stack-card .work-img-container {
+    position: relative;
+    flex: 1 1 46%;
+    aspect-ratio: auto;
+    height: 100%;
+}
+
+.stack-card .work-details {
+    flex: 1 1 54%;
+    height: 100%;
+    padding: 40px 48px;
+    justify-content: center;
+    gap: 4px;
+    overflow: hidden;
+}
+
+.stack-card .work-details h3 {
+    font-size: var(--h2-size);
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.stack-card .work-summary-line {
+    font-size: var(--body-regular-size);
+    margin-bottom: 20px;
+    /* Clamp to 3 lines so longer summaries can't push the meta/impact/CTA block below the
+       card's fixed height. */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.stack-card .cs-card-meta,
+.stack-card .cs-card-impact {
+    margin-bottom: 12px;
+}
+
+/* Sticky stacking needs vertical scroll room and side-by-side space to read well - both are
+   scarce on phones/tablets, so below 993px it degrades to a plain stacked list: no pinning,
+   no overlap, image above text, same as a normal card. */
+@media (max-width: 992px) {
+    .stack-card {
+        position: relative !important;
+        top: auto !important;
+        z-index: auto !important;
+        flex-direction: column;
+        height: auto;
+    }
+    .stack-card .work-img-container {
+        aspect-ratio: 16/10;
+        height: auto;
+        flex: none;
+    }
+    .stack-card .work-details {
+        height: auto;
+        padding: 24px;
+        gap: 0;
+        overflow: visible;
+    }
+    .stack-card .work-details h3 {
+        font-size: var(--h3-size);
+    }
+    .stack-card .work-summary-line {
+        -webkit-line-clamp: unset;
+        overflow: visible;
+    }
+    /* Bump the CTA to a comfortable >=44px touch target on mobile - the site-wide .btn-read-cs
+       sizing (8px/13px) is designed for a dense desktop grid card, not a thumb. */
+    .stack-card .btn-read-cs {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
 /* --- Education & Certification Block --- */
 .education-section {
     padding: 100px 0;
@@ -1892,6 +2016,26 @@ h5, h6 {
     .footer-spotlight {
         display: none;
     }
+    .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* --- Scroll Reveal System ---
+   Applied generically by app.js to content cards/sections across all pages
+   (work cards, stat cards, testimonials, expertise cards, case-study sections, etc.)
+   so they fade/slide in once as the user scrolls to them, instead of appearing all at once. */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0s);
+}
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* --- Tablet: two-column layout --- */
@@ -2099,7 +2243,7 @@ h5, h6 {
         font-size: 10px !important;
         gap: 4px !important;
     }
-    
+
     .floating-chip i {
         font-size: 10px !important;
     }
@@ -3027,49 +3171,6 @@ h5, h6 {
     100% { transform: translateY(6px) rotate(-1deg); }
 }
 
-/* Hero Tagline and Trust Indicators Styling */
-.hero-tagline {
-    font-size: clamp(20px, 3.5vw, 24px);
-    font-weight: 500;
-    line-height: 1.4;
-    color: var(--text-primary);
-    margin-bottom: 24px;
-    letter-spacing: -0.5px;
-}
-
-.hero-trust-indicators {
-    display: flex;
-    gap: 56px;
-    padding-top: 32px;
-    border-top: 1px solid var(--bg-surface-border);
-    align-items: flex-start;
-    flex-wrap: wrap;
-}
-
-.trust-indicator {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    align-items: flex-start;
-}
-
-.trust-val {
-    font-family: var(--font-heading);
-    font-size: 42px;
-    font-weight: 800;
-    color: var(--accent-primary);
-    letter-spacing: -0.8px;
-    line-height: 1.1;
-}
-
-.trust-lbl {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-}
-
 @media (max-width: 992px) {
     .hero-grid {
         grid-template-columns: 1fr;
@@ -3087,9 +3188,6 @@ h5, h6 {
     }
     .hero-actions {
         justify-content: flex-start;
-    }
-    .hero-trust-indicators {
-        gap: 40px;
     }
     .portrait-wrapper {
         margin: 0;
@@ -3117,6 +3215,98 @@ h5, h6 {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(-8px); }
     60% { transform: translateY(-4px); }
+}
+
+/* --- Visual Work Marquee (Hero -> Impact bridge) ---
+   Two identical image sets sit in one flex row and scroll together; translating exactly -50%
+   loops seamlessly since the second half is a pixel-for-pixel duplicate of the first. */
+.work-marquee-section {
+    padding: 48px 0 64px;
+    overflow: hidden;
+}
+
+.marquee-eyebrow {
+    display: block;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: var(--overline-size);
+    font-weight: var(--overline-weight);
+    letter-spacing: var(--overline-letter-spacing);
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.marquee-viewport {
+    overflow: hidden;
+    /* Fade the strip out at both edges instead of hard-cutting images against the section edge */
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 6%, #000 94%, transparent 100%);
+}
+
+.marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: max-content;
+    animation: marquee-scroll 38s linear infinite;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .marquee-viewport:hover .marquee-track {
+        animation-play-state: paused;
+    }
+}
+
+.marquee-item {
+    flex: none;
+    height: 280px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--bg-surface-border);
+    box-shadow: var(--shadow-md);
+    background-color: var(--bg-secondary);
+}
+
+.marquee-item img {
+    height: 100%;
+    width: auto;
+    max-width: none;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+    .marquee-viewport {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    /* No looping animation to hide the seam, so drop the duplicate set and let the strip
+       be a normal manually-scrollable row of the 6 unique images. */
+    .marquee-item[aria-hidden="true"] {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .work-marquee-section {
+        padding: 32px 0 48px;
+    }
+    .marquee-item {
+        height: 170px;
+    }
+    .marquee-track {
+        gap: 16px;
+        animation-duration: 26s;
+    }
 }
 
 /* Featured Case Studies Meta Styles */
@@ -3518,35 +3708,6 @@ h5, h6 {
 }
 
 /* --- Optimized Homepage Components --- */
-
-/* Hero Trust Indicators */
-.hero-trust-indicators {
-    display: flex;
-    gap: 32px;
-    margin-top: 32px;
-    margin-bottom: 32px;
-    border-top: 1px solid var(--bg-surface-border);
-    border-bottom: 1px solid var(--bg-surface-border);
-    padding: 16px 0;
-}
-.trust-indicator {
-    display: flex;
-    flex-direction: column;
-}
-.trust-val {
-    font-family: var(--font-heading);
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--text-primary);
-}
-.trust-lbl {
-    font-size: 11px;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-top: 2px;
-    letter-spacing: 0.5px;
-}
 
 /* Featured Case Study Subcategory tag */
 .cs-card-industry {

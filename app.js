@@ -290,6 +290,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Generic Scroll-Reveal for content cards & sections (site-wide) ---
+    // Targets shared card/section classes that already exist across every page, so this
+    // needs no per-page markup changes. Falls back to showing everything immediately when
+    // the visitor prefers reduced motion or the browser lacks IntersectionObserver.
+    (function initScrollReveal() {
+        const revealSelector = [
+            '.stat-card', '.work-card', '.stack-card', '.testimonial-card', '.premium-exp-card',
+            '.philosophy-card', '.edu-item', '.cert-list li', '.metric-card',
+            '.cs-section', '.about-story', '.about-philosophies',
+            '.contact-info', '.contact-form-container'
+        ].join(', ');
+
+        const targets = Array.from(document.querySelectorAll(revealSelector));
+        if (!targets.length) return;
+
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reducedMotion || !('IntersectionObserver' in window)) {
+            targets.forEach(el => el.classList.add('is-visible'));
+            return;
+        }
+
+        targets.forEach(el => {
+            el.classList.add('reveal-on-scroll');
+            const parent = el.parentElement;
+            const siblingGroup = parent
+                ? Array.from(parent.children).filter(child => child.matches(revealSelector))
+                : [el];
+            const indexInGroup = siblingGroup.indexOf(el);
+            el.style.setProperty('--reveal-delay', `${Math.min(indexInGroup, 5) * 90}ms`);
+        });
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+        targets.forEach(el => revealObserver.observe(el));
+    })();
+
     // --- Back to Top Smooth Scroll ---
     const backToTopBtn = document.getElementById('backToTop');
     if (backToTopBtn) {
@@ -308,6 +351,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!href || href.startsWith('mailto:') || href.startsWith('http') || href.startsWith('#')) return;
 
         link.addEventListener('click', (e) => {
+            // Let browser handle new-tab/new-window/download intents (Ctrl/Cmd/middle/shift-click) untouched
+            if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
             e.preventDefault();
             document.body.classList.add('page-transition-active');
             setTimeout(() => {

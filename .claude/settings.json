@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(npm install *)",
+      "Bash(npx eleventy *)",
+      "Bash(node ./node_modules/vite/bin/vite.js build --outDir dist_old)"
+    ]
+  }
+}
